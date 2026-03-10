@@ -36,6 +36,11 @@ function selectModel(task) {
   if (keywords.designer.some(k => task.includes(k))) return "bailian/glm-5";
   if (keywords.critic.some(k => task.includes(k))) return "minimax/minimax-m2.5";
   
+  // 架构类任务：GLM 系列试试（GLM-5 深度设计，GLM-4.7 轻量架构）
+  if (task.includes("架构")) {
+    return task.length > 200 ? "bailian/glm-5" : "bailian/glm-4.7";
+  }
+  
   // 简单任务判断
   if (task.length < 100 || keywords.light.some(k => task.includes(k))) {
     return "bailian/glm-4.7";
