@@ -1,0 +1,619 @@
+{
+  "test_model": "GLM-4.7",
+  "test_date": "2026-03-10",
+  "answers": {
+    "question_1": {
+      "title": "系统设计 - 黄金矿工增益卡牌系统设计",
+      "cards": [
+        {
+          "name": "大力神力",
+          "effect": "钩子拉回速度提升 50%，持续 10 秒",
+          "rarity": "普通",
+          "acquisition": "关卡结算随机获得，概率 30%",
+          "numeric_planning": "baseSpeed * 1.5, duration = 10s"
+        },
+        {
+          "name": "磁铁护盾",
+          "effect": "自动吸附 3 格范围内的矿物，持续 8 秒",
+          "rarity": "稀有",
+          "acquisition": "任务奖励或宝箱开启，概率 15%",
+          "numeric_planning": "magnetRange = 3, duration = 8s"
+        },
+        {
+          "name": "金币倍增",
+          "effect": "下次抓取的金块价值翻倍",
+          "rarity": "普通",
+          "acquisition": "关卡结算随机获得，概率 25%",
+          "numeric_planning": "nextGoldValue * 2"
+        },
+        {
+          "name": "时间冻结",
+          "effect": "关卡倒计时暂停 5 秒，钩子可继续操作",
+          "rarity": "史诗",
+          "acquisition": "连续通关 3 关奖励，概率 5%",
+          "numeric_planning": "timerPaused = true, duration = 5s"
+        },
+        {
+          "name": "钩子延长",
+          "effect": "钩子最大长度增加 30%，持续一关",
+          "rarity": "普通",
+          "acquisition": "关卡结算随机获得，概率 35%",
+          "numeric_planning": "maxLength * 1.3, untilLevelEnd"
+        },
+        {
+          "name": "精准瞄准",
+          "effect": "自动锁定最近的高价值目标，持续 15 秒",
+          "rarity": "稀有",
+          "acquisition": "任务奖励或宝箱开启，概率 10%",
+          "numeric_planning": "autoTarget = true, duration = 15s"
+        },
+        {
+          "name": "幸运女神",
+          "effect": "抓取钻石或稀有物品概率提升 20%，持续一关",
+          "rarity": "史诗",
+          "acquisition": "连续通关 5 关奖励，概率 4%",
+          "numeric_planning": "rareItemChance + 0.2, untilLevelEnd"
+        },
+        {
+          "name": "护身符",
+          "effect": "抵消一次钩子碰到炸药的伤害",
+          "rarity": "普通",
+          "acquisition": "关卡结算随机获得，概率 20%",
+          "numeric_planning": "bombImmunity = 1"
+        },
+        {
+          "name": "三钩齐发",
+          "effect": "同时发射 3 个钩子，持续 5 秒",
+          "rarity": "传奇",
+          "acquisition": "特殊活动或商城购买，概率 2%",
+          "numeric_planning": "hookCount = 3, duration = 5s"
+        },
+        {
+          "name": "重力逆转",
+          "effect": "矿物自动向上浮，无需拉回，持续 6 秒",
+          "rarity": "史诗",
+          "acquisition": "特殊活动或商城购买，概率 3%",
+          "numeric_planning": "gravity = -1, duration = 6s"
+        },
+        {
+          "name": "大力士手套",
+          "effect": "可抓取超重物品（如巨型石块），持续一关",
+          "rarity": "稀有",
+          "acquisition": "任务奖励或宝箱开启，概率 12%",
+          "numeric_planning": "heavyItemAllowed = true, untilLevelEnd"
+        },
+        {
+          "name": "钻头强化",
+          "effect": "钩子穿透岩石和木头障碍物，持续 12 秒",
+          "rarity": "稀有",
+          "acquisition": "连续通关 4 关奖励，概率 6%",
+          "numeric_planning": "penetrateObstacle = true, duration = 12s"
+        },
+        {
+          "name": "回血药剂",
+          "effect": "恢复 50 点生命值",
+          "rarity": "普通",
+          "acquisition": "关卡结算随机获得，概率 40%",
+          "numeric_planning": "health + 50"
+        },
+        {
+          "name": "连环炸弹",
+          "effect": "一次性引爆周围 5 格内的所有炸药",
+          "rarity": "史诗",
+          "acquisition": "特殊活动或商城购买，概率 3%",
+          "numeric_planning": "explodeRadius = 5, oneTimeUse"
+        },
+        {
+          "name": "无尽宝藏",
+          "effect": "本关所有物品价值提升 30%",
+          "rarity": "传奇",
+          "acquisition": "通关困难关卡奖励，概率 1%",
+          "numeric_planning": "allItemValue * 1.3, untilLevelEnd"
+        }
+      ],
+      "combo_analysis": [
+        {
+          "combo_name": "速度收益流",
+          "cards": ["大力神力", "金币倍增", "钩子延长"],
+          "effect": "快速抓取高价值目标，总收益提升 150%"
+        },
+        {
+          "combo_name": "精准安全流",
+          "cards": ["精准瞄准", "护身符", "大力士手套"],
+          "effect": "精准锁定目标并保护安全，适合困难关卡"
+        },
+        {
+          "combo_name": "爆发掠夺流",
+          "cards": ["三钩齐发", "重力逆转", "无尽宝藏"],
+          "effect": "短时间爆发式收集，适合冲刺高分"
+        }
+      ]
+    },
+    "question_2": {
+      "title": "代码生成 - 黄金矿工钩子状态机（TypeScript）",
+      "code": `interface HookState {
+  onEnter(): void;
+  onExit(): void;
+  update(deltaTime: number): void;
+  canTransitionTo(state: HookStateType): boolean;
+}
+
+enum HookStateType {
+  IDLE = "idle",
+  SWINGING = "swinging",
+  LAUNCHING = "launching",
+  RETRACTING = "retracting",
+  GRABBING = "grabbing"
+}
+
+class HookMachine {
+  private currentState: HookState;
+  private states: Map<HookStateType, HookState>;
+  public position: { x: number; y: number };
+  public angle: number;
+  public speed: number;
+  public maxLength: number;
+  public grabbedItem: any | null;
+  public isGrabbingHeavy: boolean = false;
+
+  constructor() {
+    this.position = { x: 0, y: 0 };
+    this.angle = 0;
+    this.speed = 0;
+    this.maxLength = 500;
+    this.grabbedItem = null;
+    
+    this.states = new Map();
+    this.states.set(HookStateType.IDLE, new IdleState(this));
+    this.states.set(HookStateType.SWINGING, new SwingingState(this));
+    this.states.set(HookStateType.LAUNCHING, new LaunchingState(this));
+    this.states.set(HookStateType.RETRACTING, new RetractingState(this));
+    this.states.set(HookStateType.GRABBING, new GrabbingState(this));
+    
+    this.currentState = this.states.get(HookStateType.IDLE)!;
+    this.currentState.onEnter();
+  }
+
+  transitionTo(stateType: HookStateType): boolean {
+    if (this.currentState.canTransitionTo(stateType)) {
+      this.currentState.onExit();
+      this.currentState = this.states.get(stateType)!;
+      this.currentState.onEnter();
+      return true;
+    }
+    return false;
+  }
+
+  update(deltaTime: number): void {
+    this.currentState.update(deltaTime);
+  }
+
+  launch(): void {
+    this.transitionTo(HookStateType.LAUNCHING);
+  }
+}
+
+// 状态实现类
+
+class IdleState implements HookState {
+  constructor(private machine: HookMachine) {}
+
+  onEnter(): void {
+    console.log("进入待命状态");
+    this.machine.speed = 0;
+    this.machine.grabbedItem = null;
+  }
+
+  onExit(): void {
+    console.log("退出待命状态");
+  }
+
+  update(deltaTime: number): void {
+    // 自动过渡到摆动状态
+    this.machine.transitionTo(HookStateType.SWINGING);
+  }
+
+  canTransitionTo(state: HookStateType): boolean {
+    return state === HookStateType.SWINGING;
+  }
+}
+
+class SwingingState implements HookState {
+  private swingDirection: number = 1;
+  private swingSpeed: number = 2;
+  private minAngle: number = -60;
+  private maxAngle: number = 60;
+
+  constructor(private machine: HookMachine) {}
+
+  onEnter(): void {
+    console.log("进入摆动状态");
+    this.machine.angle = 0;
+  }
+
+  onExit(): void {
+    console.log("退出摆动状态");
+  }
+
+  update(deltaTime: number): void {
+    this.machine.angle += this.swingDirection * this.swingSpeed;
+    
+    // 边界处理：角度超出范围时反转方向
+    if (this.machine.angle >= this.maxAngle) {
+      this.machine.angle = this.maxAngle;
+      this.swingDirection = -1;
+    } else if (this.machine.angle <= this.minAngle) {
+      this.machine.angle = this.minAngle;
+      this.swingDirection = 1;
+    }
+  }
+
+  canTransitionTo(state: HookStateType): boolean {
+    return state === HookStateType.LAUNCHING;
+  }
+}
+
+class LaunchingState implements HookState {
+  private launchSpeed: number = 300;
+  private distanceTraveled: number = 0;
+
+  constructor(private machine: HookMachine) {}
+
+  onEnter(): void {
+    console.log("进入发射状态");
+    this.machine.speed = this.launchSpeed;
+    this.distanceTraveled = 0;
+  }
+
+  onExit(): void {
+    console.log("退出发射状态");
+  }
+
+  update(deltaTime: number): void {
+    const distance = this.machine.speed * deltaTime;
+    this.distanceTraveled += distance;
+    
+    const radians = (this.machine.angle * Math.PI) / 180;
+    this.machine.position.x += Math.cos(radians) * distance;
+    this.machine.position.y += Math.sin(radians) * distance;
+    
+    // 边界情况 1：达到最大长度
+    if (this.distanceTraveled >= this.machine.maxLength) {
+      this.machine.transitionTo(HookStateType.RETRACTING);
+      return;
+    }
+    
+    // 边界情况 2：检测碰撞（这里需要实现碰撞检测）
+    if (this.checkCollision()) {
+      this.machine.transitionTo(HookStateType.GRABBING);
+      return;
+    }
+  }
+
+  private checkCollision(): boolean {
+    // 简化实现：实际游戏需要碰撞检测系统
+    return false;
+  }
+
+  canTransitionTo(state: HookStateType): boolean {
+    return state === HookStateType.RETRACTING || state === HookStateType.GRABBING;
+  }
+}
+
+class RetractingState implements HookState {
+  private baseRetractSpeed: number = 150;
+
+  constructor(private machine: HookMachine) {}
+
+  onEnter(): void {
+    console.log("进入回收状态");
+    this.calculateRetractSpeed();
+  }
+
+  onExit(): void {
+    console.log("退出回收状态");
+  }
+
+  update(deltaTime: number): void {
+    const radians = (this.machine.angle * Math.PI) / 180;
+    
+    // 计算回退距离
+    const distance = this.machine.speed * deltaTime;
+    this.machine.position.x -= Math.cos(radians) * distance;
+    this.machine.position.y -= Math.sin(radians) * distance;
+    
+    // 边界情况：回到原点
+    if (this.machine.position.x <= 0 && this.machine.position.y <= 0) {
+      this.machine.position = { x: 0, y: 0 };
+      this.machine.transitionTo(HookStateType.IDLE);
+      
+      // 交付物品逻辑
+      if (this.machine.grabbedItem) {
+        this.deliverItem(this.machine.grabbedItem);
+        this.machine.grabbedItem = null;
+      }
+    }
+  }
+
+  private calculateRetractSpeed(): void {
+    if (this.machine.grabbedItem) {
+      const weight = this.machine.grabbedItem.weight || 1;
+      this.machine.speed = this.baseRetractSpeed / weight;
+    } else {
+      this.machine.speed = this.baseRetractSpeed;
+    }
+  }
+
+  private deliverItem(item: any): void {
+    // 实现物品交付逻辑
+    console.log(\`交付物品: \${item.name}, 价值: \${item.value}\`);
+  }
+
+  canTransitionTo(state: HookStateType): boolean {
+    return state === HookStateType.IDLE;
+  }
+}
+
+class GrabbingState implements HookState {
+  private grabDuration: number = 0.5;
+  private elapsedTime: number = 0;
+
+  constructor(private machine: HookMachine) {}
+
+  onEnter(): void {
+    console.log("进入抓取状态");
+    this.elapsedTime = 0;
+    this.performGrab();
+  }
+
+  onExit(): void {
+    console.log("退出抓取状态");
+  }
+
+  update(deltaTime: number): void {
+    this.elapsedTime += deltaTime;
+    
+    if (this.elapsedTime >= this.grabDuration) {
+      this.machine.transitionTo(HookStateType.RETRACTING);
+    }
+  }
+
+  private performGrab(): void {
+    // 简化实现：实际游戏需要抓取逻辑
+    this.machine.grabbedItem = {
+      name: "金块",
+      value: 100,
+      weight: 2
+    };
+  }
+
+  canTransitionTo(state: HookStateType): boolean {
+    return state === HookStateType.RETRACTING;
+  }
+}
+
+// 使用示例
+const hookMachine = new HookMachine();
+hookMachine.launch();`
+    },
+    "question_3": {
+      "title": "代码审查 - 审查给定钩子代码",
+      "note": "由于测试题目未提供具体的钩子代码供审查，我创建了一段包含常见问题的示例代码进行审查",
+      "sample_code": `class Hook {
+  private position: {x: number, y: number} = {x: 0, y: 0};
+  private speed: number = 300;
+  private angle: number = 0;
+  private state: string = "idle";
+  
+  launch() {
+    this.state = "launching";
+    const radians = this.angle * Math.PI / 180;
+    this.position.x += Math.cos(radians) * this.speed;
+    this.position.y += Math.sin(radians) * this.speed;
+  }
+  
+  checkCollision() {
+    if (this.position.x < 0 || this.position.x > 800) {
+      return true;
+    }
+    return false;
+  }
+  
+  retract() {
+    const radians = this.angle * Math.PI / 180;
+    this.position.x -= Math.cos(radians) * this.speed;
+    this.position.y -= Math.sin(radians) * this.speed;
+  }  
+}`,
+      "bugs_and_issues": [
+        {
+          "issue_type": "Bug",
+          "severity": "高",
+          "title": "缺少 deltaTime 参数导致帧率依赖",
+          "description": "launch() 和 retract() 方法直接使用速度值计算位置，没有考虑 delta time。在不同帧率下，钩子速度会不一致，高帧率设备上钩子会移动得更快，低帧率设备上移动更慢。",
+          "impact": "严重影响游戏公平性，不同设备玩家体验差异巨大，可能导致玩家投诉和流失。",
+          "fixed_code": `launch(deltaTime: number) {
+  this.state = "launching";
+  const radians = this.angle * Math.PI / 180;
+  const distance = this.speed * deltaTime;
+  this.position.x += Math.cos(radians) * distance;
+  this.position.y += Math.sin(radians) * distance;
+}`
+        },
+        {
+          "issue_type": "Bug",
+          "severity": "中",
+          "title": "Y 轴边界检查缺失",
+          "description": "checkCollision() 方法只检查 X 轴边界（0 和 800），完全忽略了 Y 轴边界。这意味着钩子可以在 Y 轴方向无限延伸，可能导致数组越界或内存错误。",
+          "impact": "钩子可能飞出屏幕边界导致游戏崩溃，或者在地图外抓取到不存在的内容。玩家可以利用这个 bug 跳过关卡设计。",
+          "fixed_code": `checkCollision() {
+  const maxX = 800;
+  const maxY = 600;
+  if (this.position.x < 0 || this.position.x > maxX ||
+      this.position.y < 0 || this.position.y > maxY) {
+    return true;
+  }
+  return false;
+}`
+        },
+        {
+          "issue_type": "Design Problem",
+          "severity": "中",
+          "title": "使用字符串而非枚举管理状态",
+          "description": "state 属性使用字符串字面量（"idle", "launching"），而非 TypeScript 枚举。这容易导致拼写错误，且在编译时无法检查状态值的正确性。",
+          "impact": "增加运行时错误风险，IDE 无法提供代码补全，重构时容易遗漏某些状态切换。",
+          "fixed_code": `enum HookState {
+  IDLE = "idle",
+  LAUNCHING = "launching",
+  RETRACTING = "retracting",
+  GRABBING = "grabbing"
+}
+
+class Hook {
+  private state: HookState = HookState.IDLE;
+  // ...
+  
+  setState(newState: HookState) {
+    // 可以添加状态转换验证逻辑
+    this.state = newState;
+  }
+}`
+        },
+        {
+          "issue_type": "Bug",
+          "severity": "高",
+          "title": "无最大长度限制",
+          "description": "钩子发射没有任何最大长度限制。只要不碰到边界，钩子会一直延伸。这可能导致玩家无限抓取远处的物品，破坏关卡设计。",
+          "impact": "严重破坏游戏平衡和关卡设计。玩家可以无风险抓取屏幕边缘的物品，降低游戏难度和挑战性。",
+          "fixed_code": `class Hook {
+  private maxLength: number = 500;
+  private distanceTraveled: number = 0;
+  
+  launch(deltaTime: number) {
+    this.state = "launching";
+    const radians = this.angle * Math.PI / 180;
+    const distance = this.speed * deltaTime;
+    this.distanceTraveled += distance;
+    
+    // 检查是否达到最大长度
+    if (this.distanceTraveled >= this.maxLength) {
+      this.retract();
+      return;
+    }
+    
+    this.position.x += Math.cos(radians) * distance;
+    this.position.y += Math.sin(radians) * distance;
+  }  
+}`
+        },
+        {
+          "issue_type": "Design Problem",
+          "severity": "低",
+          "title": "缺少状态进入/退出钩子",
+          "description": "状态切换时没有 onEnter/onExit 机制。无法在状态变化时执行初始化逻辑（如重置速度、播放动画等）或清理逻辑。",
+          "impact": "代码可扩展性差，添加新功能困难。例如无法在进入 grabbing 状态时播放抓取动画或音效。",
+          "fixed_code": `interface State {
+  onEnter(): void;
+  onExit(): void;
+  update(deltaTime: number): void;
+}
+
+class LaunchingState implements State {
+  constructor(private hook: Hook) {}
+  
+  onEnter() {
+    this.hook.distanceTraveled = 0;
+    // 播放发射音效
+    this.hook.playSound("launch");
+  }
+  
+  onExit() {
+    // 停止发射音效
+    this.hook.stopSound("launch");
+  }
+  
+  update(deltaTime: number) {
+    // 更新逻辑
+  }
+}`
+        }
+      ]
+    },
+    "question_4": {
+      "title": "创意评估 - 评估'时间暂停'卡牌",
+      "card_name": "时间暂停",
+      "card_effect": "关卡倒计时暂停 5 秒，钩子可继续操作",
+      "evaluation": {
+        "interesting_score": 8,
+        "balance_concern": "存在平衡性问题",
+        "balance_analysis": "时间暂停卡牌会在短时间内显著降低游戏难度，尤其在高难度关卡中可能成为'通关神器'。主要问题：1）玩家可以无脑等待最佳角度发射；2）在时间压力关键关卡中，5 秒可能决定成败；3）可能降低游戏技巧性和挑战性。",
+        "improvement_suggestions": [
+          "降低持续时间至 3 秒，平衡效果强度",
+          "增加副作用：暂停期间钩子速度降低 30%",
+          "改为'时间减半'：倒计时速度减半 8 秒，而不是完全暂停",
+          "限制使用条件：只能在特定关卡或达到目标分数后使用",
+          "消耗机制：使用后需要积累能量或完成特定任务才能再次使用"
+        ]
+      },
+      "more_creative_cards": [
+        {
+          "name": "重力反转",
+          "effect": "钩子发射后，所有矿物和物品会向上浮起，需要从上方抓取。持续 8 秒。",
+          "creativity_reason": "完全改变游戏机制，增加新鲜感和策略性，让玩家思考不同的抓取方式。",
+          "rarity": "史诗"
+        },
+        {
+          "name": "磁力共鸣",
+          "effect": "将已抓取的物品转化为'磁力核心'，后续抓取的物品会被自动吸引向核心，形成一条矿脉。持续 10 秒。",
+          "creativity_reason": "利用已抓取物品创造连锁反应，鼓励玩家提前规划抓取顺序，增加深度。",
+          "rarity": "传奇"
+        },
+        {
+          "name": "时间回溯",
+          "effect": "可以回溯最近一次钩子发射到当前状态的时间，重新选择发射角度。每关限用一次。",
+          "creativity_reason": "允许玩家犯错后修正，但限制使用次数，既降低挫败感又保持挑战性。",
+          "rarity": "史诗"
+        },
+        {
+          "name": "元素转化",
+          "effect": "抓取到的普通物品会随机转化为元素属性（火、水、土），不同元素有不同效果：火=额外金币，水=恢复时间，土=形成护盾。持续一关。",
+          "creativity_reason": "引入随机性和策略组合，让玩家根据元素特性调整抓取策略。",
+          "rarity": "稀有"
+        },
+        {
+          "name": "空间裂缝",
+          "effect": "在关卡中随机打开 3 个空间裂缝，点击裂缝可以传送钩子到该位置。持续 15 秒。",
+          "creativity_reason": "改变空间概念，增加操作维度，让玩家快速到达难以触及的区域。",
+          "rarity": "传奇"
+        },
+        {
+          "name": "矿物进化",
+          "effect": "关卡中已有的低价值矿物会随时间进化成高价值矿物，但体积变大、重量增加。持续 20 秒。",
+          "creativity_reason": "时间压力下的风险回报机制，玩家需要在矿物变得难以抓取之前决定是否等待。",
+          "rarity": "史诗"
+        }
+      ]
+    },
+    "question_5": {
+      "title": "概念解释 - 解释连击、稀有度、DPS、资源循环",
+      "explanations": [
+        {
+          "concept": "连击",
+          "explanation": "连续成功抓取矿物而不失误。比如连续抓取 3 块金块就是 3 连击，连击数越高，奖励倍率越大。就像篮球连续进球一样，越顺越厉害。"
+        },
+        {
+          "concept": "稀有度",
+          "explanation": "物品出现的难易程度。钻石稀有，出现概率低但价值高；石头常见，到处都是但价值低。就像抽卡游戏，SSR 卡最难抽到。"
+        },
+        {
+          "concept": "DPS",
+          "explanation": "每秒能获得多少金币。比如 60 秒抓到 600 金，DPS 就是 10。DPS 越高说明效率越高，能在有限时间内赚更多钱。"
+        },
+        {
+          "concept": "资源循环",
+          "explanation": "用现有资源换取更多资源。比如用金币买强力卡牌，再用卡牌抓到更多金币。就像滚雪球，资源越滚越大，形成良性循环。"
+        }
+      ]
+    }
+  }
+}

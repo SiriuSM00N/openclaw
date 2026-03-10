@@ -1,0 +1,351 @@
+{
+  "cards": [
+    {
+      "id": "strong_hook",
+      "name": "强力钩爪",
+      "name_en": "Strong Hook",
+      "effect": "钩爪拉力提升50%，能更快拉起重物",
+      "effect_en": "Hook pulling power increased by 50%, pulls heavy objects faster",
+      "rarity": "common",
+      "rarity_level": 1,
+      "rarity_color": "#9e9e9e",
+      "acquisition": {
+        "type": "shop",
+        "cost": 200,
+        "description": "商店直接购买，每日限购3张"
+      },
+      "stats": {
+        "power_multiplier": 1.5,
+        "duration": "single_level",
+        "cooldown": 0
+      },
+      "category": "efficiency"
+    },
+    {
+      "id": "lucky_potion",
+      "name": "幸运药水",
+      "name_en": "Lucky Potion",
+      "effect": "高品质物品（金块、钻石）出现率提升30%",
+      "effect_en": "High-quality items (gold, diamonds) spawn rate increased by 30%",
+      "rarity": "common",
+      "rarity_level": 1,
+      "rarity_color": "#9e9e9e",
+      "acquisition": {
+        "type": "daily_reward",
+        "description": "每日签到第3天奖励"
+      },
+      "stats": {
+        "quality_bonus": 0.3,
+        "duration": "single_level",
+        "cooldown": 0
+      },
+      "category": "value"
+    },
+    {
+      "id": "magnet_hook",
+      "name": "磁铁钩",
+      "name_en": "Magnet Hook",
+      "effect": "对10kg以下物品，拉回速度提升80%",
+      "effect_en": "For items under 10kg, pulling speed increased by 80%",
+      "rarity": "rare",
+      "rarity_level": 2,
+      "rarity_color": "#4fc3f7",
+      "acquisition": {
+        "type": "shop",
+        "cost": 500,
+        "description": "商店购买，需通关第5关解锁"
+      },
+      "stats": {
+        "light_item_speed_bonus": 0.8,
+        "weight_threshold": 10,
+        "duration": "single_level",
+        "cooldown": 0
+      },
+      "category": "efficiency"
+    },
+    {
+      "id": "diamond_radar",
+      "name": "钻石雷达",
+      "name_en": "Diamond Radar",
+      "effect": "显示关卡中所有钻石的位置",
+      "effect_en": "Reveals all diamond locations in the level",
+      "rarity": "rare",
+      "rarity_level": 2,
+      "rarity_color": "#4fc3f7",
+      "acquisition": {
+        "type": "level_reward",
+        "description": "通关第8关奖励"
+      },
+      "stats": {
+        "reveal_type": "diamonds",
+        "duration": "single_level",
+        "cooldown": 0
+      },
+      "category": "information"
+    },
+    {
+      "id": "strength_drink",
+      "name": "力量饮料",
+      "name_en": "Strength Drink",
+      "effect": "钩爪摆动速度提升100%，持续15秒",
+      "effect_en": "Hook swing speed increased by 100%, lasts 15 seconds",
+      "rarity": "rare",
+      "rarity_level": 2,
+      "rarity_color": "#4fc3f7",
+      "acquisition": {
+        "type": "random_drop",
+        "drop_rate": 0.15,
+        "description": "关卡中随机掉落，掉落率15%"
+      },
+      "stats": {
+        "swing_speed_multiplier": 2.0,
+        "duration": 15,
+        "cooldown": 0
+      },
+      "category": "efficiency"
+    },
+    {
+      "id": "gold_multiplier",
+      "name": "聚宝盆",
+      "name_en": "Treasure Pot",
+      "effect": "本关所有物品价值提升25%",
+      "effect_en": "All item values in this level increased by 25%",
+      "rarity": "epic",
+      "rarity_level": 3,
+      "rarity_color": "#ba68c8",
+      "acquisition": {
+        "type": "achievement",
+        "achievement_id": "gold_collector_10000",
+        "description": "累计收集10000金币后解锁"
+      },
+      "stats": {
+        "value_multiplier": 1.25,
+        "duration": "single_level",
+        "cooldown": 0
+      },
+      "category": "value"
+    },
+    {
+      "id": "invisibility",
+      "name": "隐形斗篷",
+      "name_en": "Invisibility Cloak",
+      "effect": "所有物品重量降低40%，持续20秒",
+      "effect_en": "All item weights reduced by 40%, lasts 20 seconds",
+      "rarity": "epic",
+      "rarity_level": 3,
+      "rarity_color": "#ba68c8",
+      "acquisition": {
+        "type": "shop",
+        "cost": 1200,
+        "description": "传说商店限时销售"
+      },
+      "stats": {
+        "weight_reduction": 0.4,
+        "duration": 20,
+        "cooldown": 0
+      },
+      "category": "efficiency"
+    },
+    {
+      "id": "alchemist",
+      "name": "炼金术士",
+      "name_en": "Alchemist",
+      "effect": "石头有20%几率随机转化为金块",
+      "effect_en": "Stones have 20% chance to randomly transform into gold nuggets",
+      "rarity": "epic",
+      "rarity_level": 3,
+      "rarity_color": "#ba68c8",
+      "acquisition": {
+        "type": "random_drop",
+        "drop_rate": 0.05,
+        "description": "关卡中随机掉落，掉落率5%"
+      },
+      "stats": {
+        "transform_rate": 0.2,
+        "from_type": "stone",
+        "to_type": "gold",
+        "duration": "permanent_level",
+        "cooldown": 0
+      },
+      "category": "transform"
+    },
+    {
+      "id": "time_warp",
+      "name": "时光扭曲",
+      "name_en": "Time Warp",
+      "effect": "关卡时间延长30秒",
+      "effect_en": "Level time extended by 30 seconds",
+      "rarity": "common",
+      "rarity_level": 1,
+      "rarity_color": "#9e9e9e",
+      "acquisition": {
+        "type": "daily_reward",
+        "description": "每日签到第5天奖励"
+      },
+      "stats": {
+        "time_bonus": 30,
+        "duration": "single_level",
+        "cooldown": 0
+      },
+      "category": "time"
+    },
+    {
+      "id": "lucky_bag",
+      "name": "福袋",
+      "name_en": "Lucky Bag",
+      "effect": "本关结束后，额外获得关卡目标金额的10%奖励",
+      "effect_en": "After level completion, get extra 10% of target amount as bonus",
+      "rarity": "rare",
+      "rarity_level": 2,
+      "rarity_color": "#4fc3f7",
+      "acquisition": {
+        "type": "shop",
+        "cost": 600,
+        "description": "商店购买"
+      },
+      "stats": {
+        "bonus_percentage": 0.1,
+        "based_on": "target_amount",
+        "duration": "single_level",
+        "cooldown": 0
+      },
+      "category": "value"
+    },
+    {
+      "id": "precision_scope",
+      "name": "精准瞄准",
+      "name_en": "Precision Scope",
+      "effect": "钩爪出钩长度延长20%，且可预判物品位置",
+      "effect_en": "Hook cast range extended by 20%, with item position preview",
+      "rarity": "epic",
+      "rarity_level": 3,
+      "rarity_color": "#ba68c8",
+      "acquisition": {
+        "type": "level_reward",
+        "description": "通关第15关奖励"
+      },
+      "stats": {
+        "range_bonus": 0.2,
+        "has_preview": true,
+        "duration": "single_level",
+        "cooldown": 0
+      },
+      "category": "information"
+    },
+    {
+      "id": "golden_touch",
+      "name": "黄金之手",
+      "name_en": "Golden Touch",
+      "effect": "抓取任何物品都获得基础价值的50%额外奖励",
+      "effect_en": "Get extra 50% bonus value on any item grabbed",
+      "rarity": "legendary",
+      "rarity_level": 4,
+      "rarity_color": "#ffd700",
+      "acquisition": {
+        "type": "limited_event",
+        "description": "限时活动：周末狂欢期间累计通关10关获得"
+      },
+      "stats": {
+        "bonus_multiplier": 0.5,
+        "applies_to": "all_items",
+        "duration": "single_level",
+        "cooldown": 0
+      },
+      "category": "value"
+    }
+  ],
+  "combinations_analysis": [
+    {
+      "combination_name": "高效组合",
+      "cards": ["strong_hook", "magnet_hook", "strength_drink"],
+      "description": "强力钩爪 + 磁铁钩 + 力量饮料",
+      "effect": "极致的抓取效率，能够快速抓取所有类型的物品",
+      "synergy_score": 8.5,
+      "best_for": "追求速通的玩家"
+    },
+    {
+      "combination_name": "财富组合",
+      "cards": ["lucky_potion", "gold_multiplier", "golden_touch"],
+      "description": "幸运药水 + 聚宝盆 + 黄金之手",
+      "effect": "三重价值加成，单关收益最高",
+      "synergy_score": 9.5,
+      "best_for": "追求高收益的玩家"
+    },
+    {
+      "combination_name": "转化组合",
+      "cards": ["alchemist", "lucky_potion", "gold_multiplier"],
+      "description": "炼金术士 + 幸运药水 + 聚宝盆",
+      "effect": "石头变金块 + 高品质更多 + 价值提升，变废为宝",
+      "synergy_score": 9.0,
+      "best_for": "喜欢风险管理的玩家"
+    },
+    {
+      "combination_name": "轻松组合",
+      "cards": ["invisibility", "strength_drink", "magnet_hook"],
+      "description": "隐形斗篷 + 力量饮料 + 磁铁钩",
+      "effect": "物品变轻 + 摆动更快 + 轻物更快，游玩体验最轻松",
+      "synergy_score": 8.0,
+      "best_for": "休闲玩家"
+    },
+    {
+      "combination_name": "精准组合",
+      "cards": ["diamond_radar", "precision_scope", "magnet_hook"],
+      "description": "钻石雷达 + 精准瞄准 + 磁铁钩",
+      "effect": "全知视野 + 范围更广 + 快速抓取，最适合钻石关卡",
+      "synergy_score": 8.8,
+      "best_for": "专注收集高价值物品的玩家"
+    },
+    {
+      "combination_name": "时间组合",
+      "cards": ["time_warp", "strength_drink", "strong_hook"],
+      "description": "时光扭曲 + 力量饮料 + 强力钩爪",
+      "effect": "时间延长 + 极速操作，适合时间紧迫的关卡",
+      "synergy_score": 7.5,
+      "best_for": "挑战高难度关卡的玩家"
+    }
+  ],
+  "rarity_system": {
+    "common": {
+      "level": 1,
+      "color": "#9e9e9e",
+      "name": "普通",
+      "drop_weight": 60
+    },
+    "rare": {
+      "level": 2,
+      "color": "#4fc3f7",
+      "name": "稀有",
+      "drop_weight": 25
+    },
+    "epic": {
+      "level": 3,
+      "color": "#ba68c8",
+      "name": "史诗",
+      "drop_weight": 12
+    },
+    "legendary": {
+      "level": 4,
+      "color": "#ffd700",
+      "name": "传说",
+      "drop_weight": 3
+    }
+  },
+  "design_notes": {
+    "total_cards": 12,
+    "rarity_distribution": {
+      "common": 3,
+      "rare": 4,
+      "epic": 4,
+      "legendary": 1
+    },
+    "categories": {
+      "efficiency": 4,
+      "value": 4,
+      "information": 2,
+      "transform": 1,
+      "time": 1
+    },
+    "balance_philosophy": "普通卡牌易获取但效果有限，传说卡牌强力但难以获得。不同卡牌之间存在协同效应，鼓励玩家组合使用。",
+    "future_expansion": "后续可扩展更多卡牌类型，如：障碍清除类、特殊物品类、连锁效果类等"
+  }
+}

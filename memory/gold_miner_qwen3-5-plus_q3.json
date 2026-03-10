@@ -1,0 +1,61 @@
+{
+  "task": "代码审查 - 找 Bug + 修复",
+  "description": "审查黄金矿工游戏代码，找出并修复 Bug",
+  "review": {
+    "original_code": "// 有 Bug 的原始代码\nfunction calculateScore(ores, multiplier, timeBonus) {\n  let total = 0;\n  \n  for (let i = 0; i <= ores.length; i++) {  // Bug 1: 数组越界\n    total += ores[i].value;\n  }\n  \n  total = total * multiplier + timeBonus;\n  \n  if (multiplier = 2) {  // Bug 2: 赋值而非比较\n    console.log('Double score activated!');\n  }\n  \n  return total;\n}\n\nfunction checkCollision(hook, ore) {\n  const dx = hook.x - ore.x;\n  const dy = hook.y - ore.y;\n  const distance = Math.sqrt(dx * dx + dy * dy);\n  \n  if (distance < hook.radius + ore.radius) {\n    return true;  // Bug 3: 没有考虑钩子状态\n  }\n  \n  return false;\n}\n\nfunction updateGame(deltaTime) {\n  gameTime += deltaTime;  // Bug 4: 未定义变量\n  \n  if (gameTime >= maxTime) {\n    endGame();\n  }\n  \n  // Bug 5: 没有处理 deltaTime 为 0 或负数的情况\n  player.score += Math.floor(deltaTime * 10);\n}",
+    "bugs_found": [
+      {
+        "id": 1,
+        "type": "数组越界",
+        "location": "calculateScore 函数的 for 循环",
+        "problem": "i <= ores.length 应该是 i < ores.length，会导致访问 ores[ores.length] 返回 undefined",
+        "severity": "high",
+        "fix": "将 i <= ores.length 改为 i < ores.length"
+      },
+      {
+        "id": 2,
+        "type": "逻辑错误",
+        "location": "calculateScore 函数的 if 条件",
+        "problem": "使用 = 赋值运算符而非 == 或 === 比较运算符，导致条件永远为 true 且修改了 multiplier 的值",
+        "severity": "high",
+        "fix": "将 multiplier = 2 改为 multiplier === 2"
+      },
+      {
+        "id": 3,
+        "type": "逻辑缺失",
+        "location": "checkCollision 函数",
+        "problem": "没有检查钩子是否处于 SHOOTING 状态，可能在钩子收回时错误触发碰撞",
+        "severity": "medium",
+        "fix": "添加钩子状态检查，只有 SHOOTING 状态才检测碰撞"
+      },
+      {
+        "id": 4,
+        "type": "变量未定义",
+        "location": "updateGame 函数",
+        "problem": "gameTime 和 maxTime 变量未声明，可能导致全局污染或 ReferenceError",
+        "severity": "high",
+        "fix": "声明变量或使用 this/game 对象属性"
+      },
+      {
+        "id": 5,
+        "type": "边界情况未处理",
+        "location": "updateGame 函数",
+        "problem": "没有处理 deltaTime 为 0、负数或过大的情况，可能导致分数计算错误",
+        "severity": "medium",
+        "fix": "添加 deltaTime 有效性检查"
+      }
+    ],
+    "fixed_code": "// 修复后的代码\nfunction calculateScore(ores, multiplier, timeBonus) {\n  let total = 0;\n  \n  // Fix 1: 修正数组遍历边界\n  for (let i = 0; i < ores.length; i++) {\n    if (ores[i] && ores[i].value !== undefined) {\n      total += ores[i].value;\n    }\n  }\n  \n  total = total * multiplier + timeBonus;\n  \n  // Fix 2: 使用严格相等比较\n  if (multiplier === 2) {\n    console.log('Double score activated!');\n  }\n  \n  return total;\n}\n\nfunction checkCollision(hook, ore) {\n  // Fix 3: 添加钩子状态检查\n  if (hook.state !== 'SHOOTING') {\n    return false;\n  }\n  \n  const dx = hook.x - ore.x;\n  const dy = hook.y - ore.y;\n  const distance = Math.sqrt(dx * dx + dy * dy);\n  \n  if (distance < hook.radius + ore.radius) {\n    return true;\n  }\n  \n  return false;\n}\n\n// 假设在游戏类中\nclass Game {\n  constructor() {\n    this.gameTime = 0;\n    this.maxTime = 60;\n  }\n  \n  updateGame(deltaTime) {\n    // Fix 5: 处理 deltaTime 边界情况\n    if (deltaTime <= 0 || deltaTime > 1000) {\n      console.warn('Invalid deltaTime:', deltaTime);\n      return;\n    }\n    \n    // Fix 4: 使用实例变量\n    this.gameTime += deltaTime;\n    \n    if (this.gameTime >= this.maxTime) {\n      this.endGame();\n    }\n    \n    this.player.score += Math.floor(deltaTime * 10);\n  }\n}"
+  },
+  "summary": {
+    "total_bugs": 5,
+    "high_severity": 3,
+    "medium_severity": 2,
+    "low_severity": 0,
+    "categories": {
+      "syntax_errors": 1,
+      "logic_errors": 2,
+      "missing_checks": 2
+    }
+  }
+}

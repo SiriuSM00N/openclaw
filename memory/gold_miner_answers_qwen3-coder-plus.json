@@ -1,0 +1,200 @@
+{
+  "gold_miner_buff_cards": {
+    "title": "黄金矿工增益卡牌系统",
+    "description": "包含15张增益卡牌的设计方案",
+    "cards": [
+      {
+        "name": "磁力增强卡",
+        "effect": "增加钩子的磁力范围，能够自动吸附附近的金币和宝藏",
+        "rarity": "普通",
+        "acquisition_method": "商店购买、日常任务奖励",
+        "数值规划": {
+          "effect_strength": "磁力范围增加50%",
+          "duration": "60秒",
+          "cooldown": "120秒"
+        }
+      },
+      {
+        "name": "精准瞄准卡",
+        "effect": "显示钩子轨迹预测线，提高瞄准精度",
+        "rarity": "普通",
+        "acquisition_method": "新手引导奖励、签到获得",
+        "数值规划": {
+          "effect_strength": "显示准确的抛物线轨迹",
+          "duration": "45秒",
+          "cooldown": "90秒"
+        }
+      },
+      {
+        "name": "速度提升卡",
+        "effect": "加快钩子的移动速度",
+        "rarity": "普通",
+        "acquisition_method": "关卡通关奖励、成就系统",
+        "数值规划": {
+          "effect_strength": "钩子速度提升40%",
+          "duration": "50秒",
+          "cooldown": "100秒"
+        }
+      },
+      {
+        "name": "金矿探测卡",
+        "effect": "高亮显示地图上所有金币和宝藏的位置",
+        "rarity": "稀有",
+        "acquisition_method": "抽奖系统、周活跃奖励",
+        "数值规划": {
+          "effect_strength": "完全透视地图上的所有资源",
+          "duration": "30秒",
+          "cooldown": "180秒"
+        }
+      },
+      {
+        "name": "多重钩爪卡",
+        "effect": "一次抛出三个钩子，可同时抓取多个物品",
+        "rarity": "稀有",
+        "acquisition_method": "挑战模式通关、积分兑换",
+        "数值规划": {
+          "effect_strength": "同时发射3个钩子，角度分散",
+          "duration": "25秒",
+          "cooldown": "200秒"
+        }
+      },
+      {
+        "name": "时间减缓卡",
+        "effect": "减慢游戏时间流逝速度，获得更多反应时间",
+        "rarity": "稀有",
+        "acquisition_method": "限时活动、等级奖励",
+        "数值规划": {
+          "effect_strength": "游戏速度降低至50%",
+          "duration": "20秒",
+          "cooldown": "150秒"
+        }
+      },
+      {
+        "name": "财富翻倍卡",
+        "effect": "抓取的所有金币价值翻倍",
+        "rarity": "史诗",
+        "acquisition_method": "高级通行证、付费礼包",
+        "数值规划": {
+          "effect_strength": "金币收益x2",
+          "duration": "60秒",
+          "cooldown": "300秒"
+        }
+      },
+      {
+        "name": "超级力量卡",
+        "effect": "大幅提升钩子抓取重量上限",
+        "rarity": "史诗",
+        "acquisition_method": "竞技场排名奖励、成就解锁",
+        "数值规划": {
+          "effect_strength": "抓取重量上限提升200%",
+          "duration": "40秒",
+          "cooldown": "240秒"
+        }
+      },
+      {
+        "name": "连锁反应卡",
+        "effect": "抓取物品时会产生连锁效应，周围物品也会被吸引",
+        "rarity": "史诗",
+        "acquisition_method": "特殊成就、节日活动",
+        "数值规划": {
+          "effect_strength": "触发半径3格内的连锁吸引",
+          "duration": "35秒",
+          "cooldown": "280秒"
+        }
+      },
+      {
+        "name": "幸运四叶草卡",
+        "effect": "增加稀有宝藏出现概率",
+        "rarity": "史诗",
+        "acquisition_method": "高级抽奖、VIP特权",
+        "数值规划": {
+          "effect_strength": "稀有物品生成率提升80%",
+          "duration": "90秒",
+          "cooldown": "360秒"
+        }
+      },
+      {
+        "name": "无限绳索卡",
+        "effect": "钩子长度不受限制，可以到达地图任意位置",
+        "rarity": "传说",
+        "acquisition_method": "顶级通行证、特殊赛事奖励",
+        "数值规划": {
+          "effect_strength": "绳索长度无限制",
+          "duration": "20秒",
+          "cooldown": "480秒"
+        }
+      },
+      {
+        "name": "时光回溯卡",
+        "effect": "回到3秒前的状态，重新进行操作",
+        "rarity": "传说",
+        "acquisition_method": "成就大师、排行榜奖励",
+        "数值规划": {
+          "effect_strength": "状态回溯3秒",
+          "duration": "单次使用",
+          "cooldown": "600秒"
+        }
+      },
+      {
+        "name": "元素融合卡",
+        "effect": "钩子变为火、冰、雷三种元素之一，各有特殊效果",
+        "rarity": "传说",
+        "acquisition_method": "神秘商人、限时活动",
+        "数值规划": {
+          "effect_strength": "火：燃烧障碍物；冰：冻结敌人；雷：连锁电击",
+          "duration": "45秒",
+          "cooldown": "420秒"
+        }
+      },
+      {
+        "name": "财富之神卡",
+        "effect": "召唤财神，地图上随机掉落大量金币",
+        "rarity": "神话",
+        "acquisition_method": "年度活动、特别庆典",
+        "数值规划": {
+          "effect_strength": "每秒随机生成5个金币，持续15秒",
+          "duration": "15秒",
+          "cooldown": "720秒"
+        }
+      },
+      {
+        "name": "矿工大师卡",
+        "effect": "综合增强卡，全面提升各项能力",
+        "rarity": "神话",
+        "acquisition_method": "终极成就、收藏家奖励",
+        "数值规划": {
+          "effect_strength": "速度+30%，力量+50%，精准度+20%，磁力+40%",
+          "duration": "60秒",
+          "cooldown": "900秒"
+        }
+      }
+    ],
+    "interesting_combinations": [
+      {
+        "combo_name": "财富风暴组合",
+        "cards_involved": ["磁力增强卡", "财富翻倍卡"],
+        "effect": "磁力增强卡收集更多金币，配合财富翻倍卡实现收益最大化"
+      },
+      {
+        "combo_name": "时空掌控组合",
+        "cards_involved": ["时间减缓卡", "精准瞄准卡"],
+        "effect": "在时间减缓状态下使用精准瞄准，可以实现完美操作"
+      },
+      {
+        "combo_name": "连锁财富组合",
+        "cards_involved": ["连锁反应卡", "财富翻倍卡"],
+        "effect": "连锁抓取多个物品，每个物品的价值都被翻倍"
+      },
+      {
+        "combo_name": "元素磁力组合",
+        "cards_involved": ["元素融合卡", "磁力增强卡"],
+        "effect": "元素钩子加上磁力范围，可以远距离抓取并使用元素效果"
+      },
+      {
+        "combo_name": "神级探索组合",
+        "cards_involved": ["金矿探测卡", "无限绳索卡"],
+        "effect": "透视所有宝藏位置并可以无限制到达，实现完美探索"
+      }
+    ]
+  }
+}

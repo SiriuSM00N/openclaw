@@ -1,0 +1,191 @@
+{
+  "question_id": 5,
+  "question_type": "concept_explanation",
+  "theme": "gold_miner",
+  "title": "游戏核心概念解释",
+  "description": "解释黄金矿工游戏中的Combo、Rarity、DPS和资源循环机制",
+  "concepts": {
+    "combo": {
+      "definition": "连击系统在黄金矿工中指玩家在短时间内连续成功抓取高价值物品所获得的额外奖励机制",
+      "how_it_works": {
+        "trigger_condition": "在特定时间窗口内（通常3-10秒）连续成功抓取物品",
+        "combo_multiplier": "连击数越高，额外奖励倍数越高",
+        "combo_count": "记录连续成功抓取的次数"
+      },
+      "examples": [
+        {
+          "combo_count": 2,
+          "multiplier": 1.5,
+          "description": "2连击，获得1.5倍分数"
+        },
+        {
+          "combo_count": 3,
+          "multiplier": 2.0,
+          "description": "3连击，获得2倍分数"
+        },
+        {
+          "combo_count": 5,
+          "multiplier": 3.0,
+          "description": "5连击，获得3倍分数+额外金币"
+        }
+      ],
+      "strategic_importance": [
+        "鼓励玩家追求高效连续的抓取",
+        "增加游戏深度和策略性",
+        "提供高分追求的明确目标",
+        "连击断裂（抓空或抓到低价值物品）会重置计数器"
+      ],
+      "code_example": {
+        "language": "typescript",
+        "snippet": "class ComboSystem {\n  private comboCount: number = 0;\n  private comboTimer: number = 0;\n  private readonly COMBO_WINDOW = 5; // 5秒连击窗口\n  \n  onCatch(itemValue: number): number {\n    if (this.comboTimer > 0) {\n      this.comboCount++;\n    } else {\n      this.comboCount = 1;\n    }\n    this.comboTimer = this.COMBO_WINDOW;\n    \n    const multiplier = this.getMultiplier();\n    return itemValue * multiplier;\n  }\n  \n  private getMultiplier(): number {\n    if (this.comboCount >= 5) return 3.0;\n    if (this.comboCount >= 3) return 2.0;\n    if (this.comboCount >= 2) return 1.5;\n    return 1.0;\n  }\n  \n  update(deltaTime: number) {\n    if (this.comboTimer > 0) {\n      this.comboTimer -= deltaTime;\n      if (this.comboTimer <= 0) {\n        this.comboCount = 0; // 连击中断\n      }\n    }\n  }\n}"
+    }
+    },
+    "rarity": {
+      "definition": "稀有度系统用于区分不同价值、获取难度的物品等级",
+      "rarity_tiers": [
+        {
+          "tier": "common",
+          "name": "普通",
+          "color": "#808080",
+          "weight": 50,
+          "examples": ["小石块", "铜币", "小金粒"],
+          "value_range": "1-10"
+        },
+        {
+          "tier": "uncommon",
+          "name": "稀有",
+          "color": "#00FF00",
+          "weight": 30,
+          "examples": ["中金块", "银币", "宝石"],
+          "value_range": "10-50"
+        },
+        {
+          "tier": "rare",
+          "name": "珍稀",
+          "color": "#0000FF",
+          "weight": 12,
+          "examples": ["大金块", "金币堆", "红宝石"],
+          "value_range": "50-200"
+        },
+        {
+          "tier": "epic",
+          "name": "史诗",
+          "color": "#800080",
+          "weight": 6,
+          "examples": ["金矿", "钻石", "皇冠"],
+          "value_range": "200-1000"
+        },
+        {
+          "tier": "legendary",
+          "name": "传说",
+          "color": "#FFA500",
+          "weight": 2,
+          "examples": ["宝石王冠", "古老金像", "秘宝"],
+          "value_range": "1000+"
+        }
+      ],
+      "gameplay_purpose": [
+        "提供追求目标和收集动力",
+        "平衡游戏难度和奖励",
+        "创造惊喜感和成就感",
+        "影响关卡设计和付费点"
+      ],
+      "spawn_rules": [
+        "低稀有度物品在游戏开始时大量出现",
+        "高稀有度物品随时间或分数解锁",
+        "某些稀有物品只在特定关卡出现",
+        "使用增益卡牌可以提高稀有物品出现概率"
+      ]
+    },
+    "dps": {
+      "definition": "DPS (Damage Per Second / Damage Per Score) 在黄金矿工中指平均每秒获得的分数或造成的伤害",
+      "calculation_formula": "DPS = 总获得分数 / 总消耗时间",
+      "metrics_tracked": {
+        "score_dps": "每秒获得的平均分数",
+        "item_dps": "每秒抓取物品的平均数量",
+        "value_dps": "每秒抓取物品的平均价值"
+      },
+      "optimization_strategies": [
+        {
+          "strategy": "选择高价值物品",
+          "dps_impact": "直接提高每次抓取的价值"
+        },
+        {
+          "strategy": "减少空抓",
+          "dps_impact": "提高抓取成功率"
+        },
+        {
+          "strategy": "优化路径",
+          "dps_impact": "减少钩子飞行时间"
+        },
+        {
+          "strategy": "使用增益卡牌",
+          "dps_impact": "临时提升效率"
+        }
+      ],
+      "code_example": {
+        "language": "typescript",
+        "snippet": "class DPSTracker {\n  private totalScore: number = 0;\n  private totalTime: number = 0;\n  private sessionScores: number[] = [];\n  \n  recordCatch(score: number, timeSpent: number) {\n    this.totalScore += score;\n    this.totalTime += timeSpent;\n    this.sessionScores.push(score / timeSpent);\n  }\n  \n  getDPS(): number {\n    if (this.totalTime === 0) return 0;\n    return this.totalScore / this.totalTime;\n  }\n  \n  getPeakDPS(): number {\n    return Math.max(...this.sessionScores, 0);\n  }\n  \n  getAverageDPS(): number {\n    if (this.sessionScores.length === 0) return 0;\n    const sum = this.sessionScores.reduce((a, b) => a + b, 0);\n    return sum / this.sessionScores.length;\n  }\n}"
+    }
+    },
+    "resource_circulation": {
+      "definition": "资源循环是指游戏中各类资源（货币、物品、能量等）的产出、消耗、转化和再生的完整闭环系统",
+      "resources_in_game": [
+        {
+          "resource": "金币",
+          "type": "currency",
+          "usage": ["购买增益卡牌", "解锁关卡", "升级装备", "购买道具"]
+        },
+        {
+          "resource": "钻石",
+          "type": "premium_currency",
+          "usage": ["购买强力卡牌", "特殊解锁", "抽奖系统"]
+        },
+        {
+          "resource": "体力/能量",
+          "type": "limiter",
+          "usage": ["限制游戏次数", "驱动增益效果"]
+        },
+        {
+          "resource": "经验值",
+          "type": "progression",
+          "usage": ["角色升级", "解锁新能力"]
+        }
+      ],
+      "circulation_loop": {
+        "phase_1_input": {
+          "description": "资源投入阶段",
+          "actions": ["投入初始金币/体力", "购买增益卡牌", "选择出场装备"]
+        },
+        "phase_2_gameplay": {
+          "description": "游戏进行阶段",
+          "actions": ["抓取物品获得金币", "连击获得额外奖励", "随机掉落道具"]
+        },
+        "phase_3_output": {
+          "description": "资源产出阶段",
+          "actions": ["结算获得总金币", "获得经验值", "完成成就奖励"]
+        },
+        "phase_4_reinvestment": {
+          "description": "资源再投入阶段",
+          "actions": ["用金币购买更强卡牌", "升级角色属性", "进入下一关"]
+        }
+      },
+      "balance_principles": {
+        "input_output_ratio": "总产出应略高于总投入，鼓励持续游戏",
+        "sinks": "设置足够消耗点（金币商店、升级系统）防止通货膨胀",
+        "faucets": "多样化产出方式（抓取、奖励、活动）保持新鲜感",
+        "scarcity": "关键资源应保持稀缺性，维持游戏目标感"
+      },
+      "code_example": {
+        "language": "typescript",
+        "snippet": "class ResourceManager {\n  private gold: number = 100;\n  private diamond: number = 0;\n  private energy: number = 100;\n  \n  // 资源循环入口\n  startGame(cost: number): boolean {\n    if (this.energy >= cost) {\n      this.energy -= cost;\n      return true;\n    }\n    return false;\n  }\n  \n  // 产出资源\n  addResources(item: CollectibleItem, combo: number) {\n    const baseValue = item.value;\n    const comboMultiplier = 1 + (combo * 0.5);\n    const earnedGold = Math.floor(baseValue * comboMultiplier);\n    \n    this.gold += earnedGold;\n    this.energy += 5; // 每次抓取回复少量体力\n    \n    // 稀有物品额外产出\n    if (item.rarity === 'legendary') {\n      this.diamond += 1;\n    }\n    \n    return earnedGold;\n  }\n  \n  // 消耗资源（资源下沉）\n  spendGold(amount: number): boolean {\n    if (this.gold >= amount) {\n      this.gold -= amount;\n      return true;\n    }\n    return false;\n  }\n  \n  // 购买增益卡牌\n  buyCard(card: Card): boolean {\n    if (this.spendGold(card.price)) {\n      return true;\n    }\n    // 钻石补偿购买\n    const diamondPrice = Math.ceil(card.price / 100);\n    if (this.diamond >= diamondPrice) {\n      this.diamond -= diamondPrice;\n      return true;\n    }\n    return false;\n  }\n}"
+    }
+  },
+  "summary": {
+    "combo": "连击系统通过时间窗口和倍数奖励，激励玩家追求高效连续的抓取，增加策略深度",
+    "rarity": "稀有度系统将物品分为5个等级，创造追求目标和惊喜感，同时平衡游戏经济",
+    "dps": "DPS是衡量玩家效率的核心指标，帮助玩家优化游戏策略和资源投入",
+    "resource_circulation": "资源循环确保游戏经济的健康运转，通过投入-产出-再投入的闭环维持玩家持续参与"
+  },
+  "answer_verified": true
+}

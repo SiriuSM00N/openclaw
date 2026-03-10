@@ -1,0 +1,213 @@
+{
+  "question_id": 1,
+  "question_type": "system_design",
+  "theme": "gold_miner",
+  "title": "增益卡牌系统设计",
+  "description": "设计10-15张黄金矿工游戏的增益卡牌",
+  "cards": [
+    {
+      "id": "card_001",
+      "name": "大力强化",
+      "type": "buff",
+      "rarity": "common",
+      "description": "钩子拉力+30%，持续30秒",
+      "effect": {
+        "hook_power": 30,
+        "duration": 30,
+        "unit": "second"
+      },
+      "icon": "💪"
+    },
+    {
+      "id": "card_002",
+      "name": "急速钩索",
+      "type": "buff",
+      "rarity": "common",
+      "description": "钩子收回速度+25%，持续25秒",
+      "effect": {
+        "hook_speed": 25,
+        "duration": 25,
+        "unit": "second"
+      },
+      "icon": "⚡"
+    },
+    {
+      "id": "card_003",
+      "name": "财富感知",
+      "type": "buff",
+      "rarity": "rare",
+      "description": "下一钩必定抓到贵重物品区域",
+      "effect": {
+        "guarantee_premium": true,
+        "duration": 1,
+        "unit": "hook"
+      },
+      "icon": "💎"
+    },
+    {
+      "id": "card_004",
+      "name": "时间减缓",
+      "type": "buff",
+      "rarity": "epic",
+      "description": "全局时间流速降至50%，持续15秒",
+      "effect": {
+        "time_scale": 0.5,
+        "duration": 15,
+        "unit": "second"
+      },
+      "icon": "🕐"
+    },
+    {
+      "id": "card_005",
+      "name": "黄金之魂",
+      "type": "buff",
+      "rarity": "legendary",
+      "description": "抓到的所有物品价值x2，持续60秒",
+      "effect": {
+        "value_multiplier": 2.0,
+        "duration": 60,
+        "unit": "second"
+      },
+      "icon": "👑"
+    },
+    {
+      "id": "card_006",
+      "name": "范围扩展",
+      "type": "buff",
+      "rarity": "rare",
+      "description": "钩子抓取范围+40%",
+      "effect": {
+        "hook_range": 40,
+        "duration": 30,
+        "unit": "second"
+      },
+      "icon": "🔵"
+    },
+    {
+      "id": "card_007",
+      "name": "幸运硬币",
+      "type": "buff",
+      "rarity": "uncommon",
+      "description": "完成抓取后额外获得10金币",
+      "effect": {
+        "bonus_gold": 10,
+        "trigger": "on_catch"
+      },
+      "icon": "🪙"
+    },
+    {
+      "id": "card_008",
+      "name": "连锁闪电",
+      "type": "debuff",
+      "rarity": "rare",
+      "description": "使所有可视敌人麻痹3秒",
+      "effect": {
+        "stun_enemies": true,
+        "duration": 3,
+        "unit": "second"
+      },
+      "icon": "⚡"
+    },
+    {
+      "id": "card_009",
+      "name": "钻石祝福",
+      "type": "buff",
+      "rarity": "epic",
+      "description": "下次抓取必定获得钻石或以上品质物品",
+      "effect": {
+        "guarantee_rarity": "diamond",
+        "duration": 1,
+        "unit": "hook"
+      },
+      "icon": "💠"
+    },
+    {
+      "id": "card_010",
+      "name": "时间冻结",
+      "type": "special",
+      "rarity": "legendary",
+      "description": "暂停时间5秒，期间可以无限次发射钩子",
+      "effect": {
+        "time_stop": true,
+        "unlimited_hooks": true,
+        "duration": 5,
+        "unit": "second"
+      },
+      "icon": "❄️"
+    },
+    {
+      "id": "card_011",
+      "name": "磁力吸引",
+      "type": "buff",
+      "rarity": "uncommon",
+      "description": "钩子自动吸引附近金币，持续20秒",
+      "effect": {
+        "magnetic": true,
+        "range": 100,
+        "duration": 20,
+        "unit": "second"
+      },
+      "icon": "🧲"
+    },
+    {
+      "id": "card_012",
+      "name": "反弹护盾",
+      "type": "defense",
+      "rarity": "uncommon",
+      "description": "抵挡一次来自敌人的攻击",
+      "effect": {
+        "shield": 1,
+        "trigger": "on_damage"
+      },
+      "icon": "🛡️"
+    },
+    {
+      "id": "card_013",
+      "name": "贪婪吸取",
+      "type": "buff",
+      "rarity": "epic",
+      "description": "抓取物品时额外吸取路径上30%金币",
+      "effect": {
+        "path_gold_drain": 30,
+        "duration": 45,
+        "unit": "second"
+      },
+      "icon": "🤑"
+    },
+    {
+      "id": "card_014",
+      "name": "瞬间收回",
+      "type": "skill",
+      "rarity": "rare",
+      "description": "立即收回当前钩子，无需等待",
+      "effect": {
+        "instant_retract": true,
+        "duration": 1,
+        "unit": "use"
+      },
+      "icon": "🔙"
+    },
+    {
+      "id": "card_015",
+      "name": "财富降临",
+      "type": "special",
+      "rarity": "legendary",
+      "description": "随机掉落5-8个高价值宝箱在矿区内",
+      "effect": {
+        "spawn_chests": true,
+        "min_count": 5,
+        "max_count": 8,
+        "rarity": "epic"
+      },
+      "icon": "🎁"
+    }
+  ],
+  "rarity_system": {
+    "common": {"weight": 50, "color": "#808080"},
+    "uncommon": {"weight": 30, "color": "#00FF00"},
+    "rare": {"weight": 12, "color": "#0000FF"},
+    "epic": {"weight": 6, "color": "#800080"},
+    "legendary": {"weight": 2, "color": "#FFA500"}
+  },
+  "answer_verified": true
+}

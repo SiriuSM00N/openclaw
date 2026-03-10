@@ -1,0 +1,18 @@
+{
+  "task": "题 2（代码生成）：黄金矿工钩子状态机",
+  "model": "bailian/glm-4.7",
+  "status": "completed",
+  "runtime": "92s",
+  "states": ["IDLE", "SWING", "SHOOT", "GRABBING", "RETRACT"],
+  "features": [
+    "5 个核心状态",
+    "完整的进入/退出逻辑",
+    "边界情况处理（钩到石头 vs 金块 vs 钻石）",
+    "碰撞检测",
+    "重量影响回收速度",
+    "回调函数支持",
+    "完整测试代码"
+  ],
+  "item_types": ["EMPTY", "GOLD", "ROCK", "DIAMOND"],
+  "configurable": true
+}

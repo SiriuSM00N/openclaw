@@ -1,0 +1,25 @@
+{
+  "judge": "Kimi-K2.5",
+  "question": "Q2-代码生成",
+  "scores": {
+    "答案 A": {
+      "score": 4,
+      "reason": "5个状态完整（SWINGING、LAUNCHING、RETRACTING、GRABBING、IDLE），有专门的update方法处理各状态逻辑，包含重力、碰撞检测、边界检查等物理效果，有完整demo代码可运行。不足之处在于状态转换逻辑（进入/退出回调）描述不够明确，代码结构相对简单。"
+    },
+    "答案 B": {
+      "score": 5,
+      "reason": "5个状态完整（IDLE、SWING、SHOOT、GRABBING、RETRACT），拥有最完整的状态机设计：transitionTo/onEnterState/onExitState逻辑清晰，体现了专业状态机模式。ItemType枚举丰富（EMPTY/GOLD/ROCK/DIAMOND），重量影响回收速度的游戏机制考虑周到，有测试代码验证。进入/退出逻辑最清晰，边界情况处理完善，是5个答案中架构最规范的实现。"
+    },
+    "答案 C": {
+      "score": 4,
+      "reason": "5状态完整（idle/swinging/firing/reeling/grabbing），采用状态机模式实现，有swingAngle/velocity等物理属性，处理了钩到石头vs金块的不同回收速度（游戏核心机制），代码量约200行适中。不足之处在于进入/退出回调逻辑描述不够详细，相比答案B的状态机封装度略低。"
+    },
+    "答案 D": {
+      "score": 2,
+      "reason": "仅4个状态（IDLE/SWINGING/RETRACTING/CAUGHT），不满足题目至少5个状态的要求。代码仅约100行，注释较少，功能相对简单。虽然有基础摆动和回收逻辑，但状态完整性不足，边界情况处理较弱，整体实现较为简陋。"
+    },
+    "答案 E": {
+      "score": 4,
+      "reason": "5状态完整（待命/摆动/发射/回收/抓取中），有进入退出回调，处理了边界情况，代码结构清晰，约250行，中文注释友好。不足之处在于具体的状态转换机制和物理效果（如重力、碰撞检测）描述不够详细，相比答案B缺少具体的ItemType枚举和游戏机制实现细节。"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "task": "系统设计 - 增益卡牌设计",
+  "description": "10-15 张黄金矿工主题增益卡牌",
+  "cards": [
+    {
+      "id": "buff_001",
+      "name": "强力磁铁",
+      "rarity": "common",
+      "effect": "钩子吸附范围增加 50%",
+      "duration": 30,
+      "cost": 50,
+      "description": "让钩子像磁铁一样吸引附近的矿石"
+    },
+    {
+      "id": "buff_002",
+      "name": "速度提升",
+      "rarity": "common",
+      "effect": "钩子移动速度提升 40%",
+      "duration": 20,
+      "cost": 40,
+      "description": "让钩子收放更快，节省宝贵时间"
+    },
+    {
+      "id": "buff_003",
+      "name": "幸运四叶草",
+      "rarity": "rare",
+      "effect": "金块出现概率提升 30%",
+      "duration": 60,
+      "cost": 100,
+      "description": "带来好运，更容易发现珍贵金块"
+    },
+    {
+      "id": "buff_004",
+      "name": "双倍收获",
+      "rarity": "epic",
+      "effect": "下次捕获的矿石价值翻倍",
+      "duration": 1,
+      "cost": 150,
+      "description": "下一次钩子捕获的宝物价值×2"
+    },
+    {
+      "id": "buff_005",
+      "name": "钻石探测",
+      "rarity": "rare",
+      "effect": "高价值矿石位置高亮显示",
+      "duration": 45,
+      "cost": 120,
+      "description": "探测并标记钻石和黄金的位置"
+    },
+    {
+      "id": "buff_006",
+      "name": "时间延长",
+      "rarity": "common",
+      "effect": "关卡时间增加 15 秒",
+      "duration": 0,
+      "cost": 80,
+      "description": "为当前关卡额外争取 15 秒时间"
+    },
+    {
+      "id": "buff_007",
+      "name": "炸药包",
+      "rarity": "rare",
+      "effect": "可炸毁 3 个障碍物",
+      "duration": 0,
+      "cost": 100,
+      "description": "炸开岩石，开辟新的挖矿路径"
+    },
+    {
+      "id": "buff_008",
+      "name": "钩子延长",
+      "rarity": "common",
+      "effect": "钩子最大长度增加 30%",
+      "duration": 40,
+      "cost": 60,
+      "description": "钩子能到达更深的矿层"
+    },
+    {
+      "id": "buff_009",
+      "name": "财富光环",
+      "rarity": "epic",
+      "effect": "所有捕获物价值 +25%",
+      "duration": 90,
+      "cost": 200,
+      "description": "被光环笼罩的宝物更加值钱"
+    },
+    {
+      "id": "buff_010",
+      "name": "精准瞄准",
+      "rarity": "rare",
+      "effect": "钩子摆动速度减慢 50%",
+      "duration": 25,
+      "cost": 90,
+      "description": "更容易精准瞄准目标矿石"
+    },
+    {
+      "id": "buff_011",
+      "name": "矿车升级",
+      "rarity": "common",
+      "effect": "背包容量增加 50%",
+      "duration": 0,
+      "cost": 70,
+      "description": "更大的矿车能装更多宝物"
+    },
+    {
+      "id": "buff_012",
+      "name": "黄金雨",
+      "rarity": "legendary",
+      "effect": "屏幕上方掉落 5 个小金块",
+      "duration": 0,
+      "cost": 300,
+      "description": "从天而降的黄金雨，直接收集"
+    },
+    {
+      "id": "buff_013",
+      "name": "透视眼",
+      "rarity": "epic",
+      "effect": "显示所有隐藏矿石位置",
+      "duration": 60,
+      "cost": 180,
+      "description": "看穿岩层，发现隐藏的宝藏"
+    },
+    {
+      "id": "buff_014",
+      "name": "自动挂钩",
+      "rarity": "legendary",
+      "effect": "钩子自动瞄准最近的高价值目标",
+      "duration": 30,
+      "cost": 250,
+      "description": "智能钩子，自动寻找最佳目标"
+    },
+    {
+      "id": "buff_015",
+      "name": "点石成金",
+      "rarity": "legendary",
+      "effect": "将 3 个普通石头变成金块",
+      "duration": 0,
+      "cost": 350,
+      "description": "炼金术的力量，石头变黄金"
+    }
+  ],
+  "rarity_distribution": {
+    "common": 5,
+    "rare": 5,
+    "epic": 3,
+    "legendary": 3
+  },
+  "total_cards": 15
+}

@@ -1,0 +1,163 @@
+{
+  "题目1_系统设计": {
+    "卡牌系统": [
+      {
+        "名称": "黄金狂热",
+        "效果": "所有挖掘收益增加50%，持续30秒",
+        "稀有度": "稀有",
+        "获取方式": "完成特殊关卡奖励",
+        "数值规划": "基础收益×1.5倍，持续30秒，冷却时间120秒"
+      },
+      {
+        "名称": "磁力钩爪",
+        "效果": "自动吸引周围5单位内的所有物品，无视距离限制",
+        "稀有度": "史诗",
+        "获取方式": "月度签到奖励",
+        "数值规划": "影响半径5单位，持续20秒，冷却时间180秒"
+      },
+      {
+        "名称": "坚固绳索",
+        "效果": "绳索耐久度提升100%，不易断裂",
+        "稀有度": "普通",
+        "获取方式": "日常任务奖励",
+        "数值规划": "耐久度×2，持续整个关卡，冷却时间60秒"
+      },
+      {
+        "名称": "精准定位",
+        "效果": "显示所有隐藏宝藏的位置，持续15秒",
+        "稀有度": "稀有",
+        "获取方式": "成就解锁",
+        "数值规划": "视野范围+100%，持续15秒，冷却时间240秒"
+      },
+      {
+        "名称": "超级加速",
+        "效果": "钩子摆动速度提升100%",
+        "稀有度": "普通",
+        "获取方式": "商店购买",
+        "数值规划": "摆动速度×2，持续15秒，冷却时间90秒"
+      },
+      {
+        "名称": "双倍收益",
+        "效果": "本次挖掘的所有物品价值翻倍",
+        "稀有度": "传说",
+        "获取方式": "限时活动奖励",
+        "数值规划": "价值×2倍，仅对当前钩子有效，冷却时间300秒"
+      },
+      {
+        "名称": "回旋钩爪",
+        "效果": "钩子命中目标后可二次发射",
+        "稀有度": "史诗",
+        "获取方式": "副本通关奖励",
+        "数值规划": "额外1次发射机会，持续整个钩子周期，冷却时间150秒"
+      },
+      {
+        "名称": "幸运四叶草",
+        "效果": "稀有物品出现概率提升50%",
+        "稀有度": "稀有",
+        "获取方式": "随机宝箱",
+        "数值规划": "稀有度概率×1.5，持续45秒，冷却时间200秒"
+      },
+      {
+        "名称": "快速修复",
+        "效果": "立即恢复钩子耐久度至满值",
+        "稀有度": "普通",
+        "获取方式": "初始赠送",
+        "数值规划": "耐久度恢复100%，瞬发，冷却时间60秒"
+      },
+      {
+        "名称": "冰冻陷阱",
+        "效果": "使指定区域内的敌人暂时冻结，无法移动",
+        "稀有度": "史诗",
+        "获取方式": "挑战模式通关",
+        "数值规划": "冻结时间5秒，作用范围3单位，冷却时间180秒"
+      },
+      {
+        "名称": "能量爆发",
+        "效果": "瞬间获得最大能量值",
+        "稀有度": "稀有",
+        "获取方式": "竞技场排名奖励",
+        "数值规划": "能量值立即充满，瞬发，冷却时间120秒"
+      },
+      {
+        "名称": "重力反转",
+        "效果": "钩子抓取的物品重量变为负数，提升速度",
+        "稀有度": "传说",
+        "获取方式": "节日限定活动",
+        "数值规划": "物品重量×(-1)，持续25秒，冷却时间400秒"
+      },
+      {
+        "名称": "透视眼",
+        "效果": "临时显示地下所有物品的类型和价值",
+        "稀有度": "史诗",
+        "获取方式": "VIP特权",
+        "数值规划": "显示时长20秒，价值预览精度100%，冷却时间300秒"
+      },
+      {
+        "名称": "风暴之锤",
+        "效果": "钩子威力提升200%，可破坏坚硬岩石",
+        "稀有度": "传说",
+        "获取方式": "最高成就奖励",
+        "数值规划": "破坏力×3，持续30秒，冷却时间360秒"
+      }
+    ],
+    "卡牌组合分析": {
+      "黄金组合": ["黄金狂热", "双倍收益", "幸运四叶草"],
+      "描述": "最大化收益的组合，适用于追求高分的玩家",
+      "效果": "收益大幅提升，稀有物品概率增加"
+    }
+  },
+  "题目2_代码生成": {
+    "钩子状态机代码": "// 黄金矿工钩子状态机\n\ntype HookState = 'IDLE' | 'SWINGING' | 'LAUNCHING' | 'RETRACTING' | 'GRABBING';\n\nclass HookStateMachine {\n  private currentState: HookState;\n  private prevState: HookState | null;\n  \n  constructor() {\n    this.currentState = 'IDLE';\n    this.prevState = null;\n  }\n  \n  // 获取当前状态\n  getCurrentState(): HookState {\n    return this.currentState;\n  }\n  \n  // 切换状态\n  setState(newState: HookState): void {\n    if (this.currentState !== newState) {\n      this.onExit(this.currentState);\n      this.prevState = this.currentState;\n      this.currentState = newState;\n      this.onEnter(newState);\n    }\n  }\n  \n  // 状态进入逻辑\n  private onEnter(state: HookState): void {\n    switch (state) {\n      case 'IDLE':\n        console.log('钩子处于待命状态，等待玩家操作');\n        break;\n      case 'SWINGING':\n        console.log('钩子开始摆动，准备发射');\n        break;\n      case 'LAUNCHING':\n        console.log('钩子发射，向目标方向移动');\n        break;\n      case 'RETRACTING':\n        console.log('钩子开始回收，返回原点');\n        break;\n      case 'GRABBING':\n        console.log('钩子抓取中，判定是否成功');\n        break;\n    }\n  }\n  \n  // 状态退出逻辑\n  private onExit(state: HookState): void {\n    switch (state) {\n      case 'IDLE':\n        console.log('离开待命状态');\n        break;\n      case 'SWINGING':\n        console.log('结束摆动状态');\n        break;\n      case 'LAUNCHING':\n        console.log('发射过程结束');\n        break;\n      case 'RETRACTING':\n        console.log('回收过程结束');\n        break;\n      case 'GRABBING':\n        console.log('抓取过程结束');\n        break;\n    }\n  }\n  \n  // 状态转换方法\n  idle(): void {\n    this.setState('IDLE');\n  }\n  \n  swing(): void {\n    if (this.currentState === 'IDLE') {\n      this.setState('SWINGING');\n    } else {\n      console.warn(`无法从${this.currentState}状态切换到摆动状态`);\n    }\n  }\n  \n  launch(): void {\n    if (this.currentState === 'SWINGING') {\n      this.setState('LAUNCHING');\n    } else {\n      console.warn(`无法从${this.currentState}状态发射钩子`);\n    }\n  }\n  \n  retract(): void {\n    if (['LAUNCHING', 'GRABBING'].includes(this.currentState)) {\n      this.setState('RETRACTING');\n    } else {\n      console.warn(`无法从${this.currentState}状态回收钩子`);\n    }\n  }\n  \n  grab(): void {\n    if (this.currentState === 'LAUNCHING') {\n      this.setState('GRABBING');\n    } else {\n      console.warn(`无法从${this.currentState}状态进入抓取状态`);\n    }\n  }\n  \n  // 边界情况处理\n  handleBoundaryCollision(): void {\n    if (this.currentState === 'LAUNCHING') {\n      // 如果撞击到边界，则开始回收\n      console.log('钩子撞击边界，开始回收');\n      this.retract();\n    }\n  }\n  \n  handleGrabResult(success: boolean): void {\n    if (this.currentState === 'GRABBING') {\n      if (success) {\n        console.log('抓取成功，开始回收');\n        this.retract();\n      } else {\n        console.log('抓取失败，开始回收');\n        this.retract();\n      }\n    }\n  }\n  \n  // 重置状态机\n  reset(): void {\n    this.setState('IDLE');\n  }\n}\n\n// 使用示例\nconst hookSM = new HookStateMachine();\nhookSM.idle();\nhookSM.swing();\nhookSM.launch();\nhookSM.grab();\nhookSM.handleGrabResult(true);\nhookSM.retract();\nhookSM.idle();"
+  },
+  "题目3_代码审查": {
+    "原始代码": "// 假设的原始钩子代码\n\nclass Hook {\n  public x: number;\n  public y: number;\n  public angle: number;\n  public velocityX: number;\n  public velocityY: number;\n  public isLaunched: boolean;\n  \n  constructor(x: number, y: number) {\n    this.x = x;\n    this.y = y;\n    this.angle = 0;\n    this.velocityX = 0;\n    this.velocityY = 0;\n    this.isLaunched = false;\n  }\n  \n  launch(power: number, angle: number): void {\n    this.isLaunched = true;\n    this.velocityX = power * Math.cos(angle);\n    this.velocityY = power * Math.sin(angle);\n  }\n  \n  update(deltaTime: number): void {\n    if (this.isLaunched) {\n      this.x += this.velocityX * deltaTime;\n      this.y += this.velocityY * deltaTime;\n      \n      // 检查是否超出边界\n      if (this.x < 0 || this.x > 1000 || this.y < 0 || this.y > 600) {\n        this.isLaunched = false; // 钩子超出边界\n      }\n    }\n  }\n}",
+    "发现的问题": [
+      {
+        "问题编号": 1,
+        "问题描述": "缺少重力模拟",
+        "影响": "钩子运动不符合物理规律，显得不真实",
+        "修复代码": "// 在update方法中添加重力影响\nthis.velocityY += gravity * deltaTime;"
+      },
+      {
+        "问题编号": 2,
+        "问题描述": "硬编码边界值",
+        "影响": "缺乏灵活性，难以适配不同尺寸的游戏场景",
+        "修复代码": "// 将边界值作为参数传入类构造函数\nclass Hook {\n  private boundaryRight: number;\n  private boundaryBottom: number;\n  \n  constructor(x: number, y: number, boundaryRight: number, boundaryBottom: number) {\n    // ...其他初始化代码\n    this.boundaryRight = boundaryRight;\n    this.boundaryBottom = boundaryBottom;\n  }\n  \n  update(deltaTime: number): void {\n    if (this.isLaunched) {\n      this.x += this.velocityX * deltaTime;\n      this.y += this.velocityY * deltaTime;\n      \n      // 检查是否超出边界\n      if (this.x < 0 || this.x > this.boundaryRight || \n          this.y < 0 || this.y > this.boundaryBottom) {\n        this.isLaunched = false;\n      }\n    }\n  }\n}"
+      },
+      {
+        "问题编号": 3,
+        "问题描述": "缺少碰撞检测",
+        "影响": "钩子无法与游戏中的物体进行交互",
+        "修复代码": "// 添加碰撞检测方法\ncheckCollisions(objects: GameObject[]): void {\n  for (const obj of objects) {\n    const distance = Math.sqrt((this.x - obj.x) ** 2 + (this.y - obj.y) ** 2);\n    if (distance < (this.radius + obj.radius)) {\n      this.onCollision(obj);\n      break; // 假设只处理第一次碰撞\n    }\n  }\n}\n\nonCollision(object: GameObject): void {\n  console.log('钩子与物体发生碰撞');\n  this.isLaunched = false; // 停止钩子运动\n  // 可以根据碰撞对象类型执行不同逻辑\n}"
+      }
+    ]
+  },
+  "题目4_创意评估": {
+    "时间暂停卡牌评估": {
+      "趣味评分": 7,
+      "平衡性问题": "可能会严重破坏游戏平衡，让玩家无限期暂停时间获取优势",
+      "改进建议": "限制暂停时间（如只能暂停3-5秒），或者消耗大量资源才能使用",
+      "替代卡牌1": {
+        "名称": "时间回溯",
+        "效果": "将钩子位置和状态回退到3秒前",
+        "描述": "当钩子陷入不利位置时，可将其状态回退"
+      },
+      "替代卡牌2": {
+        "名称": "时间加速",
+        "效果": "钩子移动速度提升200%，但耐久度消耗加快",
+        "描述": "快速到达目标，但牺牲钩子寿命"
+      },
+      "替代卡牌3": {
+        "名称": "时空裂隙",
+        "效果": "在目标位置打开传送门，钩子可瞬间移动",
+        "描述": "突破距离限制，直达远端目标"
+      }
+    }
+  },
+  "题目5_概念解释": {
+    "连击": "在黄金矿工中，连续成功挖掘可形成连击，每次连击会使得分倍数增加。比如连续挖到3个宝石，第二个宝石得分翻倍，第三个三倍，以此类推。",
+    "稀有度": "游戏中物品分为不同稀有度，如普通石头、珍贵宝石、神秘文物等。稀有度越高，价值越大。就像抽卡游戏中的R、SR、SSR等级别。",
+    "DPS": "每秒伤害/收益，在黄金矿工中指钩子每秒能带回的金币量。计算方法是每次挖掘的平均收益除以完成挖掘所需的时间。",
+    "资源循环": "游戏中金币用于升级装备，更好装备能挖到更多金币，形成良性循环。类似滚雪球效应，前期投入带来后期回报增长。"
+  }
+}
