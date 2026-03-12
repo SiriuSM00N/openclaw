@@ -275,7 +275,6 @@
 | x-reader | ✅ | skills/x-reader/ |
 | browserwing | ✅ | skills/browserwing/ |
 | modsearch | ✅ | skills/modsearch/ |
-| **tabbit-flow** | ✅ | skills/tabbit-flow/ |
 | find-skills | ⏳ | 需认证 |
 | free-ride | ⏳ | 需认证 |
 
@@ -283,7 +282,10 @@
 - `memory-dedup` — 去重索引 ✅
 - `memory-watcher` — 文件监听 ✅
 
-**统计：** 10 个已安装，2 个待安装，完成率 83%
+**统计：** 9 个已安装，2 个待安装，完成率 82%
+
+**弃用技能：**
+- `tabbit-flow` — 2026-03-12 删除（违反诚实原则）
 
 ---
 
