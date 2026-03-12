@@ -1,16 +1,20 @@
-# tabbit-flow — Tabbit 工作流自动化技能
+# tabbit-flow — 新闻工作流自动化技能
 
-_白嫖 Tabbit 公测免费模型 + OpenClaw 自动化辅助_
+_OpenClaw 全自动新闻收集 + 推送_
 
 ---
 
 ## 📖 简介
 
-**Tabbit** 是一个 AI 浏览器扩展，提供 14 个免费模型的上下文感知对话能力。
+**tabbit-flow 技能** 实现完全自动化的 AI 新闻收集工作流：
+- ✅ 自动搜索：Exa API 搜索 AI+ 游戏新闻
+- ✅ 自动抓取：browser 工具提取网页内容
+- ✅ 自动摘要：LLM 生成新闻摘要
+- ✅ 自动保存：保存到 memory/news/
+- ✅ 自动推送：钉钉推送摘要
+- ✅ 自动索引：记忆系统索引
 
-**tabbit-flow 技能** 将 Tabbit 内容生成与 OpenClaw 自动化能力结合，实现：
-- Tabbit 负责：模型调用、内容生成
-- OpenClaw 负责：文件存储、Cron 提醒、钉钉推送、Git 操作、记忆索引
+**无需手动操作 Tabbit** — 全部自动化！
 
 ---
 
@@ -29,32 +33,45 @@ _白嫖 Tabbit 公测免费模型 + OpenClaw 自动化辅助_
 ### 安装后第一步
 
 ```bash
-# 1. 确认 Tabbit 浏览器扩展已安装
-# 2. 确认 OpenClaw 钉钉连接器已配置
-# 3. 运行初始化命令
+# 1. 确认 OpenClaw 钉钉连接器已配置
+# 2. 运行初始化命令
 openclaw skill tabbit-flow init
+```
+
+### 全自动模式（推荐）
+
+**无需手动操作！** Cron 每天 8:00 自动执行：
+- Exa 搜索 AI+ 游戏新闻
+- 自动保存到 `memory/news/YYYY-MM-DD.md`
+- 自动推送钉钉摘要
+- 自动索引记忆系统
+
+**手动触发：**
+```bash
+openclaw cron run ca8c0748-260d-4528-823b-fe67373ec28f
 ```
 
 ---
 
 ## 📋 6 个工作流
 
-### 1️⃣ 每日新闻收集（10 分钟）
+### 1️⃣ 每日新闻收集（全自动）
 
-**Tabbit 侧：**
-1. 打开 Tabbit → 选 Gemini-Pro
-2. 打开 3-5 个新闻网站标签页
-3. 输入：`@所有标签页 总结今日 AI 新闻`
-4. 保存到 `memory/news/YYYY-MM-DD.md`
+**全自动流程（无需手动操作）：**
+1. Cron 每天 8:00 自动触发
+2. Exa API 搜索 AI+ 游戏新闻（10 条）
+3. 自动保存到 `memory/news/YYYY-MM-DD.md`
+4. 自动推送钉钉摘要
+5. 自动索引记忆系统
 
-**OpenClaw 侧：**
-- Cron 每天 8:00 自动提醒
-- 读取新闻文件 → 格式化 → 钉钉推送
-- 索引到记忆系统
-
-**触发命令：**
+**手动触发：**
 ```bash
-openclaw skill tabbit-flow news --date today
+openclaw cron run ca8c0748-260d-4528-823b-fe67373ec28f
+```
+
+**或运行脚本：**
+```bash
+openclaw skill tabbit-flow news
 ```
 
 ---
