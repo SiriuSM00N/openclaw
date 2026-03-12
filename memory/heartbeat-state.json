@@ -1,13 +1,18 @@
 {
   "lastChecks": {
-    "browser": 1773121980000,
-    "cron": 1773121980000,
-    "dingtalk": 1773121980000,
-    "email": null,
-    "calendar": null,
-    "weather": null
+    "browser": 1773248940000,
+    "dingtalk": 1773248940000,
+    "dailyLog": 1773248940000,
+    "todos": 1773248940000,
+    "skillGaps": 1773248940000,
+    "memoryIndex": 1773248940000,
+    "cron": 1773248940000
   },
-  "lastAction": "2026-03-10T14:53:00+08:00",
-  "actionsTaken": [],
-  "status": "all_healthy"
+  "lastHeartbeat": "2026-03-12T03:09:00+08:00",
+  "status": "ok",
+  "issues": [
+    "Cron 失败监控 - 连续错误（可忽略，自身监控任务）",
+    "竞品分析监控 - 网络问题（白天重试）"
+  ],
+  "note": "用户正在配置 GitHub SSH，继续协助中"
 }

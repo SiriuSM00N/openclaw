@@ -1,0 +1,99 @@
+{
+  "chunks": {
+    "7ce9c6dfbedcf1277ed0ba8973c7d9b4c8116246c1ab79fa6f9d789ba42f8271": {
+      "content": "### [x] 配置 GitHub 认证\n- **截止：** 2026-03-19\n- **状态：** ✅ 已完成\n- **任务清单：**\n  - [x] 创建配置指南（`scripts/github-auth-guide.md`）\n  - [x] 生成 GitHub Token（用户操作）\n  - [x] 配置 Git 凭证（用户操作）\n  - [x] 测试克隆 find-skills\n  - [x] 安装 find-skills ✅\n  - [x] 安装 Free Ride ⚠️ 已卸载（保守选择）\n- **指南位置：** `scripts/github-auth-guide.md`\n- **备注：** Free Ride 因需要 API Key 已卸载，find-skills 保留使用\n\n---\n\n## 🟡 中优先级（本月）",
+      "source": "/Users/sirius/.openclaw/workspace/memory/todos.md",
+      "chunk_index": 1,
+      "total_chunks": 7,
+      "indexed_at": "2026-03-12T03:40:59.962602"
+    }
+  },
+  "files": {
+    "/Users/sirius/.openclaw/workspace/memory/2026-03-12.md": {
+      "hash": "b6552202d15bfc2ca658a436ae81de68b453923adb3f31c83b55c4d634f9c5e7",
+      "chunks": 7,
+      "indexed_at": "2026-03-12T03:40:59.962430"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/security-rules.md": {
+      "hash": "0015ab50722da0310c03c464a13e6ba9b3860fdc9d66c3e4c5757949194fe82b",
+      "chunks": 6,
+      "indexed_at": "2026-03-12T03:40:59.962474"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/quality-rubric.md": {
+      "hash": "05fda3b69d461aa89de9ecf9fc349ecc2cddda8526d459b20caa19aaecff192f",
+      "chunks": 5,
+      "indexed_at": "2026-03-12T03:40:59.962518"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/achievements.md": {
+      "hash": "cedf0736280a2e1e32c698beb4b6caf64ab6b26662a1746ad5d80a11acea74fc",
+      "chunks": 5,
+      "indexed_at": "2026-03-12T03:40:59.962560"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/todos.md": {
+      "hash": "51fd9cdcfd667517d39aa4b1b5c06d7612df42e5b654d546c255a3f62b48727e",
+      "chunks": 7,
+      "indexed_at": "2026-03-12T03:40:59.962608"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/skills.md": {
+      "hash": "01b9f0be3f1afe0efdfc7723a2916f6555a25b881ee2defafc8998461fd58d48",
+      "chunks": 10,
+      "indexed_at": "2026-03-12T03:40:59.962657"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/model-test-round1.md": {
+      "hash": "eb5f511b406849fbac1e2d997205a2d75c1d8f1546ded98830b472df048cdb7c",
+      "chunks": 15,
+      "indexed_at": "2026-03-12T03:40:59.962740"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/model-test-plan.md": {
+      "hash": "8b6cb2ecd2538aff0e6bb45cbb1ea1fddf352d9c6e52c92036f0a0d5ea33bcc1",
+      "chunks": 7,
+      "indexed_at": "2026-03-12T03:40:59.962794"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/model-usage-guide.md": {
+      "hash": "fa23ebd25e47674a829a74ce6f3383ae14185c78f1e6b0710a504ee0d3d0377f",
+      "chunks": 4,
+      "indexed_at": "2026-03-12T03:40:59.962836"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/model-test-simple.md": {
+      "hash": "37d47d5b48467a1240a5fb6be477306aa92b96bf54d6c1457adcd13be0659ce1",
+      "chunks": 4,
+      "indexed_at": "2026-03-12T03:40:59.962871"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/2026-03-10.md": {
+      "hash": "90f2c63d6f008306a755f48798b05abc990941c508d97126829de5b833d203fd",
+      "chunks": 6,
+      "indexed_at": "2026-03-12T03:40:59.962918"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/knowledge-base.md": {
+      "hash": "cd278e21ef9524d5058a4c114c9aaeeb8ce06ca6334651d02d028bf4a17f0c35",
+      "chunks": 8,
+      "indexed_at": "2026-03-12T03:40:59.962970"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/model-test-results.md": {
+      "hash": "ea7f79c253cc82c91c11b736761ea9d10bf9bae737a328ad412ab5604b4cf8da",
+      "chunks": 9,
+      "indexed_at": "2026-03-12T03:40:59.963028"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/daily-learning-plan.md": {
+      "hash": "c9ad427d97cda88ca37898a309575ebf17b577dc5f73453910d8f576f8761416",
+      "chunks": 5,
+      "indexed_at": "2026-03-12T03:40:59.963068"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/2026-03-11.md": {
+      "hash": "2b6b5c65c06f2e88f542bc719d1034e726ad8fbaf348c29f175b98af2b8375d1",
+      "chunks": 1,
+      "indexed_at": "2026-03-12T03:40:59.963092"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/game-design-learning.md": {
+      "hash": "8bfbc86a2ce80749c0c46cf749a92125376a04f44c542a5d9b8fa8f220f17fe7",
+      "chunks": 8,
+      "indexed_at": "2026-03-12T03:40:59.963150"
+    },
+    "/Users/sirius/.openclaw/workspace/memory/skill-gaps.md": {
+      "hash": "6bbf2ad9e5efea0a62bf70c7182662160d4cf5309741b79ac5e9fa2af93ebb63",
+      "chunks": 1,
+      "indexed_at": "2026-03-12T03:40:59.963176"
+    }
+  },
+  "last_updated": "2026-03-12T03:40:59.963215"
+}

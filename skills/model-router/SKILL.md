@@ -1,3 +1,8 @@
+---
+name: model-router
+description: 根据任务内容自动选择最优 LLM 模型（模型路由）
+---
+
 # Model Router Skill - 模型自动路由
 
 _根据任务内容自动选择最优模型_

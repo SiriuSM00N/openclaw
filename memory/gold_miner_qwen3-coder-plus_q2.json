@@ -1,7 +1,0 @@
-{
-  "task": "题 2（代码生成）：用 TypeScript 写一个黄金矿工钩子的状态机",
-  "model": "bailian/qwen3-coder-plus",
-  "status": "completed",
-  "runtime": "51s",
-  "result_summary": "完整的黄金矿工钩子状态机 TypeScript 实现，包含 5 个核心状态（IdleState、SwingingState、LaunchingState、RetrievingState、GrabbingState），每个状态有明确的进入/退出逻辑，处理边界情况（钩到金块 vs 石头），包含示例演示代码和完整日志输出。"
-}

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-03-12T18:17:36.720114",
+  "results": [
+    {
+      "model": "GPT-5.2",
+      "question": "1+1=? 一句话回答",
+      "response_time": 10.141112089157104,
+      "success": true
+    },
+    {
+      "model": "Claude-Sonnet",
+      "question": "中国首都是哪里？",
+      "response_time": 10.126789093017578,
+      "success": true
+    },
+    {
+      "model": "Gemini-3.1-Pro",
+      "question": "Python 是什么语言？",
+      "response_time": 10.13079285621643,
+      "success": true
+    }
+  ],
+  "summary": {
+    "models_tested": 3,
+    "all_success": true,
+    "avg_response_time": 10.132898012797037
+  }
+}
