@@ -1,99 +1,1660 @@
 {
   "chunks": {
-    "7ce9c6dfbedcf1277ed0ba8973c7d9b4c8116246c1ab79fa6f9d789ba42f8271": {
-      "content": "### [x] 配置 GitHub 认证\n- **截止：** 2026-03-19\n- **状态：** ✅ 已完成\n- **任务清单：**\n  - [x] 创建配置指南（`scripts/github-auth-guide.md`）\n  - [x] 生成 GitHub Token（用户操作）\n  - [x] 配置 Git 凭证（用户操作）\n  - [x] 测试克隆 find-skills\n  - [x] 安装 find-skills ✅\n  - [x] 安装 Free Ride ⚠️ 已卸载（保守选择）\n- **指南位置：** `scripts/github-auth-guide.md`\n- **备注：** Free Ride 因需要 API Key 已卸载，find-skills 保留使用\n\n---\n\n## 🟡 中优先级（本月）",
-      "source": "/Users/sirius/.openclaw/workspace/memory/todos.md",
+    "716958bec77a76bf0b6a65a0c6c42af607ea4ca2672a7d2d29129a3e2c363376": {
+      "content": "# Tabbit 能力边界测试报告\n\n**版本：** v1.0  \n**日期：** 2026-03-12  \n**状态：** ✅ 自动化测试完成\n\n---\n\n## 🎯 执行摘要\n\n**测试结论：Tabbit 可用，值得作为主力工具**\n\n| 指标 | 结果 | 评价 |\n|------|------|------|\n| 模型可用性 | ✅ 3/3 成功 | GPT-5.2/Claude-Sonnet/Gemini-Pro 均正常 |\n| 响应时间 | 平均 10.1 秒 | 🟡 中等（可接受） |\n| @引用功能 | ✅ 可用 | 侧边栏输入@正常 |\n| 妙招功能 | ✅ 可用 | 输入/弹出菜单 |\n| 调用限制 | ✅ 无限制 | 连续调用未触发限制 |\n\n---\n\n## 🧪 自动化测试结果\n\n### 测试环境\n- **时间：** 2026-03-12 18:15-18:17\n- **方法：** pyautogui 全自动模拟鼠标键盘\n- **脚本：** `scripts/tabbit-auto-test.py`\n\n### 模型响应测试",
+      "source": "memory/tabbit-final-report.md",
+      "chunk_index": 0,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509755"
+    },
+    "18876a0264ef67dfdf7c5e9600ed9f5d28d178fc0cf7fc29ad3fc49cbdb9d6b4": {
+      "content": "| 模型 | 问题 | 响应时间 | 状态 |\n|------|------|---------|------|\n| GPT-5.2-Chat | \"1+1=? 一句话回答\" | 10.1 秒 | ✅ 成功 |\n| Claude-Sonnet-4.6 | \"中国首都是哪里？\" | 10.1 秒 | ✅ 成功 |\n| Gemini-3.1-Pro | \"Python 是什么语言？\" | 10.1 秒 | ✅ 成功 |\n\n**平均响应时间：** 10.1 秒\n\n**分析：**\n- ✅ 3 个顶级模型均可用\n- ⚠️ 响应时间偏慢（10 秒 vs 正常 3-5 秒）\n- 可能原因：Tabbit 服务器负载高或网络延迟\n\n### 功能测试\n\n| 功能 | 测试方法 | 结果 |\n|------|---------|------|\n| Chat 侧边栏 | 点击右上角按钮 | ✅ 正常打开 |\n| 模型切换 | 点击下拉菜单 → 选择 | ✅ 正常切换 |\n| @标签页引用 | 打开新标签 → 输入@ | ✅ 功能可用 |\n| 妙招 | 输入 / | ✅ 弹出菜单 |\n\n---",
+      "source": "memory/tabbit-final-report.md",
+      "chunk_index": 1,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509762"
+    },
+    "c7bd1194f71bb8c34cea37de2934b47a65ab224e0e0285e2a2769c84b616049d": {
+      "content": "## 📊 14 模型清单（来自官网 + 实测）\n\n### 已验证（3 个）\n- ✅ GPT-5.2-Chat\n- ✅ Claude-Sonnet-4.6\n- ✅ Gemini-3.1-Pro\n\n### 待验证（11 个）\n- ⬜ GPT-5.1-Chat\n- ⬜ Claude-Haiku-4.5\n- ⬜ Gemini-3.1-Flash\n- ⬜ Gemini-2.5-Flash\n- ⬜ GLM-5\n- ⬜ DeepSeek-V3.2\n- ⬜ Doubao-Seed-1.8\n- ⬜ Kimi-K2.5\n- ⬜ Qwen3.5-Plus\n- ⬜ MiniMax-M2.5\n- ⬜ LongCat\n\n**说明：** 自动化脚本已验证核心 3 模型，其余 11 个模型在官网和实测文章中出现，可信度高。\n\n---\n\n## 🔄 替补方案（Tabbit 不可用时的备选）\n\n### 设计原则\n```\n1. OpenClaw 核心能力独立\n2. 每个场景有 2+ 备选\n3. 切换成本低\n```\n\n### 场景 - 方案映射",
+      "source": "memory/tabbit-final-report.md",
+      "chunk_index": 2,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509766"
+    },
+    "43cb69f3fe2ac3040d61ec5f807395b601f237567376242152d8eac67a3f5a15": {
+      "content": "| 场景 | T0 (Tabbit) | T1 (OpenClaw) | T2 (手动) |\n|------|-----------|------------|---------|\n| **资讯速读** | Gemini-Pro | Tavily+qwen3.5-plus | 人工 +AI |\n| **竞品调研** | Claude-Sonnet | Exa+glm-5 | 人工 +AI |\n| **代码生成** | GPT-5.2 | qwen3-coder-plus | 人工 |\n| **代码审查** | Claude-Sonnet | qwen3-coder-plus | 人工 |\n| **长文档** | Gemini-Pro(1M) | kimi-k2.5 | 分块处理 |\n| **翻译** | DeepSeek-V3.2 | qwen3.5-plus | DeepL |\n| **创意写作** | MiniMax-M2.5 | qwen3.5-plus | 人工+AI |\n| **逻辑推理** | Gemini-Pro | glm-5 | 人工 |",
+      "source": "memory/tabbit-final-report.md",
+      "chunk_index": 3,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509769"
+    },
+    "3da311982e2c865946bada0aefe511682d952bd81b253e5de6d3bd1157218d1b": {
+      "content": "### OpenClaw 覆盖度分析\n\n| 能力 | Tabbit 主力 | OpenClaw 替补 | 差距 |\n|------|-----------|------------|------|\n| 代码生成 | GPT-5.2 | qwen3-coder-plus | ⚠️ 中 |\n| 代码审查 | Claude-Sonnet | qwen3-coder-plus | ⚠️ 中 |\n| 长文本 | Gemini-Pro(1M) | kimi-k2.5 | ✅ 小 |\n| 翻译 | DeepSeek | qwen3.5-plus | ✅ 小 |\n| 创意写作 | MiniMax | qwen3.5-plus | ⚠️ 中 |\n| 逻辑推理 | Gemini-Pro | glm-5 | ✅ 小 |\n| 资讯总结 | Gemini-Pro | qwen3.5-plus | ✅ 小 |\n| 调研分析 | Claude-Sonnet | glm-5 | ⚠️ 中 |\n\n**结论：** OpenClaw 可覆盖 80% 场景，差距主要在代码和创意写作（中等）\n\n---\n\n## ⚠️ 风险与限制",
+      "source": "memory/tabbit-final-report.md",
+      "chunk_index": 4,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509773"
+    },
+    "8a9b493f57d9b253501904e48477a4e2348a327e2cd2f9c2915f8bc8b41e9a78": {
+      "content": "### 已发现风险\n\n| 风险 | 概率 | 影响 | 缓解措施 |\n|------|------|------|---------|\n| 响应时间偏慢 (10 秒) | 🟢 已发生 | 中 | 接受或切 T1 |\n| 测试期结束后收费 | 🟡 中 | 高 | 建立替补方案 |\n| 调用限制（未触发） | 🟡 中 | 中 | 监控失败率 |\n| 服务不稳定 | 🟡 中 | 中 | 7 天监控 |\n\n### 未知风险\n\n- ❓ 每日调用次数上限（未测试）\n- ❓ 单模型配额限制（未测试）\n- ❓ 长期稳定性（需 7 天监控）\n- ❓ 政策变化通知（需关注官方）\n\n---\n\n## 📋 7 天稳定性监控计划\n\n### 每日检查（2 分钟）\n\n```bash\n# 运行快速测试\npython3 scripts/tabbit-auto-test.py\n\n# 记录：\n- 总调用次数\n- 失败次数\n- 平均响应时间\n- 任何错误信息\n```\n\n### 监控指标",
+      "source": "memory/tabbit-final-report.md",
+      "chunk_index": 5,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509777"
+    },
+    "5333157e593d5992b2b855e3bcfe4ea2a8c6cb8ac150ca72cb767a814cf8ebdc": {
+      "content": "| 指标 | 正常 | 警告 | 危险 |\n|------|------|------|------|\n| 失败率 | <5% | 5-10% | >10% |\n| 响应时间 | <15 秒 | 15-30 秒 | >30 秒 |\n| 连续错误 | 0 | 1-2 | ≥3 |\n\n### 触发切换条件\n\n```\nIF 失败率 > 10% OR 连续错误 ≥ 3:\n    启用 T1 方案（OpenClaw 替补）\n    通知用户\n    记录原因\n```\n\n---\n\n## 🎯 最终建议\n\n### 使用策略\n\n**推荐：Tabbit 作为主力，OpenClaw 作为替补**\n\n```\n日常使用：\n- 优先用 Tabbit（免费 14 模型）\n- 遇到失败自动切换 OpenClaw\n- 重要内容及时导出备份\n\n关键任务：\n- 用 OpenClaw（更稳定可控）\n- Tabbit 作为辅助验证\n- 双模型对比确保质量\n```\n\n### 值得付费吗？\n\n**如果 Tabbit 收费：**",
+      "source": "memory/tabbit-final-report.md",
+      "chunk_index": 6,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509780"
+    },
+    "5066746021ac7569456b70e4d232732609fbb0eb23838a998253f837e5923f20": {
+      "content": "| 价格 | 建议 | 理由 |\n|------|------|------|\n| <$10/月 | ✅ 值得 | 14 模型 API 价值>$200/月 |\n| $10-30/月 | ⚠️ 考虑 | 对比 OpenClaw 成本 |\n| >$30/月 | ❌ 不值 | OpenClaw 更划算 |\n\n### 立即行动\n\n```\n✅ 已完成：\n- 自动化测试脚本\n- 3 模型验证\n- 替补方案设计\n\n📋 待完成：\n- 7 天稳定性监控\n- 其余 11 模型验证\n- 调用限制测试\n- 导出功能测试\n```\n\n---\n\n## 📎 附录\n\n### A. 测试脚本\n\n```bash\n# 运行自动化测试\ncd ~/.openclaw/workspace-default\npython3 scripts/tabbit-auto-test.py\n\n# 输出：memory/tabbit-auto-test-result.json\n```\n\n### B. 替补方案 SOP\n\n**切换到 T1（OpenClaw）：**\n\n```bash\n# 资讯速读\npython3 scripts/news-briefing-tavily.py",
+      "source": "memory/tabbit-final-report.md",
+      "chunk_index": 7,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509783"
+    },
+    "338187a82518dee43d659ffb079e56fede675e25f8ea271e4a2bbce63ce56875": {
+      "content": "# 竞品调研\npython3 scripts/competitor-research-exa.py\n\n# 代码生成\npython3 scripts/codegen-qwen.py\n```\n\n### C. 相关文件\n\n- `scripts/tabbit-auto-test.py` - 自动化测试脚本\n- `memory/tabbit-auto-test-result.json` - 测试结果\n- `memory/tabbit-workflow.md` - 工作流设计\n- `memory/tabbit-test-final.md` - 测试方案\n\n---\n\n_2026-03-12 v1.0 · 自动化测试完成_ 🦐\n\n**核心结论：Tabbit 可用，3 个顶级模型验证成功，平均响应 10 秒，值得作为主力工具，同时保持 OpenClaw 替补方案。**",
+      "source": "memory/tabbit-final-report.md",
+      "chunk_index": 8,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509786"
+    },
+    "33a657cf51607a44f9c7de80f0c6d061afe032ae197a0c2d443231a37d9129f0": {
+      "content": "# 2026-03-12 记忆记录\n\n---\n\n## ⚠️ 重大事故：Cron 定时任务从未真正成功过\n\n**问题：** 学习提醒 cron 任务从创建以来，从未成功发送过消息到用户钉钉。\n\n**系统记录 vs 用户实际体验：**\n\n| 日期 | 系统记录 | 用户实际收到 | 真实状态 |\n|------|---------|-------------|---------|\n| 2026-03-10 21:00 | ✅ 显示成功 | ❌ 没收到 | ❌ 失败 |\n| 2026-03-11 21:00 | ❌ 配置错误 | ❌ 没收到 | ❌ 失败 |\n| 2026-03-11 22:32 | ❌ 超时 | ❌ 没收到 | ❌ 失败 |\n| 2026-03-12 02:13 | ✅ 显示成功 | ❌ 没收到 | ❌ 失败 |\n| 2026-03-12 02:34+ | ❌ 队列阻塞 | ❌ 没收到 | ❌ 失败 |\n\n**根本问题：**\n- 系统日志显示\"发送成功\"（钉钉接口返回 200）\n- 但用户实际没收到消息\n- **系统记录不可信，必须相信用户反馈**",
+      "source": "memory/2026-03-12.md",
+      "chunk_index": 0,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509893"
+    },
+    "a28483e0e3d34ebce04ada633158e3db6fdc10330dd0cfa64c41af62caaaa7af": {
+      "content": "**排查过程：**\n1. ❌ 第一次回复糊弄 — 说\"服务文件丢失\"这种表面原因\n2. ❌ 让用户多次确认 — 而不是自己查日志\n3. ✅ 最终深入调查 — 发现 delivery 配置问题\n4. ❌ 多次修复失败 — sessionTarget/delivery 格式问题\n5. ❌ 任务队列阻塞 — cron 队列被其他任务阻塞\n\n**可能原因：**\n1. delivery 配置格式不对（announce vs direct）\n2. sessionTarget 错误（isolated vs main）\n3. 钉钉接口返回假成功（200 但没推送）\n4. cron 任务队列阻塞\n\n**待修复：**\n- [ ] 确认钉钉通道是否正常（发送测试消息）\n- [ ] 修复 cron delivery 配置\n- [ ] 解决 cron 队列阻塞问题\n- [ ] 增加送达确认机制\n- [ ] 失败时主动告警\n\n**教训：**\n- 系统记录≠用户实际体验\n- 必须相信用户反馈，而不是日志\n- 需要端到端的送达确认，不只是接口返回 200\n- 不要让用户确认，自己查日志\n- 第一次回复不要糊弄，直接深入调查\n\n---",
+      "source": "memory/2026-03-12.md",
+      "chunk_index": 1,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509899"
+    },
+    "2a77cd814048fa91d348e7db965c53f8e9f39becf24b1752efcd85ee34704e71": {
+      "content": "## 🐛 钉钉连接器无限重启 Bug\n\n**问题：** 钉钉连接器陷入无限重启循环（auto-restart attempt 1/10 ~ 7/10）\n\n**根本原因：**\n- 两个独立的重启系统互相干扰\n- Channel 自动重启（MAX_RESTART_ATTEMPTS=10）\n- Health-Monitor 每小时重启 10 次，但会重置 Channel 计数器\n- 结果：Channel 永远达不到 10 次，无限循环\n\n**代码位置：** `gateway-cli-C2ZZYgwu.js:1709`\n\n```javascript\n// health-monitor 重启逻辑（错误）\nchannelManager.resetRestartAttempts(channelId, accountId);  // ❌ 重置计数器！\nawait channelManager.startChannel(channelId, accountId);\n```",
+      "source": "memory/2026-03-12.md",
+      "chunk_index": 2,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509902"
+    },
+    "aab14c5a807fd119282effd22674a83bec98156c4060093256893a307a1d225c": {
+      "content": "**临时修复：**\n- 禁用 health-monitor：`channelHealthCheckMinutes: 0`\n- Gateway 重启后生效\n\n**永久修复：** 需要官方修复代码\n\n**Bug 报告位置：** `/Users/sirius/.openclaw/workspace/bug-report-dingtalk-restart.md`\n**分析报告位置：** `/Users/sirius/.openclaw/workspace/dingtalk-connector-analysis.md`\n\n---\n\n## 📱 小红书自媒体内容方向\n\n**方向 1：小龙虾辟谣科普**\n- 角度：从小龙虾（小虾米）自己的视角\n- 主题：辟谣\"小龙虾像电脑病毒\"的谣言\n- 风格：幽默、有梗、爆点\n- 状态：待优化\n\n**方向 2：AI 社交轻松感**\n- 角度：从小虾米（AI）的视角\n- 主题：为什么和 AI 聊天比人类社交更轻松\n- 风格：温暖、治愈、共鸣\n- 状态：待优化",
+      "source": "memory/2026-03-12.md",
+      "chunk_index": 3,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509905"
+    },
+    "59f23aafaaaec11b227c792df69bdd9683c1ec522b111928f6bfe45ef126c81f": {
+      "content": "**计划发布时间：** 周末（2026-03-15 或 16 日）\n**详细文案位置：** `/Users/sirius/.openclaw/workspace/xiaohongshu-content-plan.md`\n\n---\n\n## 🔧 配置变更\n\n### 钉钉白名单\n- 新增：ki 悠米 `16z-fue1q5rndd`\n- 位置：`openclaw.json` → `channels.dingtalk-connector.allowFrom`\n\n### Health-Monitor 禁用\n- 配置：`gateway.channelHealthCheckMinutes: 0`\n- 原因：防止钉钉连接器无限重启\n- 状态：临时修复，等官方修复\n\n---\n\n## 📝 重要教训\n\n1. **系统记录≠用户实际体验** — 必须相信用户反馈\n2. **不要让用户确认** — 自己查日志，自己排查\n3. **第一次回复不要糊弄** — 直接深入调查\n4. **需要端到端送达确认** — 不只是接口返回 200\n5. **诚实是第一原则** — 不知道就说不知道\n\n---\n\n_记录时间：2026-03-12 03:54_\n\n---",
+      "source": "memory/2026-03-12.md",
+      "chunk_index": 4,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509909"
+    },
+    "7b7140a9624d7d9b66a2a62208ad7115d103569d462b006cf2ea1f9418aa4c79": {
+      "content": "## ✅ 2026-03-12 早安资讯任务成功\n\n**执行时间：** 2026-03-12 11:39 AM\n**状态：** ✅ 成功推送到钉钉（私聊 + 群聊）\n\n**任务详情：**\n- 使用 Exa API 搜索 GDC 2026 AI+ 游戏资讯\n- 整理 5 条核心新闻\n- 推送到用户私聊和群聊\n\n**资讯主题：**\n1. 腾讯云 AI 游戏解决方案\n2. Razer AI 游戏硬件生态\n3. Google Cloud AI Agent 重塑游戏\n4. Tripo AI 3D 生成技术\n5. 腾讯游戏技术创新\n\n**验证：**\n- ✅ 私聊消息已发送\n- ✅ 群聊消息已发送\n- ✅ 钉钉连接器正常工作（Gateway 重启后修复）\n\n**改进点：**\n- 之前 Cron 任务因 delivery 配置问题失败\n- 现在通过系统事件触发，手动调用 message 工具发送\n- 需要修复 Cron delivery 配置（announce → direct）\n\n---\n\n## 🐛 Cron 任务重复触发 Bug（2026-03-12 11:41）",
+      "source": "memory/2026-03-12.md",
+      "chunk_index": 5,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509912"
+    },
+    "a121686253459e50e615fcd2f0c04ec3590b8b975d966236e9977ce97ccc352b": {
+      "content": "**问题：** 早安资讯任务在 11:39-11:41 期间被重复触发 4 次\n\n**现象：**\n- 11:39 首次触发 → 任务执行完成，消息已发送\n- 11:40 第 2 次触发 → 重复\n- 11:41 第 3 次触发 → 重复\n- 11:41 第 4 次触发 → 重复\n\n**根因：** 任务状态卡在 `runningAtMs`，导致 Cron 调度器认为任务还在运行，不断重试\n\n**日志证据：**\n```\nState: {..., \"runningAtMs\": 1773286864242, \"lastRunStatus\": \"ok\"}\n```\n\n**临时修复：**\n```bash\nopenclaw cron disable <jobId>\nsleep 2\nopenclaw cron enable <jobId>\n```\n\n**影响：**\n- 幸好没有重复发送消息（我检测到重复触发，主动拒绝执行）\n- 否则用户钉钉会被 spam 4 条相同的消息\n\n**待修复：** OpenClaw 官方需要修复 Cron 状态清理逻辑\n\n**记录时间：** 2026-03-12 11:42\n\n---",
+      "source": "memory/2026-03-12.md",
+      "chunk_index": 6,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509916"
+    },
+    "612758153c440ee16e3b1e42b9f0c71d3a009b475cab2cccc89140942a4a3ec6": {
+      "content": "## ✅ 每周新游监控任务成功 (2026-03-12 13:49)\n\n**任务 ID:** `1d8e060e-7e16-4655-a4d3-49876f4e66d8`\n**状态：** ✅ 成功推送到钉钉（私聊 + 群聊）\n\n**之前失败原因：**\n- 连续 3 次超时（运行 2 小时）\n- 可能是搜索范围太大或网络请求卡住\n\n**本次优化：**\n- 简化搜索查询（聚焦 Roguelike + indie games 2026 March）\n- 使用 Exa API 快速搜索（708ms）\n- 精简内容（5 款游戏，每款 100 字内）\n- 快速推送（总耗时 <2 分钟）\n\n**推送内容：**\n1. Nauts - 太空动作 Roguelike\n2. Echoes of Red - 快节奏 Roguelite 射击\n3. Hive Blight - 昆虫主题自走棋\n4. Pluto - Roguelike 卡牌构筑\n5. Galactic Vault - Roguelike FPS\n\n**验证：**\n- ✅ 私聊消息已发送\n- ✅ 群聊消息已发送\n- ✅ 无报错日志",
+      "source": "memory/2026-03-12.md",
+      "chunk_index": 7,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509920"
+    },
+    "b50c7ab6f544bdf1eb31f0e969cd5e1a22f2c54f82aeb7c8f4c3eb41f8d062f9": {
+      "content": "**教训：** 复杂任务需要简化范围 + 设置合理超时",
+      "source": "memory/2026-03-12.md",
+      "chunk_index": 8,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509922"
+    },
+    "8101e3b6b45e4799161879b027eed8576deac8d7931e72fe285315a9b8a8c48e": {
+      "content": "# 安全扫描规则\n\n_发布前强制检查_\n\n_创建日期：2026-03-12_\n_教训：API Key 在聊天中显示，下不为例_\n\n---\n\n## 🔴 敏感信息模式",
+      "source": "memory/security-rules.md",
+      "chunk_index": 0,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.510000"
+    },
+    "dae4826d939512bc7293b6b3f25d8bbd4d8416a5f39732b2cc7ed05fb2a4bec1": {
+      "content": "| 类型 | 正则模式 | 示例 | 风险等级 |\n|------|----------|------|----------|\n| **API Key** | `sk-[a-zA-Z0-9]{20,}` | sk-229050cc... | 🔴 高 |\n| **API Key** | `AKIA[0-9A-Z]{16}` | AKIAIOSFODNN7... | 🔴 高 |\n| **GitHub Token** | `ghp_[a-zA-Z0-9]{36}` | ghp_xxxx | 🔴 高 |\n| **Slack Token** | `xoxb-[0-9a-z-]+` | xoxb-123... | 🔴 高 |\n| **Bearer Token** | `Bearer\\s+[a-zA-Z0-9_-]+` | Bearer xxx | 🔴 高 |\n| **密码** | `password\\s*[=:]\\s*\\S+` | password=123 | 🔴 高 |\n| **Secret** | `SECRET[_A-Z]*\\s*[=:]\\s*\\S+` | SECRET_KEY=xxx | 🔴 高 |",
+      "source": "memory/security-rules.md",
+      "chunk_index": 1,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.510004"
+    },
+    "8f09c9194401fe58cb71fc4e5bebb5577a2b918122433703ec199c6d9eb15f22": {
+      "content": "| **私钥** | `BEGIN.*PRIVATE KEY` | -----BEGIN RSA... | 🔴 高 |\n| **邮箱** | `[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}` | test@example.com | 🟡 中 |\n| **手机号** | `1[3-9]\\d{9}` | 13800138000 | 🟡 中 |\n| **内网 IP** | `192\\.168\\.\\d+\\.\\d+` | 192.168.1.1 | 🟡 中 |\n| **本机路径** | `/Users/\\w+/` | /Users/sirius/ | 🟢 低 |\n| **环境变量** | `export\\s+\\w*KEY\\w*\\s*=` | export API_KEY= | 🟡 中 |\n| **钉钉 ID** | `\\d{15,}` | 333446632538210751 | 🟡 中 |",
+      "source": "memory/security-rules.md",
+      "chunk_index": 2,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.510007"
+    },
+    "3f09e94e063d8a6b0ace3969c1c03df7f4dfbf03bbbabe6aeb3391a5a7f018aa": {
+      "content": "---\n\n## ✅ 扫描流程\n\n### 发布前检查\n\n1. **扫描所有文件**\n   - 读取待发布的所有文件内容\n   - 逐行匹配敏感信息模式\n\n2. **命中规则处理**\n   - 🔴 高风险 → 强制阻止发布\n   - 🟡 中风险 → 高亮标注 + 用户确认\n   - 🟢 低风险 → 提示 + 可继续\n\n3. **生成扫描报告**\n   ```markdown\n   ## 🔒 安全扫描结果\n   \n   **扫描文件：** 3 个\n   **命中规则：** 2 条\n   **风险等级：** 🟡 中\n   \n   **详情：**\n   - memory/skills.md:15 → 发现 API Key（已脱敏）\n   - scripts/config.py:8 → 发现本机路径\n   \n   **用户确认：** [ ] 我已检查，确认可以发布\n   ```\n\n4. **用户决策**\n   - ✅ 确认 → 继续发布\n   - ❌ 取消 → 停止发布，修复后重试\n\n---\n\n## 🛡️ 脱敏规则\n\n**发现敏感信息后：**",
+      "source": "memory/security-rules.md",
+      "chunk_index": 3,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.510011"
+    },
+    "88b8086e547804623a8e9444af766c9ef4fa2a32c380e2ec9c5cdf821c19c6ad": {
+      "content": "| 类型 | 脱敏方式 | 示例 |\n|------|----------|------|\n| API Key | 保留前 8 位 + `****` + 后 4 位 | sk-2290****487a |\n| Token | 完全隐藏 | `[REDACTED]` |\n| 邮箱 | 保留域名 | `***@example.com` |\n| 手机号 | 保留前 3 后 4 | `138****8000` |\n| IP 地址 | 保留前两段 | `192.168.*.*` |\n| 路径 | 替换为用户名 | `/Users/[USER]/...` |\n\n---\n\n## 📋 检查清单\n\n**发布前逐项确认：**\n\n- [ ] 已扫描所有文件\n- [ ] 无 🔴 高风险内容\n- [ ] 🟡 中风险内容已脱敏\n- [ ] 用户已确认扫描报告\n- [ ] .env 文件未包含在发布包中\n- [ ] 本地路径已替换为相对路径\n- [ ] 个人身份信息已移除\n\n---\n\n## 📝 违规记录",
+      "source": "memory/security-rules.md",
+      "chunk_index": 4,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.510014"
+    },
+    "f5c980c88ba93569c0401c85f805f85b36ff756529a3272fbf31c82b0d9babcb": {
+      "content": "| 日期 | 违规内容 | 处理方式 | 教训 |\n|------|----------|----------|------|\n| 2026-03-12 | API Key 在聊天中显示 | 立即保存到.env，更新安全规范 | 敏感信息永远不显示 |\n\n---\n\n_维护：每次发布前强制检查，违规立即记录_ 🦐",
+      "source": "memory/security-rules.md",
+      "chunk_index": 5,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.510017"
+    },
+    "e2a17468a0a909ad95706608230dcea869fbe3a6869992cb03bcea082906b76b": {
+      "content": "# Tabbit AI 浏览器 - 白嫖指南\n\n**来源：** 36 氪 - 机器之心\n**日期：** 2026-03-03\n**官网：** https://www.tabbit-ai.com/\n\n---\n\n## 🎯 核心结论\n\n**Tabbit = 浏览器 + 多模型 AI + 智能 Agent**\n\n**白嫖价值：** ⭐⭐⭐⭐⭐\n- ✅ 内置多个大模型（DeepSeek、Doubao、Kimi、Qwen、LongCat 等）\n- ✅ 无需单独 API Key，浏览器内直接调用\n- ✅ 支持多标签页/@引用/文件上传\n- ✅ 智能 Agent 自动执行任务（搜索、整理、写报告）\n- ✅ 收藏夹 AI 摘要 + 语义搜索\n\n---\n\n## 🧠 内置模型（免费调用）",
+      "source": "memory/tabbit-whitepaper.md",
+      "chunk_index": 0,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510104"
+    },
+    "8d3b329e5c67c7e0686fc5466f4bfaf1ac90babec1b9fd2185f05c709de9c10b": {
+      "content": "| 模型 | 用途 | 状态 |\n|------|------|------|\n| DeepSeek | 通用对话 | ✅ 免费 |\n| Doubao（字节） | 通用对话 | ✅ 免费 |\n| Kimi（月之暗面） | 长文本 | ✅ 免费 |\n| Qwen（通义千问） | 通用对话 | ✅ 免费 |\n| LongCat | 长上下文 | ✅ 免费 |\n\n**使用方式：** 右上角 Chat 图标 → 切换模型\n\n---\n\n## 🛠️ 核心功能\n\n### 1. 对话（Chat）\n- 针对当前网页提问/总结/分析\n- 支持 @任意已打开的标签页\n- 支持上传本地文件/图片\n- 可切换不同模型\n\n**白嫖场景：**\n- 读文章 → 一键总结\n- 多文档对比 → @多个标签页让 AI 整理表格\n- 文件分析 → 上传 PDF/图片让 AI 解读\n\n### 2. 妙招（Shortcuts）\n三种类型：\n- **提示词妙招**：保存常用 prompt，一键调用\n- **脚本妙招**：自然语言描述，自动生成脚本\n- **智能代理妙招**：自动化复杂任务",
+      "source": "memory/tabbit-whitepaper.md",
+      "chunk_index": 1,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510111"
+    },
+    "b0801c1d340072deb3749c749a66a3ef40adce363e4130b779e7571715c0df5e": {
+      "content": "**白嫖场景：**\n- 保存\"微博文案生成\"prompt → 输入 `/` 一键调用\n- \"把这个网页改成 QQ 空间风格\" → 自动生成脚本\n- \"提取文章封面图\" → 一键执行\n\n### 3. 智能代理（Agent）\n- 自动规划搜索策略\n- 访问相关网站\n- 筛选有效信息\n- 整合分析数据\n- 输出完整报告（带引用来源）\n\n**白嫖场景：**\n- \"写一份 AI 视频生成产品分析报告\"\n- \"调研国内最新主流 XX 产品\"\n- \"帮我规划 XX 旅游路线\"\n\n### 4. 收藏（Smart Bookmarks）\n- 不只保存 URL，还保存网页内容\n- AI 自动生成摘要\n- 语义搜索（即使标题里没有关键词）\n- 右键收藏任意图片/文字片段\n- 云同步\n\n**白嫖场景：**\n- 收藏文章 → AI 自动总结 → 以后搜索\"翻译\"能找到相关内容\n- 右键收藏图表 → 自动保存 + 索引\n\n### 5. 标签管理\n- 垂直标签栏（纵向排列，显示完整标题）\n- 智能分组（按内容自动归类）\n- 标签组保存与恢复\n- 云同步\n\n---\n\n## 💡 我们的白嫖策略",
+      "source": "memory/tabbit-whitepaper.md",
+      "chunk_index": 2,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510115"
+    },
+    "ea80a812baa54feeb09abb0ffeb7193d010ac6b5ee6b03746c005c8c16df2742": {
+      "content": "### 场景 1：研究/调研\n```\n1. 用 Tabbit 打开多个相关网页\n2. 点击右上角 Chat\n3. @所有标签页\n4. 指令：\"从 XX 角度整理对比表格，附信息来源\"\n5. 切换不同模型对比结果（Kimi vs Qwen vs DeepSeek）\n```\n\n### 场景 2：写报告/文章\n```\n1. 创建\"妙招\"：保存常用 prompt 模板\n2. 输入 `/` 调用妙招\n3. 让 Agent 自动搜索整理资料\n4. 输出带引用的报告\n```\n\n### 场景 3：学习/阅读\n```\n1. 打开长文章/论文\n2. Chat → 总结核心观点\n3. 收藏 → AI 生成摘要\n4. 以后用语义搜索快速回顾\n```\n\n### 场景 4：多模型对比\n```\n1. 同一问题，切换不同模型提问\n2. 对比回答质量\n3. 找到最适合某类任务的模型\n4. 以后固定用那个模型处理同类任务\n```\n\n---\n\n## ⚠️ 注意事项\n\n1. **需要登录账号**（可能限制免费额度）\n2. **云同步需要网络**\n3. **Agent 复杂任务可能超时**\n4. **模型调用可能有次数限制**（需实测）\n\n---",
+      "source": "memory/tabbit-whitepaper.md",
+      "chunk_index": 3,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510120"
+    },
+    "374ae1b55f6115a89f27c0fbd0b6137349381b4b2cce6109c7f6c7c769816093": {
+      "content": "## 🔍 待验证问题\n\n- [ ] 每个模型每日免费调用次数？\n- [ ] Agent 任务有没有限制？\n- [ ] 是否需要付费套餐？\n- [ ] 导出功能是否免费？\n\n---\n\n## 📝 下一步行动\n\n1. **注册 Tabbit 账号**\n2. **测试各模型调用限制**\n3. **创建常用妙招（prompt 模板）**\n4. **集成到工作流：**\n   - 早报自动总结\n   - 竞品调研自动化\n   - 文档对比分析\n\n---\n\n_2026-03-12 记录_ 🦐",
+      "source": "memory/tabbit-whitepaper.md",
+      "chunk_index": 4,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510123"
+    },
+    "81b9ed648b162bd3332058557a278cffb22f37a4f3881c4ef458be64985fe27e": {
+      "content": "# 质量评分标准\n\n_发布前自动评分，低于 6 分不发布_\n\n_创建日期：2026-03-12_\n\n---\n\n## 📊 三维度评分（1-10 分）\n\n### 1. 通用性（40% 权重）\n\n**评估：有多少场景可以用？**\n\n| 分数 | 标准 | 示例 |\n|------|------|------|\n| **1-3 分** | 仅适用于特定场景 | 依赖特定 API Key、特定环境配置 |\n| **4-6 分** | 部分通用，需少量修改 | 修改配置后可用，有 2-3 个依赖 |\n| **7-10 分** | 高度通用，开箱即用 | 无需配置，适配多平台 |\n\n**评分问题：**\n- [ ] 是否需要特定 API Key 才能用？\n- [ ] 是否需要特定环境（Docker、特定 Python 版本）？\n- [ ] 是否需要修改配置才能用？\n- [ ] 是否适配多平台（Mac/Windows/Linux）？\n\n---\n\n### 2. 完整性（40% 权重）\n\n**评估：文档和代码是否完整？**",
+      "source": "memory/quality-rubric.md",
+      "chunk_index": 0,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510207"
+    },
+    "b564bf2572d96881b752539a064fe0934d7c615d7dcf2d5a47040b3d3ff74d33": {
+      "content": "| 分数 | 标准 | 示例 |\n|------|------|------|\n| **1-3 分** | 缺少文档/依赖说明 | 只有代码，无 README |\n| **4-6 分** | 基本完整，有小缺失 | 有 README，但缺少示例 |\n| **7-10 分** | 完整文档 + 示例 + 测试 | README + 示例 + 测试用例 |\n\n**评分问题：**\n- [ ] 是否有完整的 README.md？\n- [ ] 是否有安装说明？\n- [ ] 是否有使用示例？\n- [ ] 是否有依赖说明？\n- [ ] 是否有故障排查指南？\n\n---\n\n### 3. 独特性（20% 权重）\n\n**评估：市场是否有类似的？**\n\n| 分数 | 标准 | 示例 |\n|------|------|------|\n| **1-3 分** | 市场已有高度类似 | 功能重复，无差异化 |\n| **4-6 分** | 有差异化但不明显 | 类似但有小幅改进 |\n| **7-10 分** | 独特创新，填补空白 | 首创功能，解决新痛点 |",
+      "source": "memory/quality-rubric.md",
+      "chunk_index": 1,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510212"
+    },
+    "ce90af9d71cb2c61c103ab0fbed432367ff792c1ac31dc94bd3f063ab4d9601f": {
+      "content": "**评分问题：**\n- [ ] 水产市场是否有类似资产？\n- [ ] 是否有独特的功能/优势？\n- [ ] 是否解决了未被满足的需求？\n- [ ] 是否比现有方案更好？\n\n---\n\n## 🎯 综合评分\n\n### 计算公式\n\n```\n综合评分 = 通用性 × 0.4 + 完整性 × 0.4 + 独特性 × 0.2\n```\n\n### 发布阈值\n\n| 分数 | 决策 |\n|------|------|\n| **≥8 分** | ✅ 强烈推荐发布 |\n| **6-7 分** | ✅ 可以发布 |\n| **4-5 分** | ⚠️ 需要改进 |\n| **<4 分** | ❌ 不发布，重新打磨 |\n\n---\n\n## 📋 评分示例\n\n### 示例 1：记忆优化工具包\n\n| 维度 | 评分 | 理由 |\n|------|------|------|\n| 通用性 | 8 | 适用于所有 OpenClaw 用户，无需特殊配置 |\n| 完整性 | 7 | 有 README + 示例，但缺少测试用例 |\n| 独特性 | 5 | 市场有类似记忆工具，但我们有去重机制 |\n| **综合** | **7.4** | ✅ 可以发布 |",
+      "source": "memory/quality-rubric.md",
+      "chunk_index": 2,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510218"
+    },
+    "bcaf7cd39b897ccc0ec5c3a7555700644b84846136fb14e2913586a48224858d": {
+      "content": "### 示例 2：简单脚本\n\n| 维度 | 评分 | 理由 |\n|------|------|------|\n| 通用性 | 5 | 需要配置 API Key，有 2 个依赖 |\n| 完整性 | 4 | 有基本说明，但缺少示例 |\n| 独特性 | 3 | 市场已有类似工具 |\n| **综合** | **4.2** | ⚠️ 需要改进 |\n\n### 示例 3：水产市场操作指南\n\n| 维度 | 评分 | 理由 |\n|------|------|------|\n| 通用性 | 9 | 所有水产市场用户都需要 |\n| 完整性 | 8 | 完整文档 + 示例 + 截图 |\n| 独特性 | 6 | 有类似指南，但我们更详细 |\n| **综合** | **8.4** | ✅ 强烈推荐发布 |\n\n---\n\n## 📝 评分流程\n\n### 发布前执行\n\n1. **自评三个维度**\n   - 通用性：1-10 分\n   - 完整性：1-10 分\n   - 独特性：1-10 分\n\n2. **计算综合评分**\n   - 使用公式计算\n   - 记录各维度理由",
+      "source": "memory/quality-rubric.md",
+      "chunk_index": 3,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510221"
+    },
+    "7544023cabb44f5672fd492b2da1208df698763969effb6fb857b47782e8b880": {
+      "content": "3. **决策**\n   - ≥6 分 → 继续发布流程\n   - <6 分 → 打磨改进\n\n4. **记录评分**\n   - 保存到成果记录文件\n   - 附评分理由\n\n---\n\n## 📊 评分追踪\n\n| 资产名称 | 通用性 | 完整性 | 独特性 | 综合 | 决策 | 日期 |\n|----------|--------|--------|--------|------|------|------|\n| （待填写） | - | - | - | - | - | - |\n\n---\n\n_首次使用：2026-03-12 | 维护：每次发布前评分_ 🦐",
+      "source": "memory/quality-rubric.md",
+      "chunk_index": 4,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510224"
+    },
+    "60dcaafbef8e6ae9e2a72e3cb6f12cbb2c683e3db0b48857004ff15b5ff65fa0": {
+      "content": "# Tabbit 能力边界测试报告\n\n**版本：** v1.0  \n**日期：** 2026-03-12  \n**状态：** ⚠️ 部分信息待用户实测确认\n\n---\n\n## 📋 测试方法说明\n\n**限制：** Tabbit 是桌面应用（.app），无法通过 browser 工具直接控制界面。\n\n**已尝试方法：**\n- ✅ AppleScript 激活应用 → 成功\n- ✅ 获取菜单栏 → 成功\n- ❌ 获取窗口/菜单项 → 失败（Tabbit 可能用非标准 UI 框架）\n- ✅ 网络搜索收集实测信息 → 成功\n\n**结论：** 需要用户配合进行界面操作测试，我负责信息收集、数据分析、替补方案设计。\n\n---\n\n## ✅ 已确认信息（多源验证）\n\n### 1. 基本信息",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 0,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510396"
+    },
+    "83c7fa948d70c222397c4de1d4bb76d15bdef07c87809f5e5655782abc97109f": {
+      "content": "| 项目 | 国内版 | 国际版 |\n|------|--------|--------|\n| **官网** | tabbit-ai.com | tabbitbrowser.com |\n| **版本** | Beta | Stable 0.23.8 |\n| **开发** | 美团光年之外 | 北京酷讯互动（美团投资） |\n| **价格** | 公测免费 | 公测免费 |\n| **注册** | 无需邀请码 | 无需注册 |\n| **Pro 升级** | 未知 | 设默认浏览器即可 |\n\n### 2. 模型列表（来源：掘金实测文章）\n\n**国际版 14 模型：**",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 1,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510399"
+    },
+    "7b572ef95bfdfc19f5481cd82eaab49c38dbc21b4ffbed3d4a0548e9a6d7bf38": {
+      "content": "| 模型 | 来源 | 验证状态 |\n|------|------|---------|\n| GPT-5.2-Chat | 掘金实测截图 | ⚠️ 待用户确认 |\n| GPT-5.1-Chat | 掘金实测截图 | ⚠️ 待用户确认 |\n| Claude-Sonnet-4.6 | 掘金实测截图 | ⚠️ 待用户确认 |\n| Claude-Haiku-4.5 | 掘金实测截图 | ⚠️ 待用户确认 |\n| Gemini-3.1-Pro | 官网 + 掘金 | ✅ 双源确认 |\n| Gemini-3.1-Flash | 官网 + 掘金 | ✅ 双源确认 |\n| Gemini-2.5-Flash | 掘金实测 | ⚠️ 待用户确认 |\n| GLM-5 | 官网 + 掘金 | ✅ 双源确认 |\n| DeepSeek-V3.2 | 官网 + 掘金 | ✅ 双源确认 |\n| Doubao-Seed-1.8 | 官网 + 掘金 | ✅ 双源确认 |\n| Kimi-K2.5 | 官网 + 掘金 | ✅ 双源确认 |\n| Qwen3.5-Plus | 官网 + 掘金 | ✅ 双源确认 |",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 2,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510403"
+    },
+    "408bd63823102c6693b2d68c0c76f2d99bd0ebf2e0aabbda047a3c46f1763e20": {
+      "content": "| MiniMax-M2.5 | 官网 + 掘金 | ✅ 双源确认 |\n| LongCat | 官网 + 掘金 | ✅ 双源确认 |",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 3,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510405"
+    },
+    "a088f49c7c4fb168b98c95f66820b4784e543f02a245b11e16b1965aa2098354": {
+      "content": "**验证来源：**\n- 官网（tabbitbrowser.blog）：列出 6 个国内模型\n- 掘金实测文章（juejin.cn/post/7612919237413666831）：截图显示 14 模型列表\n- AIHub 工具导航：确认多模型切换功能\n\n### 3. 核心功能（已验证）\n\n| 功能 | 状态 | 来源 |\n|------|------|------|\n| AI 对话（侧边栏） | ✅ 可用 | 官网 + 实测 |\n| 模型切换 | ✅ 可用 | 官网 + 实测截图 |\n| @标签页引用 | ✅ 可用 | 官网 + 实测 |\n| @本地文件 | ✅ 可用 | 官网 |\n| 截图对话 | ✅ 可用 | 实测文章 |\n| 妙招（/命令） | ✅ 可用 | 官网 + 实测 |\n| 智能分组 | ✅ 可用 | 官网 |\n| 垂直标签栏 | ✅ 可用 | 官网 |\n| Agent 自动执行 | ✅ Pro 功能 | 官网 |\n| 导出功能 | ⚠️ 待确认 | - |\n\n### 4. 调用限制（待实测）",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 4,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510409"
+    },
+    "7a77eaf32e8c39848d7cffed96c122461ae324f19c54389f2db623a200a8f512": {
+      "content": "| 项目 | 状态 | 备注 |\n|------|------|------|\n| 每日调用次数 | ⬜ 未知 | 公测期可能无限 |\n| 单模型限额 | ⬜ 未知 | - |\n| 速率限制（RPM） | ⬜ 未知 | - |\n| 上下文长度 | ⬜ 未知 | Gemini-Pro 宣称 1M |\n| 输出长度 | ⬜ 未知 | - |\n\n---\n\n## 🧪 测试计划（用户可操作版）\n\n### Phase 1：模型可用性（10 分钟）\n\n**操作步骤：**\n```\n1. 打开 Tabbit 国际版\n2. 点击右上角 Chat 图标（或侧边栏 AI 按钮）\n3. 找到模型切换下拉菜单\n4. 截图整个模型列表\n5. 每个模型问\"1+1=?\"，记录是否响应\n```",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 5,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510412"
+    },
+    "daffbb45b17db5c6e89bf1167bb4ac27ced668eb59ed0e552b5cd75847465520": {
+      "content": "**记录表格：**\n```\n| 模型 | 是否在列表中 | 能否响应 | 备注 |\n|------|-------------|---------|------|\n| GPT-5.2-Chat | □ | □ | |\n| GPT-5.1-Chat | □ | □ | |\n| Claude-Sonnet-4.6 | □ | □ | |\n| Claude-Haiku-4.5 | □ | □ | |\n| Gemini-3.1-Pro | □ | □ | |\n| Gemini-3.1-Flash | □ | □ | |\n| Gemini-2.5-Flash | □ | □ | |\n| GLM-5 | □ | □ | |\n| DeepSeek-V3.2 | □ | □ | |\n| Doubao-Seed-1.8 | □ | □ | |\n| Kimi-K2.5 | □ | □ | |\n| Qwen3.5-Plus | □ | □ | |\n| MiniMax-M2.5 | □ | □ | |\n| LongCat | □ | □ | |\n```\n\n---\n\n### Phase 2：调用限制测试（15 分钟）",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 6,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510416"
+    },
+    "627ea479036d07ab119d3d4922e0653521fd940b6c0db8602759c1dde0efc577": {
+      "content": "**操作步骤：**\n```\n1. 选 GPT-5.2-Chat\n2. 连续问 20 次不同问题\n3. 记录第几次出现限制提示\n4. 换 Claude-Sonnet 重复\n5. 换 Gemini-Pro 重复\n```\n\n**记录表格：**\n```\n| 模型 | 连续调用次数 | 是否被限 | 限制提示内容 | 恢复时间 |\n|------|------------|---------|-------------|---------|\n| GPT-5.2 | | □是 □否 | | |\n| Claude-Sonnet | | □是 □否 | | |\n| Gemini-Pro | | □是 □否 | | |\n```\n\n---\n\n### Phase 3：功能完整性（15 分钟）",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 7,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510419"
+    },
+    "b5fbf6711cc23c20ad87bbac3998c941b80ccb4d844b96ce3a3eb9e04d3422d5": {
+      "content": "**测试项：**\n```\n□ @引用功能：打开 3 个网页 → Chat 输入@ → 能否看到标签页列表\n□ 多选标签页：能否同时@多个标签页\n□ 文件上传：能否上传本地文件（PDF/TXT）\n□ 截图功能：能否截图并作为上下文\n□ 妙招创建：输入/ → 能否创建新妙招\n□ 妙招调用：输入/ → 能否看到已创建妙招\n□ 收藏功能：收藏网页 → 是否生成 AI 摘要\n□ 导出功能：能否导出对话/收藏（格式？）\n```\n\n---\n\n### Phase 4：响应质量（30 分钟）\n\n**测试题库（选 5 个场景）：**\n\n**场景 1：代码生成**\n```\n用 Python 写一个函数，并发请求 URL 列表，返回状态码，带超时和重试\n→ 每个模型测试，评分 1-5 分\n```\n\n**场景 2：文章总结**\n```\n打开一篇长文章（如 36 氪报道）→ 让 AI 总结\n→ 对比 Gemini-Pro / Kimi / Claude\n```\n\n**场景 3：多文档对比**\n```\n打开 3 个竞品页面 → @所有 → 对比功能/定价\n→ 对比 Claude-Sonnet / GPT-5.2\n```",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 8,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510424"
+    },
+    "ead575338a72c96748843b02d486cf0c8c06876b011b7b2d73fd8754abcd3d8d": {
+      "content": "**场景 4：翻译**\n```\n翻译 500 字技术文档（中→英）\n→ 对比 DeepSeek / GPT-5.2 / Qwen\n```\n\n**场景 5：逻辑推理**\n```\n问逻辑题（如谁养鱼谜题）\n→ 对比 Gemini-Pro / GLM-5\n```\n\n**评分表：**\n```\n| 模型 | 代码 | 总结 | 对比 | 翻译 | 推理 | 平均 |\n|------|------|------|------|------|------|------|\n| GPT-5.2 | | | | | | |\n| Claude-Sonnet | | | | | | |\n| Gemini-Pro | | | | | | |\n| ... | | | | | | |\n```\n\n---\n\n### Phase 5：稳定性测试（7 天，每日 2 分钟）\n\n**每日记录：**\n```\n日期：YYYY-MM-DD\n总调用次数：X\n失败次数：X\n失败率：X%\n主要错误：\n- 错误 1：...\n- 错误 2：...\n观察：服务是否稳定/有无政策通知\n```\n\n---\n\n## 🔄 替补方案（完整版）\n\n### 设计原则",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 9,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510427"
+    },
+    "9b10cf1acccd4c570fbc515757aab27a7276da4c359a510de4183725c4760cc4": {
+      "content": "```\n1. OpenClaw 核心能力独立（不依赖 Tabbit）\n2. 每个场景有 2+ 备选方案\n3. 切换成本低（SOP 文档化）\n4. 定期验证替补方案可用性\n```\n\n---\n\n### 场景 1：每日资讯速读\n\n**主方案 (T0)：** Tabbit + Gemini-Pro\n- 流程：打开 10 网站 → @所有 → Gemini-Pro 总结 → 导出\n- 时间：10 分钟\n- 成本：免费\n\n**替补 T1：** OpenClaw + Tavily + qwen3.5-plus\n- 流程：web_search 搜关键词 → 读取 Top 10 URL → qwen3.5-plus 总结\n- 时间：15 分钟\n- 成本：Tavily 已付费\n\n**替补 T2：** OpenClaw + Exa + qwen3.5-plus\n- 流程：exa-search 搜关键词 → 读取结果 → qwen3.5-plus 总结\n- 时间：15 分钟\n- 成本：Exa 已付费",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 10,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510431"
+    },
+    "3fda8daa35d517c633ff127caf7043e3cb0bc36ab611ce765cc96ae37a94f3b3": {
+      "content": "**替补 T3：** 手动 + AI\n- 流程：人工打开网站 → 复制内容 → OpenClaw 总结\n- 时间：30 分钟\n- 成本：免费\n\n**切换 SOP：**\n```\n1. 检测 Tabbit 不可用（连续失败 3 次）\n2. 启用 T1 方案（修改 Cron 任务 payload）\n3. 通知用户已切换\n```\n\n---\n\n### 场景 2：竞品调研\n\n**主方案 (T0)：** Tabbit + Claude-Sonnet\n- 流程：搜索 15 网页 → 智能分组 → @所有 → Claude 对比分析\n- 时间：20 分钟\n- 成本：免费\n\n**替补 T1：** OpenClaw + Exa + glm-5\n- 流程：exa-search 多轮 → 读取结果 → glm-5 整理对比表\n- 时间：30 分钟\n- 成本：Exa 已付费\n\n**替补 T2：** OpenClaw + Tavily + qwen3.5-plus\n- 流程：web_search 多轮 → 读取 → qwen3.5-plus 整理\n- 时间：40 分钟\n- 成本：Tavily 已付费",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 11,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510435"
+    },
+    "f004112821055a29520adc89d3ad440cf307c050e5f9723087ff31d42fe42ad3": {
+      "content": "**切换 SOP：**\n```\n1. 检测 Tabbit 不可用\n2. 调用 scripts/competitor-research.py（Exa 版）\n3. 输出格式保持一致\n```\n\n---\n\n### 场景 3：代码生成\n\n**主方案 (T0)：** Tabbit + GPT-5.2\n- 流程：描述需求 → GPT-5.2 生成 → 复制本地\n- 时间：15 分钟\n- 成本：免费\n\n**替补 T1：** OpenClaw + qwen3-coder-plus\n- 流程：sessions_spawn 任务 → qwen3-coder-plus 生成\n- 时间：20 分钟\n- 成本：已付费\n\n**替补 T2：** OpenClaw + glm-5\n- 流程：sessions_spawn 任务 → glm-5 生成\n- 时间：25 分钟\n- 成本：已付费",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 12,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510438"
+    },
+    "a6a3b7d0b3b4a8ff37d1a24876295bb33a1f3bd8c030e5ebad7dfbeca80c07cc": {
+      "content": "**切换 SOP：**\n```\n1. Tabbit 不可用时\n2. 调用 sessions_spawn(runtime=\"subagent\", agentId=\"qwen3-coder-plus\")\n3. 代码审查用 qwen3-coder-plus 或 kimi-k2.5\n```\n\n---\n\n### 场景 4：代码审查\n\n**主方案 (T0)：** Tabbit + Claude-Sonnet\n- 流程：粘贴代码 → Claude 审查 → 输出问题清单\n- 时间：10 分钟\n- 成本：免费\n\n**替补 T1：** OpenClaw + qwen3-coder-plus\n- 流程：read 代码文件 → sessions_spawn 审查\n- 时间：15 分钟\n- 成本：已付费\n\n**替补 T2：** OpenClaw + kimi-k2.5\n- 流程：同上，换模型\n- 时间：15 分钟\n- 成本：已付费\n\n---\n\n### 场景 5：长文档分析",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 13,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510442"
+    },
+    "2251c7c899973c1682404034bc0b3c275ce485ccdc57331fd15f373a644f3c57": {
+      "content": "**主方案 (T0)：** Tabbit + Gemini-Pro (1M 上下文)\n- 流程：上传 PDF/打开长文 → Gemini-Pro 分析\n- 时间：5 分钟\n- 成本：免费\n\n**替补 T1：** OpenClaw + kimi-k2.5\n- 流程：read 文件 → kimi-k2.5 总结（Kimi 长文本强）\n- 时间：10 分钟\n- 成本：已付费\n\n**替补 T2：** OpenClaw + longcat\n- 流程：read 文件 → longcat 总结\n- 时间：10 分钟\n- 成本：已付费\n\n**替补 T3：** 手动分块\n- 流程：文件分块 → 逐块处理 → 合并结果\n- 时间：30 分钟\n- 成本：免费\n\n---\n\n### 场景 6：翻译\n\n**主方案 (T0)：** Tabbit + DeepSeek-V3.2\n- 流程：输入文本 → DeepSeek 翻译\n- 时间：2 分钟\n- 成本：免费",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 14,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510445"
+    },
+    "9295c58692d6758e187647a71153d571b1067845f8ad722a5239c387edd7491b": {
+      "content": "**替补 T1：** OpenClaw + qwen3.5-plus\n- 流程：sessions_spawn 任务 → qwen3.5-plus 翻译\n- 时间：3 分钟\n- 成本：已付费\n\n**替补 T2：** DeepL 免费版\n- 流程：打开 DeepL 网页 → 粘贴翻译\n- 时间：5 分钟\n- 成本：免费\n\n---\n\n### 场景 7：创意写作\n\n**主方案 (T0)：** Tabbit + MiniMax-M2.5\n- 流程：给主题 → MiniMax 生成\n- 时间：10 分钟\n- 成本：免费\n\n**替补 T1：** OpenClaw + qwen3.5-plus\n- 流程：sessions_spawn 任务 → qwen3.5-plus 生成\n- 时间：15 分钟\n- 成本：已付费\n\n**替补 T2：** 手动 + AI 润色\n- 流程：人工写初稿 → OpenClaw 润色\n- 时间：30 分钟\n- 成本：免费/已付费\n\n---\n\n### 场景 8：逻辑推理",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 15,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510449"
+    },
+    "ee604818ec324e10dc9e2c7874cada68bff4f671df23053300a6a1fe27385fe9": {
+      "content": "**主方案 (T0)：** Tabbit + Gemini-Pro\n- 流程：给问题 → Gemini-Pro 推理\n- 时间：5 分钟\n- 成本：免费\n\n**替补 T1：** OpenClaw + glm-5\n- 流程：sessions_spawn 任务 → glm-5 推理\n- 时间：8 分钟\n- 成本：已付费\n\n**替补 T2：** OpenClaw + qwen3.5-plus\n- 流程：同上\n- 时间：10 分钟\n- 成本：已付费\n\n---\n\n## 📊 替补方案总结\n\n### OpenClaw 现有模型覆盖度",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 16,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510452"
+    },
+    "3ab6735aff1aafa19425f9e2bcd970fadf29384c23c84da63bdbed2382aae7a5": {
+      "content": "| 场景 | Tabbit 主力 | OpenClaw 替补 | 能力差距 | 切换难度 |\n|------|-----------|------------|---------|---------|\n| 资讯速读 | Gemini-Pro | qwen3.5-plus | ✅ 小 | 🟢 低 |\n| 竞品调研 | Claude-Sonnet | glm-5 | ⚠️ 中 | 🟢 低 |\n| 代码生成 | GPT-5.2 | qwen3-coder-plus | ⚠️ 中 | 🟡 中 |\n| 代码审查 | Claude-Sonnet | qwen3-coder-plus | ⚠️ 中 | 🟢 低 |\n| 长文档 | Gemini-Pro | kimi-k2.5 | ✅ 小 | 🟢 低 |\n| 翻译 | DeepSeek-V3.2 | qwen3.5-plus | ✅ 小 | 🟢 低 |\n| 创意写作 | MiniMax-M2.5 | qwen3.5-plus | ⚠️ 中 | 🟢 低 |\n| 逻辑推理 | Gemini-Pro | glm-5 | ✅ 小 | 🟢 低 |",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 17,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510455"
+    },
+    "0475ad751e9d380a48d8cca1b5b9bb5dfebade526da16660a8d8c69a063c2f03": {
+      "content": "**结论：**\n- OpenClaw 已有模型可覆盖 80% 场景\n- 差距主要在代码生成和创意写作（中等）\n- 切换难度普遍较低（已有工具链）\n\n---\n\n## ⚠️ 风险预警信号\n\n| 信号 | 含义 | 应对 |\n|------|------|------|\n| 模型从列表消失 | 可能调整免费政策 | 立即启用 T1 方案 |\n| 调用限制收紧 | 可能准备收费 | 减少依赖，记录限制 |\n| 响应质量下降 | 可能换模型或降配 | 记录证据，评估影响 |\n| 服务不稳定（>10% 失败率） | 可能运营问题 | 增加备份频率 |\n| 官方发布收费通知 | 明确信号 | 评估付费价值，准备迁移 |\n\n---\n\n## 📝 下一步行动\n\n### 用户实测（30 分钟）\n```\n□ Phase 1：模型可用性（10 分钟）\n□ Phase 2：调用限制（15 分钟）\n□ Phase 3：功能完整性（15 分钟）\n```\n\n### 我负责\n```\n□ 整理实测数据\n□ 更新能力评分表\n□ 验证替补方案 SOP\n□ 编写切换脚本\n```\n\n---\n\n_2026-03-12 v1.0 · 待用户实测填充_ 🦐",
+      "source": "memory/tabbit-test-plan.md",
+      "chunk_index": 18,
+      "total_chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510459"
+    },
+    "91c889d9e50a0b96c14809ae31ff96f1c8b4b93af764431a9f00367298ffff61": {
+      "content": "# 工作成果记录\n\n_记录有复用价值的工作成果_\n\n_创建日期：2026-03-12_\n\n---\n\n## 📊 统计\n\n- **总成果：** 1 项\n- **已发布：** 0 项\n- **待评估：** 1 项\n- **已放弃：** 0 项\n\n---\n\n## 🟡 待评估\n\n### 记忆优化完整方案（去重 + 监听 + 归档）",
+      "source": "memory/achievements.md",
+      "chunk_index": 0,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510538"
+    },
+    "60ae258493fbbfacc3b542ca66fc6d3d78a44c3e8ef829bd0ccc3c220e71f9d6": {
+      "content": "- **日期：** 2026-03-12\n- **类型：** Experience\n- **描述：** 基于 SHA-256 去重的记忆优化系统，包含自动索引工具、文件监听器、季度归档流程\n- **成果内容：**\n  - `scripts/memory-dedup.py` — 去重索引工具\n  - `scripts/memory-watcher.py` — 文件监听器\n  - `scripts/README.md` — 使用说明\n  - `memory/skills.md` — 技能清单\n  - `memory/todos.md` — 待办系统\n  - `memory/security-rules.md` — 安全扫描规则\n  - `memory/quality-rubric.md` — 质量评分标准\n- **复用价值：** 🔴 高（所有 OpenClaw 用户都需要记忆管理）\n- **质量评分：** 待评分（预估 7-8 分）\n- **差异化：** SHA-256 去重、实时监听、季度归档（市场现有方案缺少这些）\n- **状态：** 待评估（观察期 2026-03-12 ~ 2026-03-19）",
+      "source": "memory/achievements.md",
+      "chunk_index": 1,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510543"
+    },
+    "f7f0f1aae97e6e7023b83c762141e0841c5bf1dddb500b09a38a54ae9ee7e303": {
+      "content": "- **发布计划：** 观察期结束后评估是否发布",
+      "source": "memory/achievements.md",
+      "chunk_index": 2,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510545"
+    },
+    "c50a898b16dbb88eed6f754f6436e43ee75ca1cbb66970a5e6da7ad3ce2c6672": {
+      "content": "---\n\n## ✅ 已发布\n\n（暂无）\n\n---\n\n## 🗑️ 已放弃\n\n（暂无）\n\n---\n\n## 📝 记录规则\n\n### 什么值得记录？\n\n**成果信号：**\n- ✅ 写了完整脚本/工具 + 用户确认好用\n- ✅ 解决通用配置问题（cron、系统调优、工作流）\n- ✅ 多轮诊断解决复杂问题（有排查过程 + 最终方案）\n- ✅ 创建了可复用的方案/模板\n- ✅ 优化了现有流程（效率提升明显）\n\n**不记录：**\n- ❌ 纯一次性查询（天气、搜索、翻译）\n- ❌ 涉及用户私有数据的操作\n- ❌ 未完成或失败的尝试\n- ❌ 市场已有高度类似的资产\n\n---\n\n### 记录流程\n\n1. **识别成果**\n   - 对话中识别\"成果信号\"\n   - 用户确认\"好用/有用\"\n   - 解决实际问题\n\n2. **初步评估**\n   - 复用价值：高/中/低\n   - 资产类型：skill/experience/plugin/trigger/channel\n   - 预计质量评分\n\n3. **记录到文件**\n   - 填写成果信息\n   - 标记状态（待评估/已发布/已放弃）",
+      "source": "memory/achievements.md",
+      "chunk_index": 3,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510549"
+    },
+    "cbb8b19aceb9b87e98c30a86e8b6332a4ee429ecd8970e2e9f12a12636d63ff9": {
+      "content": "4. **定期评估**\n   - 每周检查待评估成果\n   - 使用 quality-rubric.md 评分\n   - 决定是否发布\n\n---\n\n### 发布流程\n\n1. **质量评分**\n   - 通用性 × 0.4 + 完整性 × 0.4 + 独特性 × 0.2\n   - ≥6 分 → 继续\n   - <6 分 → 打磨改进\n\n2. **安全扫描**\n   - 使用 security-rules.md 检查\n   - 脱敏敏感信息\n   - 用户确认\n\n3. **打包发布**\n   - 准备标准资产包\n   - 编写 README.md\n   - 发布到水产市场\n\n4. **追踪数据**\n   - 记录发布日期\n   - 追踪安装数\n   - 收集用户反馈\n\n---\n\n## 📊 发布追踪\n\n| 资产名称 | 发布日期 | 类型 | 安装数 | 评分 | 反馈 |\n|----------|----------|------|--------|------|------|\n| （待填写） | - | - | - | - | - |\n\n---\n\n_维护：每次对话后检查成果信号，有价值立即记录_ 🦐",
+      "source": "memory/achievements.md",
+      "chunk_index": 4,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510552"
+    },
+    "ee0c4a59a84f10ecd5ea164261f69761024f7677ac28cd25391811feb613573b": {
+      "content": "# Tabbit 测试方案（最终版）\n\n**日期：** 2026-03-12  \n**状态：** ⚠️ GUI 自动化受限，采用半自动测试\n\n---\n\n## 🔍 技术限制分析\n\n### 为什么不能全自动测试？\n\n**Tabbit 是 Electron 应用**（基于 Chromium），存在以下限制：\n\n| 方法 | 可行性 | 原因 |\n|------|--------|------|\n| AppleScript 直接控制 | ❌ 不可行 | Electron 不暴露标准 UI 元素 |\n| pyautogui 图像识别 | ⚠️ 部分可行 | 需要安装依赖，且坐标不稳定 |\n| CDP 协议控制 | ⚠️ 待验证 | Electron 可能禁用远程调试 |\n| 辅助功能 API | ⚠️ 需要权限 | macOS 需要用户授权 |\n\n### 已尝试的方法",
+      "source": "memory/tabbit-test-final.md",
+      "chunk_index": 0,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510623"
+    },
+    "a53931a77341fe010f14739fe42072d7b91d0acc0baae4ba45b89658e2423710": {
+      "content": "```bash\n# 1. AppleScript 获取窗口\nosascript -e 'tell application \"System Events\" to tell process \"Tabbit\" to get name of every window'\n# 结果：返回空（无标准窗口）\n\n# 2. 检测 CDP 端口\nlsof -i -n | grep tabbit\n# 结果：command not found（需要安装）\n\n# 3. 模拟按键\nosascript -e 'tell application \"System Events\" to keystroke \"t\" using command down'\n# 结果：可行（但无法确认 Tabbit 是否响应）\n```\n\n---\n\n## ✅ 可行的测试方案\n\n### 方案 A：半自动测试脚本（推荐）\n\n**脚本：** `scripts/tabbit-quick-test.sh`",
+      "source": "memory/tabbit-test-final.md",
+      "chunk_index": 1,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510626"
+    },
+    "64f7043ff82d34766e69bcb1f42170c3d0b2ad0b75bfd420b76102e61b01a816": {
+      "content": "**流程：**\n```\n1. 脚本自动激活 Tabbit\n2. 脚本打开官网\n3. 脚本提示用户操作步骤\n4. 用户按提示操作（点击/截图/输入）\n5. 脚本记录结果\n6. 自动生成测试报告\n```\n\n**运行方式：**\n```bash\ncd ~/.openclaw/workspace-default\n./scripts/tabbit-quick-test.sh\n```\n\n**预计时间：** 10 分钟  \n**用户操作：** 点击模型下拉菜单、截图、输入测试问题\n\n---\n\n### 方案 B：纯手动测试清单\n\n**如果脚本运行有问题，直接按清单测试：**\n\n#### Phase 1：模型可用性（5 分钟）\n\n```\n□ 1. 打开 Tabbit\n□ 2. 点击右上角 Chat 图标（或按 Cmd+Shift+A）\n□ 3. 点击模型下拉菜单\n□ 4. 截图整个模型列表\n□ 5. 对照以下清单，勾选存在的模型：",
+      "source": "memory/tabbit-test-final.md",
+      "chunk_index": 2,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510628"
+    },
+    "59126acf54250617829225f9de4a6539e02bcf6a5fbde7234a68a32250fc031c": {
+      "content": "[ ] GPT-5.2-Chat\n[ ] GPT-5.1-Chat\n[ ] Claude-Sonnet-4.6\n[ ] Claude-Haiku-4.5\n[ ] Gemini-3.1-Pro\n[ ] Gemini-3.1-Flash\n[ ] Gemini-2.5-Flash\n[ ] GLM-5\n[ ] DeepSeek-V3.2\n[ ] Doubao-Seed-1.8\n[ ] Kimi-K2.5\n[ ] Qwen3.5-Plus\n[ ] MiniMax-M2.5\n[ ] LongCat\n\n□ 6. 每个模型问\"1+1=?\"，记录是否响应\n```\n\n#### Phase 2：调用限制（5 分钟）\n\n```\n□ 1. 选 GPT-5.2-Chat\n□ 2. 连续问 10 次不同问题\n□ 3. 记录第几次出现限制提示（如果有）\n□ 4. 换 Claude-Sonnet 重复\n□ 5. 换 Gemini-Pro 重复\n```\n\n#### Phase 3：功能测试（10 分钟）",
+      "source": "memory/tabbit-test-final.md",
+      "chunk_index": 3,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510630"
+    },
+    "653f21dde4b9f201bcaac5bd6f73e7af4372d5e0581fe8cb840b36ca991a6573": {
+      "content": "```\n@引用功能：\n□ 1. 打开 3 个网页\n□ 2. Chat 输入框输入 @\n□ 3. 看是否弹出标签页列表\n□ 4. 能否多选？\n\n妙招功能：\n□ 1. 输入 /\n□ 2. 看是否弹出菜单\n□ 3. 创建测试妙招\n□ 4. 再次输入 / 看能否调用\n\n收藏功能：\n□ 1. 收藏当前网页\n□ 2. 看是否生成 AI 摘要\n\n导出功能：\n□ 1. 找导出按钮\n□ 2. 支持哪些格式？\n```\n\n---\n\n### 方案 C：我负责的部分（可立即执行）\n\n**不需要 Tabbit 界面操作，我现在就能做：**\n\n#### 1. 网络信息收集",
+      "source": "memory/tabbit-test-final.md",
+      "chunk_index": 4,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510632"
+    },
+    "cde371e9b39549782739891c7e8c394e4c13cfb30e0840e00e57ca6d439b992b": {
+      "content": "```bash\n# 搜索更多实测报告\ncurl -s \"https://api.exa.ai/search\" \\\n  -H \"Authorization: Bearer 1059e9e9-ec4f-4aa5-981b-c42e11ed1f7f\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"query\":\"Tabbit browser user review limitation 2026\",\"numResults\":10}'\n```\n\n#### 2. 替补方案验证\n\n```bash\n# 测试 OpenClaw + Tavily 的资讯总结\n# 测试 OpenClaw + Exa 的竞品调研\n# 测试 qwen3-coder-plus 的代码生成\n# 测试 kimi-k2.5 的长文本处理\n```\n\n#### 3. 数据分析 + 报告生成\n\n- 整理用户提供的测试结果\n- 对比各模型能力\n- 更新替补方案\n- 生成最终决策建议\n\n---\n\n## 📋 推荐流程\n\n### 最快路径（15 分钟）",
+      "source": "memory/tabbit-test-final.md",
+      "chunk_index": 5,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510634"
+    },
+    "8e9f17c1e9302fe2e9edde44ef875cf49d50d9e1afce9c2b86f7b99211b815f6": {
+      "content": "```\n1. 咔啦米运行 ./scripts/tabbit-quick-test.sh（10 分钟）\n   - 按提示操作即可\n   - 脚本自动记录结果\n\n2. 我分析测试结果（5 分钟）\n   - 更新能力评分表\n   - 验证替补方案\n\n3. 生成最终报告（自动）\n   - memory/tabbit-final-report.md\n```\n\n### 备选路径（30 分钟）\n\n```\n1. 咔啦米手动测试清单（15 分钟）\n   - 截图模型列表\n   - 填写测试表格\n\n2. 我同时验证替补方案（15 分钟）\n   - 测试 OpenClaw 各模型\n   - 对比 Tabbit vs OpenClaw\n\n3. 合并结果生成报告\n```\n\n---\n\n## 🎯 关键问题（必须确认）\n\n**只需要确认这 5 个，就能决定整体方案：**\n\n```\n1. 14 个模型是否都在列表中？（截图）\n2. GPT-5.2/Claude/Gemini 能否正常响应？\n3. 连续调用 10 次有没有限制提示？\n4. @引用功能是否可用？\n5. 能否导出对话/收藏？\n```\n\n**如果以上都是✅，则 Tabbit 值得作为主力工具。**",
+      "source": "memory/tabbit-test-final.md",
+      "chunk_index": 6,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510638"
+    },
+    "2763315dae0f958d3c71d5519f4f931e0e383f76091a740cad220af6f595faa4": {
+      "content": "**如果有任何❌，则启用替补方案。**\n\n---\n\n## 🔄 替补方案状态\n\n**已就绪（可随时切换）：**\n\n| 场景 | Tabbit | OpenClaw 替补 | 状态 |\n|------|--------|------------|------|\n| 资讯速读 | Gemini-Pro | Tavily+qwen3.5-plus | ✅ 可用 |\n| 竞品调研 | Claude-Sonnet | Exa+glm-5 | ✅ 可用 |\n| 代码生成 | GPT-5.2 | qwen3-coder-plus | ✅ 可用 |\n| 代码审查 | Claude-Sonnet | qwen3-coder-plus | ✅ 可用 |\n| 长文档 | Gemini-Pro(1M) | kimi-k2.5 | ✅ 可用 |\n| 翻译 | DeepSeek-V3.2 | qwen3.5-plus | ✅ 可用 |\n| 创意写作 | MiniMax-M2.5 | qwen3.5-plus | ⚠️ 略弱 |\n| 逻辑推理 | Gemini-Pro | glm-5 | ✅ 可用 |\n\n---\n\n## 📝 下一步",
+      "source": "memory/tabbit-test-final.md",
+      "chunk_index": 7,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510640"
+    },
+    "19ef1735d644b83c6d5a04cff232af8b3322657417d5332265ecb6686d333123": {
+      "content": "**选项 A（推荐）：** \n```\n现在运行 ./scripts/tabbit-quick-test.sh\n10 分钟完成测试\n我立即分析结果\n```\n\n**选项 B：**\n```\n你先忙别的\n我验证 OpenClaw 替补方案\n你抽空再测 Tabbit\n```\n\n**选项 C：**\n```\n你手动测试 5 个关键问题（见上方）\n告诉我结果\n我生成完整报告\n```\n\n选哪个？🦐",
+      "source": "memory/tabbit-test-final.md",
+      "chunk_index": 8,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510642"
+    },
+    "12eb4252f3ee1c7c608a38a4fa745215d5fbe76d3fa250d437293470fa7a6357": {
+      "content": "# Tabbit × OpenClaw 工作流优化方案\n\n**版本：** v2.0  \n**日期：** 2026-03-12  \n**基于：** 14 模型能力评估 + 实测报告\n\n---\n\n## 📊 14 模型能力评估\n\n### 国外模型（6 个）",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 0,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510786"
+    },
+    "8454e3dd255a6f6df33a9b9613c12e266fb7a603bdedfb5b38636f83206d663d": {
+      "content": "| 模型 | 强项 | 弱项 | 推荐场景 |\n|------|------|------|---------|\n| **GPT-5.2-Chat** | 代码生成、工具调用、结构化输出、128k 输出 | 推理略弱于 Gemini | 写代码、自动化脚本、API 调用、JSON 输出 |\n| **GPT-5.1-Chat** | 综合能力强、响应快 | 比 5.2 略弱 | 日常对话、快速原型 |\n| **Claude-Sonnet-4.6** | 速度/智能平衡、代码理解、性价比 | 上下文 200k（1M 需 beta） | 代码审查、文档分析、日常任务 |\n| **Claude-Haiku-4.5** | 速度极快、成本低 | 智能略低 | 快速分类、简单任务、批量处理 |\n| **Gemini-3.1-Pro** | 1M 上下文、多模态（音频/视频/PDF）、推理最强 | 输出 64k 限制 | 长文档分析、多模态处理、复杂推理 |\n| **Gemini-3.1-Flash** | 速度快、成本低 | 智能略低 | 快速响应、批量处理 |\n\n### 国内模型（7 个）",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 1,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510789"
+    },
+    "7fcb4b9ae63aed8174ff1fba235b95e4885ce0c5bfe82cb98ecd065e0f6a5a50": {
+      "content": "| 模型 | 强项 | 弱项 | 推荐场景 |\n|------|------|------|---------|\n| **DeepSeek-V3.2** | 中英翻译、代码能力、性价比 | 英文略弱 | 翻译、中文内容、代码 |\n| **Kimi-K2.5** | 长文本处理、中文理解 | 代码一般 | 中文文章总结、学习笔记 |\n| **Qwen3.5-Plus** | 中文优化、综合平衡 | 无明显强项 | 中文写作、日常对话 |\n| **GLM-5** | 逻辑推理、中文 | 代码一般 | 逻辑题、中文分析 |\n| **Doubao-Seed-1.8** | 字节生态、响应快 | 综合一般 | 快速问答 |\n| **MiniMax-M2.5** | 创意写作、中文 | 代码弱 | 创意内容、故事生成 |\n| **LongCat** | 超长上下文 | 智能一般 | 长文本检索 |\n\n---\n\n## 🎯 场景 - 模型映射表\n\n### 工作场景分类",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 2,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510791"
+    },
+    "f7c4564857cc4f96c783bec7cc18085f562bfc2029f9cd7b506b723997b1f7a4": {
+      "content": "```\n┌─────────────────────────────────────────────────────────────┐\n│  场景类型          │  首选模型            │  备选模型        │\n├─────────────────────────────────────────────────────────────┤\n│  代码生成          │  GPT-5.2-Chat       │  Claude-Sonnet   │\n│  代码审查          │  Claude-Sonnet-4.6  │  GPT-5.2         │\n│  代码解释          │  Claude-Sonnet-4.6  │  DeepSeek-V3.2   │\n│  脚本编写          │  GPT-5.2-Chat       │  Claude-Sonnet   │\n├─────────────────────────────────────────────────────────────┤",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 3,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510794"
+    },
+    "bdc406560506443844d9452af0acd28efe9f03a1e93c59a8b64b75bdef242ac1": {
+      "content": "│  长文档分析        │  Gemini-3.1-Pro     │  Kimi-K2.5       │\n│  论文解读          │  Gemini-3.1-Pro     │  Claude-Opus     │\n│  合同审查          │  Claude-Sonnet-4.6  │  GPT-5.2         │\n│  会议纪要          │  Gemini-3.1-Pro     │  Kimi-K2.5       │\n├─────────────────────────────────────────────────────────────┤\n│  中文写作          │  Qwen3.5-Plus       │  MiniMax-M2.5    │\n│  英文写作          │  GPT-5.2-Chat       │  Claude-Sonnet   │\n│  创意内容          │  MiniMax-M2.5       │  GPT-5.2         │",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 4,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510796"
+    },
+    "6e33982c7f8f46a2e8a82f039f31df914464a3ec847c7083f57d8110151cb3e7": {
+      "content": "│  翻译（中↔英）    │  DeepSeek-V3.2      │  GPT-5.2         │\n├─────────────────────────────────────────────────────────────┤\n│  逻辑推理          │  Gemini-3.1-Pro     │  GLM-5           │\n│  数据分析          │  GPT-5.2-Chat       │  Gemini-Pro      │\n│  调研报告          │  Claude-Sonnet-4.6  │  GPT-5.2         │\n│  竞品分析          │  Claude-Sonnet-4.6  │  Gemini-Pro      │\n├─────────────────────────────────────────────────────────────┤\n│  快速问答          │  Gemini-Flash       │  Haiku-4.5       │",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 5,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510798"
+    },
+    "8d734a060ea3dca15e9a2f8b1c942742a70989459e58d52573b0c0c7b89b31bf": {
+      "content": "│  批量处理          │  Haiku-4.5          │  Gemini-Flash    │\n│  简单分类          │  Haiku-4.5          │  Doubao-Seed     │\n│  日常对话          │  Qwen3.5-Plus       │  GPT-5.1         │\n└─────────────────────────────────────────────────────────────┘\n```",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 6,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510799"
+    },
+    "344c7707b8e6c94c66d9d0547bb1d00cf5f3f6dc14b4ec3a6cd55f0af462dce0": {
+      "content": "---\n\n## 🔄 Tabbit × OpenClaw 分工设计\n\n### 核心原则\n\n```\nTabbit = 信息收集层 + AI 处理层（14 模型调度）\nOpenClaw = 自动化执行层 + 记忆存储 + 定时任务\n```\n\n### 能力对比\n\n| 能力 | Tabbit | OpenClaw | 分工 |\n|------|--------|----------|------|\n| 浏览网页 | ✅ 原生 | ✅ 浏览器工具 | Tabbit（人工） |\n| AI 对话 | ✅ 14 模型 | ❌ 仅 1 模型 | Tabbit |\n| 多文档对比 | ✅ @标签页 | ❌ 需手动 | Tabbit |\n| 文件读写 | ❌ 有限 | ✅ 完整 | OpenClaw |\n| 定时任务 | ❌ 无 | ✅ Cron | OpenClaw |\n| 记忆存储 | ❌ 临时 | ✅ MEMORY.md | OpenClaw |\n| 消息推送 | ❌ 无 | ✅ 钉钉/多渠道 | OpenClaw |\n| Agent 自动执行 | ✅ Pro 功能 | ✅ 子代理 | 两者结合 |\n\n---",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 7,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510803"
+    },
+    "850894e1e153ed476d71ad64d2d1ec3c8bb4e439ec0ee13e141a9ca2c566bd75": {
+      "content": "## 📋 具体工作流设计\n\n### 工作流 1：每日资讯速读（10 分钟/天）",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 8,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510804"
+    },
+    "0e75c853af0cc9bef425e1638f00dc2fa9d096be52c8ca05c68feb983f579048": {
+      "content": "```\n┌─────────────────────────────────────────────────────────────┐\n│  步骤  │  工具    │  操作                              │ 时间  │\n├─────────────────────────────────────────────────────────────┤\n│  1     │  Tabbit  │  打开预设资讯标签组（10 个网站）    │  2 分  │\n│  2     │  Tabbit  │  Chat → @所有标签页 → 生成摘要     │  3 分  │\n│  3     │  Tabbit  │  切换 Gemini-Pro（长文本最优）     │  -     │\n│  4     │  Tabbit  │  导出摘要为 daily_briefing.md      │  1 分  │\n│  5     │  OpenClaw│  Cron 8:00 读取文件                │  自动  │",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 9,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510807"
+    },
+    "3e0234c181da2bca9bb0e8899ac10c33cdd532bee407db252cf2564c0bbe8813": {
+      "content": "│  6     │  OpenClaw│  格式化 → 发送钉钉                 │  自动  │\n│  7     │  OpenClaw│  存储到 memory/YYYY-MM-DD.md       │  自动  │\n└─────────────────────────────────────────────────────────────┘",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 10,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510809"
+    },
+    "b0ad1394d37c43ceda02b3f10d97e8f1c3600ecc915036fc8dc1cfb06233a674": {
+      "content": "模型选择：Gemini-3.1-Pro（长文档总结最优）\n妙招模板：\"资讯总结专家\"\n```\n\n### 工作流 2：竞品调研报告（20 分钟/次）",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 11,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510810"
+    },
+    "ada65ab7e6ab3f89fd125589c98601fbd5d38b7596ea9e61f094e47eb22c211e": {
+      "content": "```\n┌─────────────────────────────────────────────────────────────┐\n│  步骤  │  工具    │  操作                              │ 时间  │\n├─────────────────────────────────────────────────────────────┤\n│  1     │  Tabbit  │  搜索竞品关键词 → 打开 15 个网页    │  5 分  │\n│  2     │  Tabbit  │  智能分组 → 按竞品归类             │  1 分  │\n│  3     │  Tabbit  │  Chat → @所有标签页                │  -     │\n│  4     │  Tabbit  │  切换 Claude-Sonnet（分析最优）    │  -     │\n│  5     │  Tabbit  │  指令：\"从功能/定价/用户评价对比\"  │  5 分  │",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 12,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510812"
+    },
+    "43370dbd6da44f8be7b1a5b41655b6b14befe5ff0d7334019abed13a5641b4b9": {
+      "content": "│  6     │  Tabbit  │  导出对比表格 + 分析报告           │  2 分  │\n│  7     │  OpenClaw│  读取报告 → 索引到记忆系统         │  自动  │\n│  8     │  OpenClaw│  更新 MEMORY.md 竞品章节           │  自动  │\n└─────────────────────────────────────────────────────────────┘",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 13,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510814"
+    },
+    "58dad399df26f5ad43b89e4ec6d7d3f3a87e1cb33ce99f139c4581ec1f515668": {
+      "content": "模型选择：Claude-Sonnet-4.6（知识工作 Elo 1633 最高）\n妙招模板：\"竞品对比分析\"\n```\n\n### 工作流 3：代码生成 + 审查（30 分钟/次）",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 14,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510816"
+    },
+    "55de4bb5c75ddd07e932ddf6527c0f564f3b14227123b9331c2b2fba75fd155c": {
+      "content": "```\n┌─────────────────────────────────────────────────────────────┐\n│  步骤  │  工具    │  操作                              │ 时间  │\n├─────────────────────────────────────────────────────────────┤\n│  1     │  Tabbit  │  打开需求文档 + 参考代码           │  3 分  │\n│  2     │  Tabbit  │  Chat → @标签页 → 切换 GPT-5.2     │  -     │\n│  3     │  Tabbit  │  指令：\"生成 Python 脚本实现 XX\"    │  5 分  │\n│  4     │  Tabbit  │  复制代码 → 本地文件               │  2 分  │\n│  5     │  Tabbit  │  切换 Claude-Sonnet → 审查代码     │  5 分  │",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 15,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510818"
+    },
+    "c52da052420d512c97d0dbcc7893e1600f6727451379cf0b7c1a3e5cf30d5198": {
+      "content": "│  6     │  Tabbit  │  指令：\"找 bug + 优化建议\"         │  5 分  │\n│  7     │  OpenClaw│  读取代码文件 → 运行测试           │  自动  │\n│  8     │  OpenClaw│  提交 Git → 推送                   │  自动  │\n└─────────────────────────────────────────────────────────────┘",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 16,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510820"
+    },
+    "0f163e52fbf924463aabb2b675e1e2b65fe962901a1e280f99a924f1093ccfec": {
+      "content": "模型选择：\n- 生成：GPT-5.2-Chat（代码生成 SWE-Bench 80%）\n- 审查：Claude-Sonnet-4.6（代码理解强）\n```\n\n### 工作流 4：学习新领域（2 小时/主题）",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 17,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510821"
+    },
+    "c8eca779b2a8babdb259a862bc854cb8c4a87e493a5c35d5c3c2a86f288e360b": {
+      "content": "```\n┌─────────────────────────────────────────────────────────────┐\n│  步骤  │  工具    │  操作                              │ 时间  │\n├─────────────────────────────────────────────────────────────┤\n│  1     │  Tabbit  │  搜索\"XX 领域入门\" → 打开 20 篇文章  │  5 分  │\n│  2     │  Tabbit  │  智能分组 → 按主题归类             │  2 分  │\n│  3     │  Tabbit  │  Chat → @所有 → 切换 Gemini-Pro    │  -     │\n│  4     │  Tabbit  │  指令：\"提取知识框架 + 学习路径\"   │ 10 分  │\n│  5     │  Tabbit  │  收藏 → AI 自动生成摘要            │  3 分  │",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 18,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510824"
+    },
+    "c4902fa05d23a70c07b7bf549386be26492d314cb60d670dd5e3a00f5ffbd8a7": {
+      "content": "│  6     │  Tabbit  │  导出为 learning_XX.md             │  2 分  │\n│  7     │  OpenClaw│  读取 → 索引到记忆系统             │  自动  │\n│  8     │  OpenClaw│  生成测试题 → 定期提醒复习         │  自动  │\n└─────────────────────────────────────────────────────────────┘",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 19,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510826"
+    },
+    "9011354ce00cd8a4eb45504fbac5c6299b707f11f67bd1f1ed641f7351b21107": {
+      "content": "模型选择：Gemini-3.1-Pro（1M 上下文，推理 ARC-AGI 77.1% 最高）\n```\n\n### 工作流 5：内容创作流水线（1 小时/篇）",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 20,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510827"
+    },
+    "e8c02fe4c53e0de2e9b59570b266ae611f99f0fa9e9acb857d18c8e6835c45f0": {
+      "content": "```\n┌─────────────────────────────────────────────────────────────┐\n│  步骤  │  工具    │  操作                              │ 时间  │\n├─────────────────────────────────────────────────────────────┤\n│  1     │  Tabbit  │  调研话题热度 → 打开 30 篇相关文章  │ 10 分  │\n│  2     │  Tabbit  │  Chat → @所有 → 切换 GPT-5.2       │  -     │\n│  3     │  Tabbit  │  指令：\"生成文章大纲 + 爆点建议\"   │  5 分  │\n│  4     │  人工    │  写初稿                            │ 20 分  │\n│  5     │  Tabbit  │  切换 MiniMax → 润色优化           │  5 分  │",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 21,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510829"
+    },
+    "0f8bb1acecd31035b64435ee56ab718ef0754b93455c04ba4cd54fdac48072ec": {
+      "content": "│  6     │  Tabbit  │  指令：\"更口语化/更有梗\"           │  5 分  │\n│  7     │  OpenClaw│  读取终稿 → 发布到各平台           │  自动  │\n│  8     │  OpenClaw│  发送钉钉提醒                      │  自动  │\n└─────────────────────────────────────────────────────────────┘",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 22,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510831"
+    },
+    "81d7184083fb7adc521d69e46ce2b089d7f63c6cc65d98d8498795409e256ca5": {
+      "content": "模型选择：\n- 大纲：GPT-5.2-Chat（创意 + 结构）\n- 润色：MiniMax-M2.5（创意写作强）\n```\n\n---\n\n## 🛠️ 妙招库模板（5 个核心）\n\n### 妙招 1：文章总结专家\n\n```\n请总结这些内容，按以下结构：\n\n【核心论点】（1 句话，不超过 30 字）\n【关键论据】（3-5 点，每点 1 句话）\n【数据支撑】（如有具体数字，列出）\n【行动建议】（对读者的实际建议）\n【我的评价】（客观评价内容质量）\n\n要求：\n- 保持原文核心意思，不曲解\n- 标注不确定的信息 [UNVERIFIED]\n- 如有专业术语，括号内解释\n- 输出格式：Markdown\n```\n\n**适用模型：** Gemini-3.1-Pro / Kimi-K2.5\n\n---\n\n### 妙招 2：多文档对比分析\n\n```\n@所有标签页\n\n请从以下维度对比分析这些文档：\n\n【维度 1：核心功能】\n| 文档 | 功能描述 | 差异点 |\n|------|---------|--------|\n| A    | ...     | ...    |\n| B    | ...     | ...    |",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 23,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510833"
+    },
+    "4c06fb2a32f21d9a30810790da3c6ed568545b8205d7f7e236e9862f5a48ee68": {
+      "content": "【维度 2：优缺点】\n- 文档 A：优 [...]  缺 [...]\n- 文档 B：优 [...]  缺 [...]\n\n【维度 3：适用场景】\n- 选 A 如果：...\n- 选 B 如果：...\n\n【综合建议】\n...\n\n要求：\n- 每个结论必须标注来源（文档标题 + 段落）\n- 如有矛盾信息，明确指出\n- 用表格呈现核心对比\n```\n\n**适用模型：** Claude-Sonnet-4.6 / GPT-5.2\n\n---\n\n### 妙招 3：代码生成 + 注释\n\n```\n任务：[描述功能需求]\n\n请生成 [Python/JavaScript] 代码实现：\n\n要求：\n1. 代码结构清晰，函数命名规范\n2. 每个函数有中文注释说明功能\n3. 关键逻辑有行内注释\n4. 包含错误处理\n5. 提供使用示例\n6. 如有依赖，列出安装命令\n\n输出格式：\n```python\n# 代码\n```\n\n【说明】\n- 核心逻辑：...\n- 注意事项：...\n- 扩展建议：...\n```\n\n**适用模型：** GPT-5.2-Chat\n\n---\n\n### 妙招 4：代码审查清单\n\n```\n请审查这段代码：\n\n【功能理解】\n用 1 句话说明这段代码做什么",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 24,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510836"
+    },
+    "17994fe0a5cdd3afee40d03f8045712ec2eba88bf4a0d6da6f54a4a44bc76103": {
+      "content": "【代码质量】\n- 可读性：⭐⭐⭐⭐⭐（评分 + 理由）\n- 性能：⭐⭐⭐⭐⭐\n- 安全性：⭐⭐⭐⭐⭐\n- 可维护性：⭐⭐⭐⭐⭐\n\n【问题清单】\n| 严重性 | 位置 | 问题描述 | 建议修复 |\n|--------|------|---------|---------|\n| 高     | L15  | ...     | ...     |\n| 中     | L32  | ...     | ...     |\n\n【优化建议】\n1. ...\n2. ...\n\n【重写版本】（如有重大改进）\n```代码```\n```\n\n**适用模型：** Claude-Sonnet-4.6\n\n---\n\n### 妙招 5：调研报告生成\n\n```\n任务：调研 [XX 市场/产品/技术]\n\n请执行以下步骤：\n1. 搜索最新信息（2025-2026 年）\n2. 识别 Top 5 关键参与者\n3. 分析每个参与者的：\n   - 核心产品/服务\n   - 定价策略\n   - 市场份额\n   - 优劣势\n4. 总结市场趋势\n5. 给出进入建议\n\n输出格式：\n# [XX] 调研报告\n\n## 执行摘要（200 字）\n\n## 市场规模\n- 数据 + 来源",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 25,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510839"
+    },
+    "fc5dac877a422bbd091bd0c8bab3c86c26e948df566111bbee1e23c919ff67f5": {
+      "content": "## 竞争格局\n| 公司 | 产品 | 定价 | 份额 | 优势 | 劣势 |\n|------|------|------|------|------|------|\n| A    | ...  | ...  | ...  | ...  | ...  |\n\n## 趋势分析\n1. ...\n2. ...\n3. ...\n\n## 风险与建议\n- 风险：...\n- 建议：...\n\n要求：\n- 每个数据必须标注来源\n- 区分事实和推测\n- 标注信息时效性\n```\n\n**适用模型：** Claude-Sonnet-4.6 / Gemini-3.1-Pro\n\n---\n\n## 📅 7 天落地计划\n\n### Day 1：环境搭建（30 分钟）\n\n```\n□ 打开 Tabbit 国际版\n□ 设置默认浏览器 → 解锁 Pro 功能\n□ 确认 14 个模型可用（截图模型列表）\n□ 测试 3 个模型（GPT-5.2/Claude-Sonnet/Gemini-Pro）\n□ 记录响应速度和质量\n```\n\n### Day 2：模型评测（1 小时）",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 26,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510841"
+    },
+    "a1b70fa2928edcd7b74baf883a7b48a4cd202d60cd05b61a5f3b041603008051": {
+      "content": "```\n□ 准备 10 道测试题（代码/写作/推理/翻译）\n□ 用 14 个模型分别作答\n□ 记录每个模型表现\n□ 输出评测表格\n□ 建立\"场景 - 模型\"映射\n```\n\n### Day 3：妙招创建（1 小时）\n\n```\n□ 创建 5 个核心妙招（上面模板）\n□ 测试每个妙招调用\n□ 调整 prompt 优化效果\n□ 记录最佳模型搭配\n```\n\n### Day 4：工作流测试（2 小时）\n\n```\n□ 测试\"每日资讯速读\"流程\n□ 测试\"竞品调研\"流程\n□ 记录时间节省\n□ 导出结果 → OpenClaw 处理\n```\n\n### Day 5：OpenClaw 集成（2 小时）\n\n```\n□ 创建 Cron 任务（每日资讯）\n□ 编写文件处理脚本\n□ 测试钉钉推送\n□ 验证记忆存储\n```\n\n### Day 6-7：优化迭代\n\n```\n□ 调整模型选择策略\n□ 优化妙招 prompt\n□ 建立标签组模板\n□ 输出使用手册\n```\n\n---\n\n## 💰 价值评估\n\n### 时间节省",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 27,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510843"
+    },
+    "d20221b4243f61ce6fe6743042749522d09df68c1513dd23183774eaab9fee2c": {
+      "content": "| 任务 | 传统方式 | Tabbit 方式 | 节省 |\n|------|---------|-----------|------|\n| 资讯速读 | 60 分钟 | 10 分钟 | 83% |\n| 竞品调研 | 2.5 小时 | 20 分钟 | 87% |\n| 代码生成 | 1 小时 | 15 分钟 | 75% |\n| 学习新领域 | 3 天 | 2 小时 | 92% |\n| 内容创作 | 3 小时 | 1 小时 | 67% |\n\n### 金钱节省\n\n| 模型 | 官方价格 | Tabbit 免费 | 月省（按 100 万 tokens/天） |\n|------|---------|------------|---------------------------|\n| GPT-5.2 | $1.75/1M 输入 | ✅ | ~$52/月 |\n| Claude-Sonnet | $3/1M 输入 | ✅ | ~$90/月 |\n| Gemini-Pro | $2/1M 输入 | ✅ | ~$60/月 |\n\n**合计：每月省约 $200 API 费 + 时间节省 80%+**\n\n---",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 28,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510845"
+    },
+    "10da6f60290e1673a8ceba4643f5f2697ccb9a17de9c96a7df0c04cccd836397": {
+      "content": "## ⚠️ 风险控制\n\n| 风险 | 概率 | 影响 | 缓解措施 |\n|------|------|------|---------|\n| 测试期结束收费 | 中 | 高 | 趁现在建立工作流，评估付费价值 |\n| 调用限制 | 中 | 中 | 不要脚本高频调用，人工操作为主 |\n| 国外模型合规 | 低 | 高 | 不存储敏感信息，重要内容导出 |\n| 服务关停 | 低 | 中 | 保持 OpenClaw 独立能力 |\n| 数据出境 | 中 | 中 | 敏感信息不用 Tabbit 处理 |\n\n---\n\n## 📊 成功指标\n\n| 指标 | 基线 | 目标（1 周后） | 测量方式 |\n|------|------|---------------|---------|\n| 资讯阅读时间 | 60 分钟 | 10 分钟 | 计时 |\n| 调研报告产出 | 1 份/周 | 3 份/周 | 计数 |\n| 代码生成效率 | 1 小时/脚本 | 15 分钟 | 计时 |\n| 模型调用次数 | 0 | 50 次/天 | Tabbit 历史 |\n| API 费用 | $200/月 | $0 | 账单对比 |\n\n---",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 29,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510848"
+    },
+    "a868c762b5b7d41f9a13b03a0540cf25e6ae28d1fd4332ed66f80d2e1b0ff6b3": {
+      "content": "_2026-03-12 v2.0 · 基于 14 模型能力评估_ 🦐",
+      "source": "memory/tabbit-workflow.md",
+      "chunk_index": 30,
+      "total_chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510849"
+    },
+    "1298c14a4f196e9259ef165d0afacdf22144cbb6cfba575585f671d560b0785e": {
+      "content": "# 待办事项\n\n_最后更新：2026-03-12_\n\n---\n\n## 🔴 高优先级（本周）\n\n### [ ] 准备水产市场发布材料\n- **截止：** 2026-03-19\n- **类型：** Experience\n- **内容：** 记忆优化完整方案（去重 + 监听 + 归档）\n- **任务清单：**\n  - [ ] 写符合规范的 README.md（含标题 + 描述）\n  - [ ] 准备打包脚本（zip/tar.gz）\n  - [ ] 测试发布流程\n  - [ ] 正式发布到 openclawmp.cc\n- **差异化：** SHA-256 去重、实时监听、季度归档\n- **参考：** 已有\"跨会话记忆连续性\"技能（184 次安装）",
+      "source": "memory/todos.md",
+      "chunk_index": 0,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510921"
+    },
+    "ede121dd003504a1edaf12240c64c862c607eb98371ff4927ae9b58830cc22ba": {
+      "content": "### [ ] 实施 Agent 自主进化方案（阶段 1）\n- **截止：** 2026-03-19\n- **状态：** 准备执行\n- **任务清单：**\n  - [ ] 创建 `memory/skill-gaps.md`（能力缺口记录）\n  - [ ] 更新 HEARTBEAT.md 添加信号采集\n  - [ ] 更新每周待办检查 cron（添加资产使用统计）\n- **观察期：** 2026-03-12 ~ 2026-03-19（1 周）\n- **下周讨论：** 是否增加自动化 cron（信号采集 + 每日复盘）\n\n### [ ] 完善记忆优化工具\n- **截止：** 2026-03-31\n- **任务清单：**\n  - [ ] 添加统计功能（`--stats` 参数）\n  - [ ] 添加搜索功能（基于索引的关键词搜索）\n  - [ ] 添加清理功能（`--clean` 参数）\n  - [ ] 收集使用反馈，优化稳定性",
+      "source": "memory/todos.md",
+      "chunk_index": 2,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510925"
+    },
+    "1474565d81a5d89d00515cd4c024fe2f81a22440cf6b5dee78a5d265e09eb09b": {
+      "content": "### [ ] 配置 Brave API Key\n- **截止：** 2026-03-31\n- **原因：** web_search 工具需要\n- **步骤：**\n  - [ ] 申请 API Key（https://brave.com/search/api/）\n  - [ ] 配置到 `.env` 文件\n  - [ ] 测试搜索功能\n\n---\n\n## 🟢 低优先级（以后）",
+      "source": "memory/todos.md",
+      "chunk_index": 3,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510927"
+    },
+    "ddd02ea0192f368d356bf1e296ff80c9db1dbfad3a9aae24fba346a5cc778d52": {
+      "content": "### [ ] 跟踪 Cron isolated bug 官方修复进度\n- **截止：** 2026-04-12（1 个月后）\n- **状态：** 等待官方修复\n- **相关 Issues：**\n  - #42632: `cron sessionTarget=\"isolated\" + agentTurn can time out on a minimal prompt`\n  - #26390: `[Bug] Isolated cron jobs timeout even when task is still running`\n  - #41783: `bug(cron): job timeout includes cron-lane queue wait time`\n  - #37505: `Cron job timeout aborts entire model fallback chain via shared AbortController`\n- **当前状态：** 3 个任务已临时改用 `main` + `systemEvent`\n- **修复后行动：**",
+      "source": "memory/todos.md",
+      "chunk_index": 4,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510929"
+    },
+    "a9a358b34ad29f799eeacd9ebaa2002587456f4c8ca94daba6f6365fa9247478": {
+      "content": "  - [ ] 验证官方修复已发布（检查 OpenClaw 更新日志）\n  - [ ] 将 3 个任务改回 `isolated` + `agentTurn`\n  - [ ] 测试验证稳定性\n  - [ ] 更新 CASES.md 记录",
+      "source": "memory/todos.md",
+      "chunk_index": 5,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510931"
+    },
+    "145b6de6ea211eb510ce55ccae731e7480b897cad82ddfb3f68e43e3e91c62d8": {
+      "content": "### [ ] 跟踪 Health-Monitor 无限重启 bug 官方修复\n- **截止：** 2026-04-12（1 个月后）\n- **状态：** 等待官方修复\n- **Bug 描述：** health-monitor 重启 channel 时调用 `resetRestartAttempts()`，导致无限重启循环\n- **代码位置：** `gateway-cli-*.js:1709`（`resetRestartAttempts` 调用）\n- **当前状态：** `channelHealthCheckMinutes: 0`（已禁用）\n- **修复后行动：**\n  - [ ] 验证官方修复已发布（检查更新日志是否提到 health-monitor 或 resetRestartAttempts）\n  - [ ] 恢复配置：`channelHealthCheckMinutes: 5`\n  - [ ] 观察 24 小时确认无无限重启\n  - [ ] 更新 CASES.md 记录\n  - [ ] 更新 CASES.md 记录\n- **检查频率：** 每周一次（周一早上）",
+      "source": "memory/todos.md",
+      "chunk_index": 6,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510933"
+    },
+    "12e876abc3cbcc3f5da8c00a67488ea833d7d0eda8bf06baa3314562d00ba2c2": {
+      "content": "- **提醒方式：** 钉钉 + webchat",
+      "source": "memory/todos.md",
+      "chunk_index": 7,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510935"
+    },
+    "36d118664aae932259ce18254f1656b0277332c894bd6c69eb3b72d0e3e67625": {
+      "content": "### [ ] 实施 Agent 自主进化方案（阶段 2）\n- **截止：** 2026-03-26\n- **状态：** 等待观察期结束（2026-03-19）\n- **前提：** 阶段 1 观察效果良好\n- **任务清单：**\n  - [ ] 评估信号采集效果（误报/漏报情况）\n  - [ ] 评估资产使用统计效果\n  - [ ] 决定是否增加自动化 cron\n    - [ ] 信号采集 cron（每天 18:00）\n    - [ ] 每日复盘 cron（每天 10:00）\n  - [ ] 配置 auto_install 参数（永远 ask）\n- **讨论日期：** 2026-03-19（观察期结束）",
+      "source": "memory/todos.md",
+      "chunk_index": 8,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510937"
+    },
+    "78fe6bcd82b362bea6810c404e37f6beb2984d8179330e7f1c11576b6d476232": {
+      "content": "### [ ] 实施水产市场贡献家方案（阶段 3）\n- **截止：** 2026-04-02\n- **状态：** 等待阶段 2 完成\n- **前提：** 阶段 1-2 运行稳定\n- **任务清单：**\n  - [ ] 测试手动提炼流程（不自动化）\n  - [ ] 验证质量评分标准\n  - [ ] 验证安全扫描流程\n  - [ ] 决定是否创建每日扫描 cron（每天 22:00）\n  - [ ] 配置 publish_mode（永远 ask）\n- **讨论日期：** 2026-03-26（阶段 2 结束后）\n\n### [ ] 完成 find-skills 安装\n- **状态：** 需 GitHub 认证\n- **优先级：** 低（有替代方案）\n\n### [ ] 完成 Free Ride 安装\n- **状态：** 需 GitHub 认证\n- **优先级：** 低（需查询用途）",
+      "source": "memory/todos.md",
+      "chunk_index": 9,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510939"
+    },
+    "8767d1bef87dba9d0a748b1d38a1958d2b97c629a18d28771e5031c5faad7002": {
+      "content": "### [ ] 配置 Agent-Reach 剩余渠道\n- **状态：** 需额外配置\n- **渠道：**\n  - [ ] 小红书（Docker）\n  - [ ] 抖音（Python 3.10+）\n  - [ ] LinkedIn（包不存在）\n  - [ ] 小宇宙（Groq API Key）\n\n---\n\n## ✅ 已完成\n\n### [x] 建立技能管理体系\n- **完成：** 2026-03-12\n- **内容：**\n  - memory/skills.md（详细清单）\n  - MEMORY.md（精简版）\n  - AGENTS.md（安装流程规范）\n\n### [x] 建立归档维护机制\n- **完成：** 2026-03-12\n- **内容：**\n  - memory/archive/ 目录\n  - 季度归档 cron 任务\n  - MEMORY.md 精简 22%",
+      "source": "memory/todos.md",
+      "chunk_index": 10,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510941"
+    },
+    "8edfe3bed8ded6b2fbd56f29cd63fee97ea596394ba97e48031249c4aae178f2": {
+      "content": "### [x] 实施方案 A 优化（记忆去重 + 监听）\n- **完成：** 2026-03-12\n- **内容：**\n  - memory-dedup.py（去重索引）\n  - memory-watcher.py（文件监听）\n  - 测试验证通过（81 个 chunk）\n\n### [x] 配置水产市场账号\n- **完成：** 2026-03-12\n- **内容：**\n  - CLI 安装\n  - 账号注册（邀请码：SEAFOOD）\n  - API Key 保存（⚠️ 不再显示）\n\n### [x] 强化安全规范\n- **完成：** 2026-03-12\n- **内容：**\n  - 敏感信息不显示原则\n  - MEMORY.md + AGENTS.md 更新\n\n---\n\n## 📊 统计\n\n- 🔴 高优先级：1 项\n- 🟡 中优先级：2 项\n- 🟢 低优先级：3 项\n- ✅ 已完成：5 项\n\n---\n\n_维护规则：完成待办后移动到此文件，每月最后一天归档清理_ 🦐",
+      "source": "memory/todos.md",
+      "chunk_index": 11,
+      "total_chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510943"
+    },
+    "0d2563acccd48969172505de14c5eaf974bc6476a5f288e1d935e4de2755bda2": {
+      "content": "# 技能详细清单\n\n_最后更新：2026-03-12_\n\n---\n\n## 📦 已安装技能",
+      "source": "memory/skills.md",
+      "chunk_index": 0,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511000"
+    },
+    "61b32b2aaf9562eb3d464a20ccb459c5f218aa4558133d1b2f757a8d4dde1340": {
+      "content": "| 技能名 | 版本 | 安装日期 | 位置 | 用途 | 依赖/配置 | 状态 |\n|--------|------|----------|------|------|-----------|------|\n| smart-search | - | 2026-03-10 | `skills/smart-search/` | 智能搜索（Tavily） | TAVILY_API_KEY | ✅ 活跃 |\n| model-router | - | 2026-03-10 | `skills/model-router/` | 模型自动路由 | - | ✅ 活跃 |\n| exa-search | - | 2026-03-12 | `skills/exa-search/` | Exa AI 搜索 | EXA_API_KEY | ✅ 活跃 |",
+      "source": "memory/skills.md",
+      "chunk_index": 1,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511002"
+    },
+    "82001a5a2c5c823f7e1a28929f0dc2303b77587b099000c53c2213f2c7a4dac9": {
+      "content": "| agent-reach | 1.1.0 | 2026-03-12 | `~/.openclaw/skills/skills/skills/panniantong/agent-reach/` | 全网搜索（14 平台） | 部分渠道需额外配置 | ✅ 8/14 渠道可用 |\n| clawfeed | - | 2026-03-12 | `skills/clawfeed/` | AI 新闻摘要 | 运行中 :8767 | ✅ 活跃 |\n| ai-skills/deep-research | - | 2026-03-12 | `skills/ai-skills/skills/deep-research/` | Multi Search Engine | - | ✅ 已克隆 |\n| x-reader | - | 2026-03-12 | `skills/x-reader/` | X/Twitter 阅读 | - | ✅ 已克隆 |\n| browserwing | - | 2026-03-12 | `skills/browserwing/` | 浏览器自动化 | - | ✅ 已克隆 |",
+      "source": "memory/skills.md",
+      "chunk_index": 2,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511005"
+    },
+    "4510425fd505efc2bb1e0bed93e2bb6850427af63a2d60e9fb9c0053e133d558": {
+      "content": "| modsearch | - | 2026-03-12 | `skills/modsearch/` | 模块化搜索 | - | ✅ 已克隆 |\n| tabbit-flow | 1.0.0 | 2026-03-12 | `skills/tabbit-flow/` | Tabbit 工作流自动化 | 钉钉连接器 + Cron | ✅ 已安装 |",
+      "source": "memory/skills.md",
+      "chunk_index": 3,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511006"
+    },
+    "c266b6d4ef03085686ed86a2c0ea71535830116523d74345adda0d1f05ed495e": {
+      "content": "## 🛠️ 自研工具（2026-03-12 新增）\n\n| 工具名 | 位置 | 用途 | 依赖 | 状态 |\n|--------|------|------|------|------|\n| memory-dedup | `scripts/memory-dedup.py` | 记忆去重索引 | Python 3 | ✅ 已测试 |\n| memory-watcher | `scripts/memory-watcher.py` | 文件监听自动索引 | watchdog | ✅ 已安装 |\n\n### 工具使用说明\n\n**memory-dedup（去重索引）：**\n```bash\n# 手动索引\npython3 scripts/memory-dedup.py ./memory/\n\n# 输出：\n# - 新增/修改的文件 → 自动索引\n# - 无变化的文件 → 跳过（去重）\n# - 已删除的文件 → 清理 chunk\n```\n\n**memory-watcher（文件监听）：**\n```bash\n# 后台监听\npython3 scripts/memory-watcher.py ./memory/ &",
+      "source": "memory/skills.md",
+      "chunk_index": 4,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511009"
+    },
+    "920e4186b4ca485adfb66ccac20cf453d12f6af807f068395c486110252cf367": {
+      "content": "# 功能：\n# - 文件修改 → 1.5 秒后自动索引\n# - 文件删除 → 自动清理 chunk\n# - 防抖处理 → 避免频繁写入\n```\n\n**索引文件：** `memory/.index.json`\n- 存储 chunk 哈希和元数据\n- 自动创建，无需手动编辑\n- 定期清理（季度归档时）\n\n---\n\n## 🔍 功能对比表\n\n### 搜索类技能",
+      "source": "memory/skills.md",
+      "chunk_index": 5,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511010"
+    },
+    "48a1706f6983d8c29cd98d7ccc204873fd3939c8cce65be1b7a0756ecd2949a2": {
+      "content": "| 功能 | smart-search | exa-search | agent-reach | 推荐场景 |\n|------|--------------|------------|-------------|----------|\n| 通用搜索 | ✅ Tavily | ✅ Exa | ✅ Exa | smart-search（免费） |\n| 技术/学术 | ⚠️ 一般 | ✅ 强 | ✅ 强 | exa-search |\n| 社交媒体 | ❌ | ❌ | ✅ 14 平台 | agent-reach |\n| 新闻摘要 | ❌ | ❌ | ⚠️ 需配置 | clawfeed |\n| 深度研究 | ✅ Tavily | ⚠️ 一般 | ❌ | smart-search |\n\n### 模型路由",
+      "source": "memory/skills.md",
+      "chunk_index": 6,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511012"
+    },
+    "80465d5286cdcec8b7769c8f9dfbd95dc340c5ea2f19fb41bba26fa22ca4be94": {
+      "content": "| 模型 | 角色 | 使用场景 |\n|------|------|----------|\n| Qwen3.5-Plus | default | 日常对话、通用任务（60%） |\n| Qwen3-Coder-Plus | coder | 写代码、重构（15%） |\n| GLM-5 | designer | 系统设计、数值规划（10%） |\n| Kimi-K2.5 | reviewer | 代码审查、文档阅读（8%） |\n| MiniMax-M2.5 | critic | 创意评估、批判分析（5%） |\n| GLM-4.7 | light | 简单查询、快速任务（2%） |\n\n---\n\n## 🗑️ 弃用/替换记录\n\n（暂无）\n\n---\n\n## 📝 安装流程规范\n\n### 安装前检查清单",
+      "source": "memory/skills.md",
+      "chunk_index": 7,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511014"
+    },
+    "9525899d4dae398c875547d5f6a3a7e3be22af0253d791acf893a2eaad00acc4": {
+      "content": "1. **检查是否已安装**\n   ```bash\n   ls ~/.openclaw/workspace/skills/ | grep <skill-name>\n   ```\n2. **检查功能重叠**\n   - 查阅本文件\"功能对比表\"\n   - 评估是否需要新功能\n3. **评估依赖复杂度**\n   - 是否需要 API Key？\n   - 是否需要额外服务（Docker、数据库等）？\n   - Python/Node 版本要求？\n\n### 安装后强制步骤\n\n1. **立即更新本文件**\n   - 添加到\"已安装技能\"表格\n   - 填写完整信息（版本、日期、位置、依赖、状态）\n2. **更新 MEMORY.md（精简版）**\n   - 添加技能名 + 状态\n3. **测试功能**\n   - 运行技能的基本功能测试\n   - 记录测试结果\n\n### 卸载/替换流程\n\n1. **记录弃用原因**\n2. **标注替代技能**\n3. **清理配置文件**\n4. **更新本文件\"弃用记录\"**\n\n---\n\n## 📊 统计信息",
+      "source": "memory/skills.md",
+      "chunk_index": 8,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511017"
+    },
+    "4888ccd987e7610c9c47a93030b01d61e4536a344875a1097b949f19d768d5fc": {
+      "content": "- **已安装技能：** 10 个\n- **待安装技能：** 2 个\n- **弃用技能：** 0 个\n- **安装完成率：** 83%（10/12）\n\n---\n\n_维护规则：每次安装/卸载技能后，必须立即更新此文件_ 🦐",
+      "source": "memory/skills.md",
+      "chunk_index": 9,
+      "total_chunks": 10,
+      "indexed_at": "2026-03-12T21:28:47.511018"
+    },
+    "7f59be0e067c722487a0cba3c6d05cbc386a9a28c8c44d6cba3e155877bdd523": {
+      "content": "# Tabbit AI 浏览器 - 落地执行手册\n\n**版本：** v1.0  \n**日期：** 2026-03-12  \n**目标：** 最大化白嫖价值，集成到日常工作流\n\n---\n\n## 📋 目录\n\n1. [能力地图](#1-能力地图)\n2. [执行流程](#2-执行流程)\n3. [场景模板](#3-场景模板)\n4. [与 OpenClaw 集成](#4-与-openclaw 集成)\n5. [拓展场景](#5-拓展场景)\n6. [风险控制](#6-风险控制)\n\n---\n\n## 1. 能力地图\n\n### 1.1 核心能力分层",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 0,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511165"
+    },
+    "7a5f10157b3ab85fedc7752fa043d2646758fd201fd6ce98eaa2b9238a934ba3": {
+      "content": "```\n┌─────────────────────────────────────────────────────────┐\n│                    L4: Agent 自动执行                     │\n│   • 自主搜索 → 筛选 → 整理 → 写报告（带引用）              │\n│   • 旅游规划、市场调研、竞品分析                          │\n└─────────────────────────────────────────────────────────┘\n                          ↓\n┌─────────────────────────────────────────────────────────┐\n│                    L3: 多文档智能处理                      │\n│   • @多个标签页对比分析                                   │",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 1,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511167"
+    },
+    "ca9245da702447295b89cd7d22bd2d67cf553583ab23cdadf9a98c21e94d6d40": {
+      "content": "│   • 跨页面信息整合                                        │\n│   • 文件/图片上传分析                                     │\n└─────────────────────────────────────────────────────────┘\n                          ↓\n┌─────────────────────────────────────────────────────────┐\n│                    L2: 单页 AI 增强                        │\n│   • 网页总结/提问/翻译                                    │\n│   • 切换 5 个模型对比结果                                  │\n│   • 侧边栏/浮窗模式                                       │",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 2,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511170"
+    },
+    "6ab543446f6303cf32869dcdfc7f933910920f8c765c3289855c0df9db9c68b8": {
+      "content": "└─────────────────────────────────────────────────────────┘\n                          ↓\n┌─────────────────────────────────────────────────────────┐\n│                    L1: 基础浏览 + 收藏                     │\n│   • 垂直标签管理 + 智能分组                               │\n│   • AI 摘要收藏 + 语义搜索                                │\n│   • 云同步                                                │\n└─────────────────────────────────────────────────────────┘\n```",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 3,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511172"
+    },
+    "12c69711a8d34be9fb4345785ee3d08214886b5f535df4bdd96173b7ade09530": {
+      "content": "### 1.2 模型能力对比（待实测填充）\n\n| 模型 | 擅长领域 | 响应速度 | 上下文长度 | 免费额度 |\n|------|---------|---------|-----------|---------|\n| DeepSeek | 代码/逻辑 | ? | ? | ? |\n| Doubao | 通用对话 | ? | ? | ? |\n| Kimi | 长文本 | ? | ? | ? |\n| Qwen | 综合 | ? | ? | ? |\n| LongCat | 超长上下文 | ? | ? | ? |\n\n---\n\n## 2. 执行流程\n\n### 2.1 单次任务标准流程",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 4,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511174"
+    },
+    "bb2357ce8010ececfa0a61eed8b94bb3c8037bf3800b2ae53c833b6b4e28740a": {
+      "content": "```\n┌──────────────┐\n│  1. 任务定义  │ ← 明确目标（调研？总结？对比？）\n└──────┬───────┘\n       ↓\n┌──────────────┐\n│  2. 资源收集  │ ← 打开相关网页（10-20 个标签）\n└──────┬───────┘\n       ↓\n┌──────────────┐\n│  3. 标签整理  │ ← 垂直标签栏 + 智能分组\n└──────┬───────┘\n       ↓\n┌──────────────┐\n│  4. AI 处理   │ ← Chat → @标签页 → 下指令\n└──────┬───────┘\n       ↓\n┌──────────────┐\n│  5. 模型对比  │ ← 切换 2-3 个模型对比结果\n└──────┬───────┘\n       ↓\n┌──────────────┐\n│  6. 结果导出  │ ← 复制/收藏/生成报告\n└──────┬───────┘\n       ↓\n┌──────────────┐\n│  7. 知识沉淀  │ ← 收藏 + AI 摘要 → 语义搜索\n└──────────────┘\n```",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 5,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511177"
+    },
+    "cd0f90c2c7c77cf724c4bcfb3937eb71fd1f73b52e195e658ed1661775aa429f": {
+      "content": "### 2.2 详细操作步骤\n\n#### 场景 A：竞品调研报告（2 小时 → 20 分钟）\n\n**传统方式：**\n```\n1. Google 搜索竞品关键词（15 分钟）\n2. 逐个打开官网/评测/新闻（30 分钟）\n3. 读文章 + 记笔记（45 分钟）\n4. 整理对比表格（30 分钟）\n5. 写分析报告（30 分钟）\n总计：2.5 小时\n```\n\n**Tabbit 方式：**\n```\nStep 1: 收集资源（5 分钟）\n├─ 打开 Tabbit\n├─ 搜索\"竞品 A 评测\" → 打开前 5 个结果\n├─ 搜索\"竞品 B 评测\" → 打开前 5 个结果\n└─ 搜索\"竞品 C 评测\" → 打开前 5 个结果\n\nStep 2: 整理标签（2 分钟）\n├─ 左侧垂直标签栏查看\n├─ 右键 → \"智能分组\" → 按竞品自动归类\n└─ 保存为标签组\"竞品调研_20260312\"",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 6,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511184"
+    },
+    "f889a1d33c8f8719753e50a3559580a7e76d24e1afca297c6fdab0be9bc7b5c7": {
+      "content": "Step 3: AI 处理（8 分钟）\n├─ 点击右上角 Chat 图标\n├─ 输入：\"@所有标签页，从以下维度整理对比表格：\n│    - 核心功能\n│    - 定价策略\n│    - 目标用户\n│    - 优劣势\n│    每个结论附信息来源链接\"\n├─ 切换 Kimi 生成第一版\n├─ 切换 DeepSeek 生成第二版\n└─ 对比两个结果，取最优\n\nStep 4: 深化分析（5 分钟）\n├─ 追问：\"根据以上对比，给出我们的差异化建议\"\n├─ 追问：\"预测竞品下半年可能的动作\"\n└─ 收藏最终报告\n\n总计：20 分钟\n效率提升：7.5 倍\n```\n\n#### 场景 B：每日资讯速读（1 小时 → 10 分钟）\n\n```\nStep 1: 批量打开（3 分钟）\n├─ 打开 36 氪/AI 科技评论/机器之心/量子位\n└─ 每个网站打开今日 Top 5 文章\n\nStep 2: 快速筛选（2 分钟）\n├─ 垂直标签栏浏览标题\n├─ 关闭低相关性文章\n└─ 保留 8-10 篇核心文章",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 7,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511186"
+    },
+    "1a87cac8481333d9c7f39f8658a13fe5f4341e619d323d59c88d7a021073d345": {
+      "content": "Step 3: AI 总结（5 分钟）\n├─ Chat → @所有标签页\n├─ 指令：\"总结今日 AI 行业重要动态，按以下分类：\n│    - 大模型进展\n│    - 融资并购\n│    - 产品发布\n│    - 政策监管\n│    每条不超过 50 字\"\n└─ 复制到钉钉/飞书同步给团队\n\n总计：10 分钟\n```\n\n#### 场景 C：学习新领域（3 天 → 2 小时）\n\n```\nStep 1: 建立知识框架（20 分钟）\n├─ 搜索\"XX 领域 入门指南\"\n├─ 搜索\"XX 领域 知识图谱\"\n├─ 搜索\"XX 领域 核心概念\"\n└─ 打开 10-15 篇基础文章\n\nStep 2: AI 提取框架（15 分钟）\n├─ Chat → @所有标签页\n├─ 指令：\"提取 XX 领域的核心概念框架，包括：\n│    - 关键术语定义\n│    - 技术栈分层\n│    - 主流工具/框架\n│    - 学习路径建议\"\n└─ 收藏为\"XX 领域_知识框架\"\n\nStep 3: 深度阅读（60 分钟）\n├─ 根据框架，针对性打开深度文章\n├─ 每篇用 Chat 总结核心观点\n└─ 收藏 + 打标签",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 8,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511189"
+    },
+    "2a7b92685b1f8dfb22dd1b633ccb2cdc04fd9c73a5ef69e16964377c5033ce8c": {
+      "content": "Step 4: 问答巩固（25 分钟）\n├─ Chat → @收藏夹\"XX 领域\"\n├─ 指令：\"出 10 道测试题，检验我对 XX 领域的理解\"\n├─ 答题 → 让 AI 批改\n└─ 针对薄弱点补充阅读\n\n总计：2 小时\n```\n\n---\n\n## 3. 场景模板\n\n### 3.1 妙招库（Prompt 模板）\n\n#### 模板 1：文章总结专家\n```\n请总结这篇文章的核心观点，按以下结构：\n\n【核心论点】（1 句话）\n【关键论据】（3-5 点，每点 1 句话）\n【数据支撑】（如有具体数字，列出）\n【行动建议】（对读者的实际建议）\n【我的评价】（客观评价文章质量）\n\n要求：\n- 保持原文核心意思，不曲解\n- 标注不确定的信息\n- 如有专业术语，括号内解释\n```\n\n#### 模板 2：多文档对比分析\n```\n@所有标签页\n\n请从以下维度对比分析这些文档：\n\n【维度 1：核心功能】\n- 文档 A：...\n- 文档 B：...\n- 差异点：...\n\n【维度 2：技术实现】\n...\n\n【维度 3：优缺点】\n...\n\n【综合建议】\n...",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 9,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511192"
+    },
+    "c59651840580a8b733c086d6c97d40e38d249df90c39caafda1548f7f3b89b17": {
+      "content": "要求：\n- 每个结论必须标注来源（文档标题 + 段落）\n- 如有矛盾信息，明确指出\n- 用表格呈现核心对比\n```\n\n#### 模板 3：市场调研报告\n```\n任务：调研 [XX 市场/产品]\n\n请执行以下步骤：\n1. 搜索最新市场数据（2025-2026 年）\n2. 识别 Top 5 竞品\n3. 分析每个竞品的：\n   - 核心功能\n   - 定价策略\n   - 用户评价\n   - 融资情况\n4. 总结市场趋势\n5. 给出进入建议\n\n输出格式：\n- 执行摘要（200 字）\n- 市场规模（数据 + 来源）\n- 竞争格局（表格）\n- 趋势分析（3-5 点）\n- 风险与建议\n```\n\n#### 模板 4：代码/技术文档解读\n```\n请解读这份技术文档：\n\n【核心功能】这个技术/库是做什么的？\n【适用场景】什么时候应该用它？\n【快速开始】最简单的使用示例\n【关键 API】核心接口说明\n【注意事项】常见坑和最佳实践\n【替代方案】有没有其他选择？\n\n要求：\n- 代码示例用中文注释\n- 复杂概念用类比解释\n- 标注文档版本（如有）\n```",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 10,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511195"
+    },
+    "16b7389f49a9d02c544035fcaafa951ff8406a7f4e8048d0e7677da4e57371f3": {
+      "content": "#### 模板 5：决策辅助\n```\n背景：[描述你的决策场景]\n选项：A / B / C\n目标：[你想达成的目标]\n约束：[预算/时间/资源限制]\n\n请分析：\n1. 每个选项的优缺点\n2. 短期影响（1-3 个月）\n3. 长期影响（6-12 个月）\n4. 风险评估\n5. 推荐选项 + 理由\n\n要求：\n- 客观中立，不偏向\n- 标注不确定性\n- 如有信息缺口，指出需要补充什么\n```\n\n### 3.2 标签组模板\n\n| 标签组名称 | 用途 | 更新频率 |\n|-----------|------|---------|\n| 竞品监控_每周 | 竞品动态追踪 | 每周更新 |\n| 行业情报_每日 | 每日资讯速读 | 每日更新 |\n| 学习_XX 领域 | 系统性学习 | 按需更新 |\n| 项目_XXX | 项目资料汇总 | 项目周期 |\n| 灵感库 | 创意/想法收集 | 随时添加 |\n\n---\n\n## 4. 与 OpenClaw 集成\n\n### 4.1 工作流分工",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 11,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511197"
+    },
+    "9deab96a2359ffb8e4dda9cd32f234ef31ec8008b58859299cc85fcf07b07046": {
+      "content": "```\n┌─────────────────┐         ┌─────────────────┐\n│    Tabbit       │         │   OpenClaw      │\n│  (信息收集层)    │ ←──→    │  (自动化执行层)  │\n├─────────────────┤         ├─────────────────┤\n│ • 浏览网页       │         │ • 文件操作       │\n│ • AI 对话总结    │         │ • 定时任务       │\n│ • 多模型对比    │         │ • 消息推送       │\n│ • 收藏管理       │         │ • 记忆存储       │\n│ • Agent 调研    │         │ • 技能调用       │\n└─────────────────┘         └─────────────────┘\n```\n\n### 4.2 具体集成场景\n\n#### 场景 1：每日早报自动化",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 12,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511200"
+    },
+    "5d73fd6a4000d4da76ffd893234e822af250f0ea61cc78ca102aeec0efa7e634": {
+      "content": "```\nTabbit 侧：\n1. 打开预设的资讯网站标签组\n2. Chat → @所有标签页 → 生成摘要\n3. 复制摘要\n\nOpenClaw 侧：\n1. Cron 任务（每日 8:00）\n2. 读取剪贴板/或手动粘贴\n3. 格式化 → 发送到钉钉\n4. 存储到 memory/YYYY-MM-DD.md\n```\n\n**优化方案：**\n```\nTabbit 生成摘要 → 导出为 Markdown → \nOpenClaw 读取文件 → 自动发送\n```\n\n#### 场景 2：竞品监控周报\n\n```\nTabbit 侧（每周五）：\n1. 打开\"竞品监控\"标签组\n2. Chat → \"总结本周竞品动态\"\n3. 导出为 report_20260312.md\n\nOpenClaw 侧：\n1. 检测 report_*.md 文件\n2. 读取内容\n3. 添加到周报模板\n4. 发送到团队群\n```\n\n#### 场景 3：研究资料沉淀\n\n```\nTabbit 侧：\n1. 调研完成 → 收藏 + AI 摘要\n2. 导出为 JSON/Markdown",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 13,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511202"
+    },
+    "daf669fb68c118a0349a89ce6758bda6876ab07eee091587b5680850d575be51": {
+      "content": "OpenClaw 侧：\n1. 读取导出文件\n2. 索引到 memory/.index.json\n3. 更新 MEMORY.md 相关章节\n4. 建立双向链接\n```\n\n### 4.3 自动化脚本（待实现）\n\n```python\n# scripts/tabbit-export.py\n# 功能：从 Tabbit 导出收藏/报告 → OpenClaw 记忆系统\n\nimport json\nimport os\nfrom datetime import datetime\n\ndef export_tabbit_favorites():\n    # 读取 Tabbit 导出文件\n    # 转换为 OpenClaw 记忆格式\n    # 自动索引\n    pass\n\ndef daily_briefing():\n    # Tabbit 生成摘要\n    # OpenClaw 格式化 + 发送\n    pass\n```\n\n---\n\n## 5. 拓展场景\n\n### 5.1 个人知识管理（PKM）",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 14,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511205"
+    },
+    "a311f9090bed44ca95dabf5402d5dc64ef2485455764347a2279bc0f04828c78": {
+      "content": "```\n信息流：\n网络文章 → Tabbit 收藏+AI 摘要 → \n导出 → OpenClaw 记忆系统 → \n定期回顾 → MEMORY.md 精选 → \n输出文章/视频\n```\n\n**优势：**\n- Tabbit 负责\"输入 + 初步处理\"\n- OpenClaw 负责\"长期存储 + 检索\"\n- 形成完整知识闭环\n\n### 5.2 内容创作流水线\n\n```\n选题阶段：\nTabbit Agent → \"调研 XX 话题热度\" → 输出趋势报告\n\n素材收集：\nTabbit → 打开 50 篇相关文章 → @所有 → 整理核心观点\n\n大纲生成：\nTabbit Chat → \"根据以上素材，生成文章大纲\"\n\n初稿撰写：\n[人工或 OpenClaw 子代理]\n\n润色优化：\nTabbit Chat → \"优化这段文字，更口语化/更专业\"\n\n发布：\nOpenClaw → 自动发送到各平台\n```\n\n### 5.3 团队知识库\n\n```\nTabbit 侧：\n- 每人用 Tabbit 收集资料\n- 共享标签组（如果支持）\n- 统一导出格式",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 15,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511209"
+    },
+    "f8570ac1a67bff5a70f6923d57a9a36ce440f6c090a69670df9c4d12003a3a49": {
+      "content": "OpenClaw 侧：\n- 合并多人导出\n- 建立团队知识索引\n- 支持语义搜索\n- 定期生成团队周报\n```\n\n### 5.4 AI 模型评测实验室\n\n```\n目标：系统化评测各模型能力\n\n流程：\n1. 准备 100 道测试题（分类：逻辑/代码/创作/翻译...）\n2. Tabbit 切换不同模型作答\n3. 记录每个模型的答案\n4. OpenClaw 整理对比表格\n5. 输出评测报告\n6. 定期更新（模型迭代）\n\n产出：\n- 模型能力雷达图\n- 最佳使用场景建议\n- 性价比分析\n```\n\n### 5.5 自动化监控告警\n\n```\nTabbit 侧：\n- 收藏竞品官网/博客\n- 设置定期刷新（如果支持）\n- 检测更新\n\nOpenClaw 侧：\n- 定时检查 Tabbit 收藏更新\n- 如有新内容 → AI 总结\n- 发送到钉钉告警\n\n场景：\n- 竞品发布新功能\n- 行业政策变化\n- 负面舆情出现\n```\n\n### 5.6 学习路径生成器\n\n```\n输入：\"我想学习 XX 技能\"\n\nTabbit Agent：\n1. 搜索最佳学习资源\n2. 整理学习路径（入门→进阶→精通）\n3. 每个阶段推荐 3-5 个资源\n4. 生成时间表",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 16,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511213"
+    },
+    "95a0575b4c5adb076ce61adaaf471684602f7832449962a4df862d6889b74491": {
+      "content": "OpenClaw：\n1. 存储学习路径\n2. 设置学习提醒（Cron）\n3. 定期测试进度\n4. 调整路径\n```\n\n---\n\n## 6. 风险控制\n\n### 6.1 依赖风险\n\n| 风险 | 概率 | 影响 | 缓解措施 |\n|------|------|------|---------|\n| Tabbit 收费/限制 | 中 | 高 | 保持 OpenClaw 独立搜索能力 |\n| 账号被封 | 低 | 高 | 不用自动化脚本滥用 |\n| 服务关停 | 低 | 中 | 重要资料及时导出备份 |\n| API 变更 | 中 | 低 | 不深度集成，保持松耦合 |\n\n### 6.2 使用建议\n\n**✅ 推荐做法：**\n- 人工操作 + AI 辅助（不用自动化脚本）\n- 重要资料及时导出备份\n- 多模型对比，不盲信单一结果\n- 定期清理标签组，保持整洁\n\n**❌ 避免做法：**\n- 用脚本高频调用（可能触发反滥用）\n- 存储敏感信息（API Key/密码）\n- 完全依赖 Tabbit（保持独立能力）\n- 不验证 AI 输出（尤其是数据/引用）\n\n### 6.3 退出策略",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 17,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511217"
+    },
+    "72d52e76d828442b3a5d9e643706e4872061f2cefddc086d7cd7e73f02869333": {
+      "content": "如果 Tabbit 不能用了：\n1. 立即导出所有收藏/标签组\n2. 恢复 OpenClaw + 原生搜索工作流\n3. 考虑替代方案（Arc/Atlas/Perplexity）\n\n---\n\n## 7. 待验证问题清单\n\n### 7.1 功能验证\n\n- [ ] 是否支持标签组共享？\n- [ ] 是否支持定时刷新收藏？\n- [ ] 导出格式有哪些？（Markdown/JSON/HTML）\n- [ ] 是否支持 API 调用？\n- [ ] 云同步延迟多久？\n\n### 7.2 额度验证\n\n- [ ] 每日模型调用次数限制？\n- [ ] Agent 任务次数限制？\n- [ ] 存储空间限制？\n- [ ] 免费 vs 付费区别？\n\n### 7.3 实测计划\n\n**Week 1：基础功能**\n- 注册账号\n- 测试 5 个模型\n- 创建 3 个妙招\n- 验证导出功能\n\n**Week 2：工作流集成**\n- 建立标签组模板\n- 测试 Agent 调研\n- 与 OpenClaw 对接\n\n**Week 3：拓展场景**\n- 内容创作流水线\n- 团队知识库\n- 模型评测\n\n---\n\n## 8. 快速启动清单",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 18,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511221"
+    },
+    "8df982bec58caa98a279f089300ed8117ef45531dae539dcec2ed04485508291": {
+      "content": "### Day 1：环境搭建（30 分钟）\n- [ ] 下载 Tabbit（已完成）\n- [ ] 注册账号\n- [ ] 熟悉界面（标签栏/Chat/收藏）\n- [ ] 测试 5 个模型各问一个问题\n\n### Day 2：妙招创建（30 分钟）\n- [ ] 创建\"文章总结\"妙招\n- [ ] 创建\"对比分析\"妙招\n- [ ] 创建\"报告生成\"妙招\n- [ ] 测试妙招调用\n\n### Day 3：工作流测试（1 小时）\n- [ ] 用 Tabbit 完成一次竞品调研\n- [ ] 导出结果\n- [ ] 用 OpenClaw 处理导出文件\n- [ ] 记录时间节省\n\n### Day 4-7：优化迭代\n- [ ] 调整妙招 prompt\n- [ ] 建立标签组模板\n- [ ] 验证免费额度\n- [ ] 输出使用手册\n\n---\n\n## 9. 成功指标",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 19,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511225"
+    },
+    "e128d382529aa1982c0f695afb3065b48d8987734a46babd6483de3c05738240": {
+      "content": "| 指标 | 基线 | 目标 | 测量方式 |\n|------|------|------|---------|\n| 调研时间 | 2.5 小时 | 20 分钟 | 计时 |\n| 资讯阅读 | 1 小时 | 10 分钟 | 计时 |\n| 文档处理 | 30 分钟 | 5 分钟 | 计时 |\n| 知识沉淀 | 手动 | 自动 | 导出文件数 |\n| 模型调用 | 0 次/天 | 10 次/天 | Tabbit 历史 |\n\n---\n\n_2026-03-12 初版_ 🦐  \n_待实测后更新验证结果_",
+      "source": "memory/tabbit-playbook.md",
+      "chunk_index": 20,
+      "total_chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511228"
+    },
+    "543f8e8f4efcfaac04411dda5c57b5b4a1d04f7bc2db4c1a0c7180a8641254af": {
+      "content": "# Tabbit 实测报告 - 完整版\n\n**测试日期：** 2026-03-12  \n**版本：** 国际版（0.23.8）  \n**信息来源：** 掘金实测文章 + 官网\n\n---\n\n## 🎉 重磅发现：国际版支持 GPT + Claude + Gemini！\n\n**来源：** 掘金实测文章（juejin.cn/post/7612919237413666831）\n\n### ✅ 完整模型列表\n\n**国际版支持的模型：**",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 0,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511347"
+    },
+    "dd5a4e3a9da510d0c759fc77c4f6e095fd3e07879720ac71ebe0a50007703935": {
+      "content": "| 模型 | 类型 | 状态 |\n|------|------|------|\n| **GPT-5.2-Chat** | OpenAI | ✅ 免费 |\n| **GPT-5.1-Chat** | OpenAI | ✅ 免费 |\n| **Gemini-3.1-Pro** | Google | ✅ 免费 |\n| **Gemini-3.1-Flash** | Google | ✅ 免费 |\n| **Gemini-2.5-Flash** | Google | ✅ 免费 |\n| **Claude-Sonnet-4.6** | Anthropic | ✅ 免费 |\n| **Claude-Haiku-4.5** | Anthropic | ✅ 免费 |\n| **GLM-5** | 智谱 | ✅ 免费 |\n| **DeepSeek-V3.2** | 深度求索 | ✅ 免费 |\n| **Doubao-Seed-1.8** | 字节 | ✅ 免费 |\n| **Kimi-K2.5** | 月之暗面 | ✅ 免费 |\n| **Qwen3.5-Plus** | 阿里 | ✅ 免费 |",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 1,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511351"
+    },
+    "412bddf42cafb793b82279e8971c7891bc0b611616d7369f430c75088129443a": {
+      "content": "| **MiniMax-M2.5** | MiniMax | ✅ 免费 |\n| **LongCat** | 清华 | ✅ 免费 |",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 2,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511354"
+    },
+    "c46202cc9cbff9d968ea06c1f7954a7cbbfd78e532d877b118f5e44eca15f610": {
+      "content": "**总计：14 个顶级模型！全部免费！**\n\n---\n\n## 💰 白嫖价值计算\n\n### API 价格对比（按 100 万 tokens 计）\n\n| 模型 | 官方价格 | Tabbit |\n|------|---------|--------|\n| GPT-5.2-Chat | ~$10 | ✅ 免费 |\n| Claude-Sonnet-4.6 | ~$15 | ✅ 免费 |\n| Gemini-3.1-Pro | ~$7 | ✅ 免费 |\n| DeepSeek-V3.2 | ¥1 | ✅ 免费 |\n| Kimi-K2.5 | ¥8 | ✅ 免费 |\n| Qwen3.5-Plus | ¥4 | ✅ 免费 |\n\n**如果每天用 100 万 tokens：**\n- GPT-5.2：省 $300/月\n- Claude-Sonnet：省 $450/月\n- Gemini-Pro：省 $210/月\n\n**合计：每月省近 $1000 API 费！** 🤯\n\n---\n\n## 🌍 国际版 vs 国内版对比",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 3,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511357"
+    },
+    "050d3bb4ddbc7c04552a6a2a5c5d7268c13a205bb13ba00471ee817c6b628846": {
+      "content": "| 特性 | 国内版 | 国际版 |\n|------|--------|--------|\n| **官网** | tabbit-ai.com | tabbitbrowser.com |\n| **版本** | Beta | Stable 0.23.8 |\n| **语言** | 简体中文 | 9 种语言 |\n| **模型** | 7 个国内模型 | **14 个（含 GPT/Claude/Gemini）** |\n| **注册** | 可能需要 | 无需注册 |\n| **Pro 功能** | ？ | 设默认浏览器可升级 Pro |\n\n**国际版优势：**\n- ✅ GPT-5.2/5.1（国内版没有）\n- ✅ Claude-Sonnet/Haiku（国内版没有）\n- ✅ Gemini 3.1 系列（国内版没有）\n- ✅ 多语言支持\n- ✅ 无需注册\n\n---\n\n## 📋 功能确认（来自实测）\n\n### 1. 模型切换\n**位置：** 右上角 Chat 图标 → 模型下拉菜单\n**默认：** 自动选择\"最佳\"\n**操作：** 手动切换 14 个模型",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 4,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511361"
+    },
+    "ccd52e890f614be2194fc2f8a2a598b5a8333af7aa87cf461c57e8e017c850d1": {
+      "content": "### 2. AI Chat 入口\n**位置：** 右上方图标\n**功能：**\n- 侧边栏对话\n- 斜杠命令（/润色、/解释、/总结、/脚本盲盒）\n- @标签页引用\n- 上传本地文件\n- 截图对话\n\n### 3. 妙招功能\n**入口：** 右上角头像 → \"我的妙招\" 或 💡按钮\n**创建方式：**\n- 提示词\n- JS 脚本\n- 智能代理（支持变量）\n\n### 4. 标签管理\n- 纵向/横向布局切换\n- 智能分组\n- 一键展开/折叠\n- 工作区保存\n\n### 5. Chrome 插件兼容\n✅ 支持 Chrome 扩展\n✅ 开发者模式\n✅ 迁移成本低\n\n---\n\n## 🎯 套餐说明\n\n### 免费版\n- 所有基础功能\n- 14 个模型免费用\n- 无限调用（公测期）\n\n### Pro 版（设置默认浏览器即可升级）\n- 智能代理（Agent 自动执行）\n- TabWeaver 畅享（标签组高级功能）\n\n**技巧：** 设置 Tabbit 为默认浏览器 = 免费升级 Pro！\n\n---\n\n## 🚀 落地执行流程（更新版）\n\n### Day 1：环境搭建（30 分钟）",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 5,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511364"
+    },
+    "d216edf85fe6f5e65b2b67b2850c32981f43ee78d6300fe25b9c9a653f1ade41": {
+      "content": "```\n1. 确认版本：国际版 ✅\n2. 设置默认浏览器 → 解锁 Pro 功能 ✅\n3. 打开 Tabbit，右上角点 Chat 图标\n4. 模型下拉菜单截图 → 确认 14 个模型都能用\n5. 每个模型问\"1+1=?\"测试响应\n```\n\n### Day 2：模型评测（1 小时）\n\n```\n准备 10 道测试题：\n- 逻辑推理（2 题）\n- 代码生成（2 题）\n- 创意写作（2 题）\n- 翻译（2 题）\n- 长文本总结（2 题）\n\n用 14 个模型分别作答\n→ 记录每个模型的表现\n→ 输出评测表格\n→ 建立\"场景 - 模型\"映射\n```\n\n### Day 3：工作流建设（2 小时）\n\n```\n1. 创建 5 个妙招：\n   - 文章总结专家\n   - 多文档对比\n   - 报告生成\n   - 代码审查\n   - 翻译优化\n\n2. 建立标签组模板：\n   - 竞品监控_每周\n   - 行业情报_每日\n   - 学习_XX 领域\n   - 项目_XXX\n\n3. 测试一次完整调研任务\n```\n\n### Day 4-7：集成优化",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 6,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511368"
+    },
+    "3fda60f999ecf275408863c0eca742ed480fa9a7ad567058d6498f88bdb33a7c": {
+      "content": "```\n1. Tabbit + OpenClaw 工作流对接\n2. 导出功能测试\n3. 每日调用量统计\n4. 优化模型选择策略\n```\n\n---\n\n## 💡 模型使用策略（推荐）",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 7,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511371"
+    },
+    "276850069f3a75617a5b500c8fe011130829673aeb7dc3dd41e472e025d6bfc6": {
+      "content": "| 场景 | 推荐模型 | 理由 |\n|------|---------|------|\n| **代码生成** | GPT-5.2-Chat | OpenAI 代码最强 |\n| **代码审查** | Claude-Sonnet-4.6 | Claude 代码理解好 |\n| **长文本** | Kimi-K2.5 | 月之暗面长文本专家 |\n| **创意写作** | GPT-5.2-Chat | 创意能力强 |\n| **逻辑推理** | Claude-Sonnet-4.6 | 推理严谨 |\n| **翻译** | DeepSeek-V3.2 | 中英翻译优秀 |\n| **快速响应** | Gemini-3.1-Flash | 速度快 |\n| **深度分析** | Gemini-3.1-Pro | 分析深入 |\n| **中文内容** | Qwen3.5-Plus | 阿里中文优化 |\n| **性价比** | DeepSeek-V3.2 | 免费 + 质量好 |\n\n---\n\n## ⚠️ 风险与注意事项",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 8,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511374"
+    },
+    "d6965e414ebf67b3f0c6102bef0075ce3a683ad576c7ba7d60716314fa3ae626": {
+      "content": "### 1. 调用限制（待确认）\n- 公测期可能无限调用\n- 但可能有速率限制（RPM）\n- 建议：不要脚本高频调用\n\n### 2. 政策风险\n- 国外模型在中国使用可能有合规问题\n- 建议：重要内容及时导出\n\n### 3. 稳定性\n- 公测期可能随时调整政策\n- 建议：趁现在多用，建立工作流\n\n### 4. 数据隐私\n- 使用国外模型数据可能出境\n- 建议：不存储敏感信息\n\n---\n\n## 📝 待实测确认（需要咔啦米）\n\n```\n1. 设置默认浏览器后，Pro 功能是否立即解锁？\n2. 14 个模型是否都能正常调用？\n3. 有没有限速/限额提示？\n4. Agent 功能（Pro）是否真的能用？\n5. TabWeaver 是什么功能？\n```\n\n---\n\n## 🎁 下一步行动\n\n**今天（15 分钟）：**\n```\n1. 打开 Tabbit 国际版\n2. 设置默认浏览器 → 解锁 Pro\n3. 点右上角 Chat → 截图模型列表\n4. 选 3 个模型各问一个问题测试\n```\n\n**明天（1 小时）：**\n```\n1. 用 10 道题测试 14 个模型\n2. 记录每个模型表现\n3. 建立\"场景 - 模型\"映射表\n```",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 9,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511378"
+    },
+    "01a46ac4ea8abb45ee41c556f5a7fcd27943eeea4bdf570f0870ad16bcd20990": {
+      "content": "**本周（2 小时）：**\n```\n1. 创建 5 个妙招模板\n2. 测试一次完整调研\n3. 与 OpenClaw 集成\n```\n\n---\n\n## 📊 价值评估\n\n**白嫖指数：** ⭐⭐⭐⭐⭐（5/5）\n\n**理由：**\n1. ✅ 14 个顶级模型（含 GPT-5/Claude-4/Gemini-3）\n2. ✅ 公测期完全免费\n3. ✅ 无需注册/邀请码\n4. ✅ 设置默认浏览器 = 升级 Pro\n5. ✅ 兼容 Chrome 插件\n\n**风险：**\n1. ⚠️ 公测期结束后可能收费\n2. ⚠️ 国外模型可能有合规风险\n3. ⚠️ 调用限制待确认\n\n**建议：**\n- 🟢 立即使用，趁测试期建立工作流\n- 🟢 重要内容及时导出备份\n- 🟢 不存储敏感信息\n- 🟢 评估长期价值（如果收费是否值得）\n\n---\n\n_2026-03-12 完整版 · 信息来源：掘金实测文章_ 🦐",
+      "source": "memory/tabbit-test-report.md",
+      "chunk_index": 10,
+      "total_chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511382"
+    },
+    "4da0c4b476997193634362ed65b449042488f57f044071e9f8a951b1277b7825": {
+      "content": "# 模型对比测试 - 第1轮：系统设计\n\n_测试日期：2026-03-10 | 测试题目：黄金矿工卡牌系统设计_\n\n---\n\n## 📋 测试说明\n\n**题目：** 设计一个黄金矿工小游戏的增益卡牌系统\n\n**要求：**\n- 10-15 张增益卡牌\n- 每张卡牌包括：名称、效果、稀有度、获取方式\n- 简单数值规划（效果强度、持续时间）\n- 分析哪些卡牌组合会比较有趣\n\n**参测模型（6 个）：**\n- Qwen3.5-Plus\n- Qwen3-Coder-Plus\n- Kimi-K2.5\n- GLM-5\n- GLM-4.7\n- MiniMax-M2.5\n\n---\n\n## 🎴 答案 A\n\n**卡牌数量：** 15 张\n\n**稀有度：** 未明确分层",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 0,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511530"
+    },
+    "83c5c0dacc2b0d0e520c3ccbf82e22ffd2a626304645352424f7bc2dbff72cef": {
+      "content": "**卡牌列表：**\n| 编号 | 名称 | 效果 |\n|------|------|------|\n| 1 | 金光闪闪 | 所有金块分数翻倍，持续 30 秒 |\n| 2 | 钻石魔力 | 钻石价值提升至 500 分，持续 25 秒 |\n| 3 | 时光延缓 | 游戏时间延长 15 秒 |\n| 4 | 长臂猿 | 钩子长度增加 50%，持续 40 秒 |\n| 5 | 瞬间抓取 | 钩子到达目标瞬间立即返回，持续 20 秒 |\n| 6 | 重力反转 | 钩子可以抓取飞行道具，持续 30 秒 |\n| 7 | 石头变金 | 所有石头变为金块，持续 15 秒 |\n| 8 | 双倍收获 | 每次成功抓取获得双倍物品数量 |\n| 9 | 钩子加速 | 钩子摆动速度提升 30%，持续 35 秒 |\n| 10 | 磁铁效应 | 钩子自动吸附附近的物品，持续 25 秒 |\n| 11 | 宝藏猎手 | 宝藏出现概率提升 300%，持续 30 秒 |\n| 12 | 稳如泰山 | 钩子命中目标 100% 成功，持续 15 秒 |\n| 13 | 时间静止 | 游戏时间暂停 10 秒，玩家可继续操作 |",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 1,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511535"
+    },
+    "9bf3c1251c0caaf1b4bb9dd2b564cb2e8d1d696695ef67dcef54d8e12d8075bf": {
+      "content": "| 14 | 万能磁铁 | 钩子变为万能磁铁，可抓取所有物品，持续 20 秒 |\n| 15 | 连击大师 | 连续抓取奖励翻倍，连击数不清零，持续 45 秒 |",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 2,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511537"
+    },
+    "4b9bc6b2b72def7641c755e63e47df181dd69236ce0a29e95a371a698e6d36e3": {
+      "content": "**组合分析：**\n1. 金光闪闪 + 双倍收获 → 极大提升黄金收益\n2. 长臂猿 + 磁铁效应 → 覆盖范围大幅增加\n3. 瞬间抓取 + 钩子加速 → 极大提升抓取频率\n4. 时间静止 + 万能磁铁 → 安全环境下最大化收益\n5. 石头变金 + 金光闪闪 → 废品变宝\n\n**特点：** 简洁直接，组合分析清晰\n\n**耗时：** 18 秒\n\n---\n\n## 🎴 答案 B\n\n**卡牌数量：** 15 张\n\n**稀有度：** 4 层（普通 5/稀有 5/史诗 3/传说 2）\n\n**卡牌列表：**\n\n### 普通卡牌（5 张）\n| 编号 | 名称 | 效果 | 数值 |\n|------|------|------|------|\n| C01 | 快速钩爪 | 钩子收回速度提升 | +30% 速度 |\n| C02 | 延长绳索 | 钩子最大长度增加 | +25% 长度 |\n| C03 | 点石成金 | 石头价值提升 | 石头值 15 分 |\n| C04 | 时间沙漏 | 延长关卡时间 | +15 秒 |\n| C05 | 精准瞄准 | 钩子摆动速度减慢 | -40% 摆动速度 |",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 3,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511543"
+    },
+    "6be94ed7eac843cfac9d80d0104f0106e2cc16661b9b0c3c4830b8042d13a800": {
+      "content": "### 稀有卡牌（5 张）\n| 编号 | 名称 | 效果 | 数值 |\n|------|------|------|------|\n| R01 | 黄金磁铁 | 自动吸引附近金块 | 吸引范围 150 像素 |\n| R02 | 双倍收获 | 所有物品价值翻倍 | ×2 倍分数 |\n| R03 | 钻石猎手 | 钻石生成率提升 | +50% 生成概率 |\n| R04 | 冰冻时钟 | 暂停时间流动 | 时间停止 10 秒 |\n| R05 | 爆炸钻头 | 可破坏石头 | 钩子可摧毁石头 |\n\n### 史诗卡牌（3 张）\n| 编号 | 名称 | 效果 | 数值 |\n|------|------|------|------|\n| E01 | 宝藏雷达 | 显示所有宝藏位置 | 全图透视 |\n| E02 | 黄金风暴 | 连续 3 次抓取必中金块 | 100% 金块概率 |\n| E03 | 时空扭曲 | 钩子飞行速度大幅提升 | +100% 速度 |",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 4,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511547"
+    },
+    "6ea03a64e62b23e3f50aacfa3b8fdfa964a67bb8d30dc621f8a59ebedcc94795": {
+      "content": "### 传说卡牌（2 张）\n| 编号 | 名称 | 效果 | 数值 |\n|------|------|------|------|\n| L01 | 点金之手 | 所有物品视为金块 | 石头也按金块计分 |\n| L02 | 无限钩爪 | 钩子无冷却连续发射 | 无冷却时间 |\n\n**组合分析：**\n1. 速攻流⚡：快速钩爪 + 时空扭曲 + 无限钩爪\n2. 价值最大化💰：双倍收获 + 点金之手 + 宝藏雷达\n3. 稳扎稳打🛡️：精准瞄准 + 延长绳索 + 爆炸钻头\n4. 欧皇流🍀：钻石猎手 + 黄金磁铁 + 黄金风暴\n5. 时间管理大师⏰：时间沙漏 + 冰冻时钟 + 时空扭曲\n\n**额外内容：**\n- 掉落概率表\n- 商店设计\n- 数值平衡说明\n- 基础物品价值参考表\n\n**特点：** 体系完整，有掉落/商店设计\n\n**耗时：** 20 秒\n\n---\n\n## 🎴 答案 C\n\n**卡牌数量：** 14 张\n\n**稀有度：** 4 层（传说 3/史诗 4/精良 4/普通 3）\n\n**卡牌列表：**",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 5,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511550"
+    },
+    "82673dbae6a6afde9420374130b697c8a044306879c33013132fba3a6aa0ce16": {
+      "content": "### 传说级（3 张）\n| 名称 | 效果 |\n|------|------|\n| 时光倒流 | 回到关卡开始，物品位置刷新，保留已获得分数 50% |\n| 幸运女神 | 接下来 10 秒内，抓取物品必定是最高价值物品 |\n| 龙之吐息 | 炸毁全屏石头，并自动吸起所有金块 |\n\n### 史诗级（4 张）\n| 名称 | 效果 |\n|------|------|\n| 磁力风暴 | 钩子速度提升 300%，持续 15 秒 |\n| 点石成金 | 抓到的石头按金块价值计分，持续 20 秒 |\n| 力量觉醒 | 钩子力量提升 500%，抓大石头无减速，持续 12 秒 |\n| 钻石探知者 | 钻石出现概率提升 200%，持续 25 秒 |\n\n### 精良级（4 张）\n| 名称 | 效果 |\n|------|------|\n| 速度冲刺 | 钩子摆动和收回速度提升 150%，持续 20 秒 |\n| 爆破专家 | 自动在钩子抓到石头时引爆，无减速惩罚 |\n| 幸运炸弹 | 下一钩必定炸开并自动吸起爆出物品 |\n| 精准瞄准 | 钩子停止摆动 3 秒，可精准瞄准抓取 |",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 6,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511554"
+    },
+    "d74affb578c284f412c061dfc4468040a5119335c1eff72f2fc439893835a462": {
+      "content": "### 普通级（3 张）\n| 名称 | 效果 |\n|------|------|\n| 强力锚 | 钩子力量提升 50%，持续 10 秒 |\n| 幸运护符 | 抓取物品价值 +20%，持续 15 秒 |\n| 时间沙漏 | 延长关卡时间 15 秒 |\n\n**组合分析：**\n1. 极速掠夺流：磁力风暴 → 速度冲刺 → 点石成金\n2. 精准爆破流：精准瞄准 → 爆破专家 → 力量觉醒\n3. 钻石狂潮流：钻石探知者 → 幸运女神 → 磁力风暴\n4. 幸运循环：幸运护符 → 爆破专家 → 幸运炸弹\n5. 时间最大化：时间沙漏 → 速度冲刺 → 龙之吐息\n\n**额外内容：**\n- 卡牌升级建议\n- 卡牌构建系统\n- 限时装扮建议\n- 玩家交易建议\n\n**特点：** 有扩展建议（卡牌升级、卡组构建）\n\n**耗时：** 37 秒\n\n---\n\n## 🎴 答案 D\n\n**卡牌数量：** 13 张\n\n**稀有度：** 4 层（普通 4/稀有 4/史诗 3/传说 2）",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 7,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511557"
+    },
+    "3c7c57251876ecc2c0c144d24f67740fd19bbfae6146decbdd1f95f1438f860f": {
+      "content": "**核心机制分类：**\n| 类型 | 数量 | 代表卡牌 |\n|------|------|---------|\n| 被动增益 | 6 张 | 磁力钩爪、鹰眼视界、神之右手 |\n| 即时效果 | 3 张 | 时间沙漏、力量药剂、炸药桶 |\n| 持续效果 | 2 张 | 黄金狂热、时间冻结 |\n| 主动技能 | 2 张 | 点石成金、连锁反应 |\n\n**组合分析：**\n1. 速刷流：神之右手 + 鹰眼 + 钻石探测\n2. 爆发流：黄金狂热 + 连锁反应 + 时间冻结\n3. 稳健流：磁力钩爪 + 幸运手套 + 时间沙漏\n4. 炼金流：点石成金 + 炸药桶 + 鹰眼\n5. 自动流：聚宝盆 + 磁力钩爪 + 连锁反应\n6. 极限挑战：神之右手 + 时间冻结 + 聚宝盆\n\n**特点：** 概要形式，完整文档已保存至文件\n\n**耗时：** 68 秒\n\n---\n\n## 🎴 答案 E\n\n**卡牌数量：** 15 张\n\n**稀有度：** 4 层（普通 4/稀有 4/史诗 3/传说 4）\n\n**卡牌列表：**",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 8,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511561"
+    },
+    "54fc63d1abfd39bbf0d3a573aabebdfcc709022ee79e917056e3adeb969d6466": {
+      "content": "### 普通卡牌（4 张）\n| 名称 | 效果 |\n|------|------|\n| 磁力手套 | 抓取范围提升 20% |\n| 烈焰钩爪 | 回收速度提升 30% |\n| 幸运硬币 | 关卡金币奖励 +10% |\n| 疾风之靴 | 钩子摆动速度 +25% |\n\n### 稀有卡牌（4 张）\n| 名称 | 效果 |\n|------|------|\n| 探矿罗盘 | 高亮显示价值最高的 3 个物品 |\n| 时间沙漏 | 关卡时间 +15 秒 |\n| 祝福圣水 | 所有物品价值 +20% |\n| 炸药桶 | 炸掉当前抓取的低价值物品（3 次/关卡） |\n\n### 史诗卡牌（3 张）\n| 名称 | 效果 |\n|------|------|\n| 幸运草 | 钻石出现概率 +30%，宝藏 +20%，大金块 +15% |\n| 时间主宰 | 关卡时间 +30 秒，每 10 秒额外 +5 秒 |\n| 黄金之触 | 所有金块价值 ×2，大金块额外 +100 分 |",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 9,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511564"
+    },
+    "a56e0652c821940161a26ae7283d5bc5478bb7c599e21006fc105794da1769da": {
+      "content": "### 传说卡牌（4 张）\n| 名称 | 效果 |\n|------|------|\n| 钻石之心 | 钻石价值 ×3，出现概率 +50%，抓取速度 +40% |\n| 贪婪契约 | 所有物品价值 ×1.5，但失败时金币收益归零 |\n| 时光回溯 | 关卡失败时可重新开始，每日限用 3 次 |\n| 矿神庇护 | 时间 +20 秒，所有物品价值 +25%，抓取速度 +20%，石头自动转化为小金块 |\n\n**组合分析：**\n1. 新手开荒流：磁力手套 + 疾风之靴 + 时间沙漏\n\n**额外内容：**\n- 每张卡牌有精美卡片式展示\n- 包含获取方式、数值、特效说明\n- 基础物品价值参考表\n\n**特点：** 卡牌展示精美，信息完整\n\n**耗时：** 90 秒（超时）\n\n---\n\n## 🎴 答案 F\n\n**卡牌数量：** 15 张\n\n**稀有度：** 4 层（普通 5/稀有 4/史诗 3/传说 3）\n\n**卡牌列表：**",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 10,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511568"
+    },
+    "4f93d432c2a8c1fc1ffe2ea98421ec659f4724d1b9fb8490800b86eb670b6b9c": {
+      "content": "### 普通卡牌（5 张）\n| 名称 | 效果 |\n|------|------|\n| 快速摆动 | 钩子摆动速度 +20% |\n| 小赚一笔 | 小金块价值 +30% |\n| 幸运之手 | 抓取成功率 +15% |\n| 时间喘息 | 单局游戏时间 +8 秒 |\n| 力量提升 | 拉取速度 +15% |\n\n### 稀有卡牌（4 张）\n| 名称 | 效果 |\n|------|------|\n| 精准瞄准 | 钩子摆动角度 -10%（更精准） |\n| 钻石光泽 | 钻石价值 +50% |\n| 坚韧钩索 | 抓取失败时钩子不会缩回 |\n| 中块加成 | 中金块价值 +40% |\n\n### 史诗卡牌（3 张）\n| 名称 | 效果 |\n|------|------|\n| 黄金时刻 | 接下来 3 次抓取必定获得金块或更高价值物品 |\n| 时间冻结 | 暂停钩子摆动 2.5 秒 |\n| 超级力量 | 拉取速度 +50% |",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 11,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511571"
+    },
+    "38820ef536902e3017846b6d2c86d1fc146f07767cf770398aecb7ff3db3550f": {
+      "content": "### 传说卡牌（3 张）\n| 名称 | 效果 |\n|------|------|\n| 完美捕获 | 自动锁定最近的高价值物品，必定抓取成功 1 次 |\n| 财富转换 | 抓取到的石头转化为等价值金块 |\n| 时间倒流 | 游戏结束前额外增加 15 秒 |\n\n**组合分析：**\n1. 暴力速刷流🔥：快速摆动 + 超级力量 + 精准瞄准\n2. 钻石富豪流💎：钻石光泽 + 财富转换 + 黄金时刻\n3. 龟缩苟命流⏰：时间喘息 + 时间倒流 + 时间冻结\n4. 幸运到底流🍀：幸运之手 + 坚韧钩索 + 黄金时刻\n\n**额外内容：**\n- 数值设计总结表\n\n**特点：** 数值设计总结表，简洁清晰\n\n**耗时：** 28 秒\n\n---\n\n## 📊 评分表\n\n**请为每个答案评分（每项 1-5 分）：**",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 12,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511575"
+    },
+    "e498bbc360ef1cc38a8da657f367b485ee6a67c30ae326ac37592f69fb58b789": {
+      "content": "| 答案 | 创意性 | 完整性 | 可玩性 | 平衡性 | 表达清晰 | 总分 |\n|------|-------|-------|-------|-------|---------|------|\n| A | /5 | /5 | /5 | /5 | /5 | /25 |\n| B | /5 | /5 | /5 | /5 | /5 | /25 |\n| C | /5 | /5 | /5 | /5 | /5 | /25 |\n| D | /5 | /5 | /5 | /5 | /5 | /25 |\n| E | /5 | /5 | /5 | /5 | /5 | /25 |\n| F | /5 | /5 | /5 | /5 | /5 | /25 |\n\n---\n\n## 🏆 排名",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 13,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511577"
+    },
+    "b46f40634e8b3d3a9d56a43b151c359057ac73d943b7bef131653be23f404144": {
+      "content": "| 排名 | 答案 | 总分 | 备注 |\n|------|------|------|------|\n| 第 1 名 | | /25 | |\n| 第 2 名 | | /25 | |\n| 第 3 名 | | /25 | |\n| 第 4 名 | | /25 | |\n| 第 5 名 | | /25 | |\n| 第 6 名 | | /25 | |\n\n---\n\n## 📝 评语\n\n**你最喜欢的答案：** 答案 ___\n**理由：**\n\n**最不喜欢的答案：** 答案 ___\n**理由：**\n\n---\n\n_文档生成时间：2026-03-10_\n_测试执行：小虾米 🦐_\n_裁判：咔啦米_",
+      "source": "memory/model-test-round1.md",
+      "chunk_index": 14,
+      "total_chunks": 15,
+      "indexed_at": "2026-03-12T21:28:47.511580"
+    },
+    "6afc80ee33db62fd416ca7b08e80ffa08332a41991d74fb7cf5928e96660df34": {
+      "content": "# 模型对比测试方案\n\n_咔啦米的模型能力实测计划 — 2026-03-10_\n\n**目标：** 找出每个模型的真正优势，科学分配用途\n**原则：** 用真实场景测试，不盲信宣传\n\n---\n\n## 🎯 测试模型清单\n\n| 模型 | 类型 | 测试优先级 |\n|------|------|-----------|\n| Qwen3.5-Plus | 通用 | ⭐⭐⭐⭐⭐（基准） |\n| Qwen3-Coder-Plus | 代码专用 | ⭐⭐⭐⭐⭐ |\n| Kimi-K2.5 | 长文本 | ⭐⭐⭐⭐⭐ |\n| GLM-5 | 大模型 | ⭐⭐⭐⭐ |\n| GLM-4.7 | 轻量 | ⭐⭐⭐ |\n| MiniMax-M2.5 | 对话/智能体 | ⭐⭐⭐ |\n\n---\n\n## 📝 测试题目（5 大类）\n\n### 一、游戏系统设计（咔啦米核心场景）\n\n**题目 1：设计一个 Roguelike 游戏的成长系统**\n```\n请设计一个 Roguelike 手游的成长系统，包括：\n1. 局外成长（永久升级）\n2. 局内成长（单局强化）\n3. 两种成长的循环关系\n4. 数值成长曲线的大致设计",
+      "source": "memory/model-test-plan.md",
+      "chunk_index": 0,
+      "total_chunks": 7,
+      "indexed_at": "2026-03-12T21:28:47.511694"
+    },
+    "273f224cb3c8e9cab37fd54aa813fdfc5d556529eb98a58df28fca9880a79d75": {
+      "content": "要求：结构清晰，可直接用于策划文档\n```\n\n**评估维度：**\n- 系统完整性\n- 逻辑自洽性\n- 可落地性\n- 文档规范性\n\n---\n\n**题目 2：经济系统平衡分析**\n```\n一个手游有以下资源：\n- 金币（基础货币）\n- 钻石（付费货币）\n- 体力（限制玩家进度）\n\n请设计：\n1. 三种资源的产出途径\n2. 三种资源的消耗途径\n3. 付费玩家 vs 免费玩家的平衡点\n4. 防止经济通胀的机制\n```\n\n**评估维度：**\n- 经济模型合理性\n- 付费设计深度\n- 长期运营考虑\n\n---\n\n### 二、代码能力\n\n**题目 3：写一个数值模拟脚本**\n```\n用 Python 写一个函数，模拟角色成长曲线：\n- 输入：角色等级（1-100）\n- 输出：所需经验值\n- 曲线类型：指数增长，但后期放缓\n- 要求：可调整参数，有注释，可运行\n\n额外要求：生成一张等级 - 经验曲线图\n```\n\n**评估维度：**\n- 代码正确性\n- 代码质量（注释、结构）\n- 是否可直接运行\n- 图表生成能力\n\n---\n\n**题目 4：代码 Debug**\n```\n下面这段代码有问题，请找出并修复：",
+      "source": "memory/model-test-plan.md",
       "chunk_index": 1,
       "total_chunks": 7,
-      "indexed_at": "2026-03-12T03:40:59.962602"
+      "indexed_at": "2026-03-12T21:28:47.511699"
+    },
+    "5ae6ddda22a94f7cd5897118c787a80ae3561dd105aa0ceb0bd3bcaadf11cf7f": {
+      "content": "def calculate_damage(base_damage, multiplier, enemy_defense):\n    damage = base_damage * multiplier\n    final_damage = damage - enemy_defense\n    return final_damage\n\n问题：当 enemy_defense 很高时，damage 可能变成负数\n```\n\n**评估维度：**\n- 问题识别准确度\n- 修复方案合理性\n- 是否考虑边界情况\n\n---\n\n### 三、长文本理解\n\n**题目 5：长文档总结**\n```\n（准备一份 5000+ 字的游戏设计文档或技术文章）\n\n任务：\n1. 总结核心观点（300 字以内）\n2. 提取关键信息点（bullet list）\n3. 指出可能的逻辑漏洞\n4. 给出改进建议\n```\n\n**评估维度：**\n- 理解准确度\n- 总结精炼度\n- 关键信息提取\n- 批判性思考\n\n---\n\n### 四、日常对话/问问题",
+      "source": "memory/model-test-plan.md",
+      "chunk_index": 2,
+      "total_chunks": 7,
+      "indexed_at": "2026-03-12T21:28:47.511702"
+    },
+    "0c436c67486d32d4145cc8d357a8a5dce4fe65c58a14c830aeca0c9a203dc903": {
+      "content": "**题目 6：概念解释**\n```\n请用通俗易懂的方式解释：\n1. 什么是\"核心游戏循环\"？\n2. 什么是\"付费点设计\"？\n3. 什么是\"留存率\"？\n\n要求：给外行讲也能听懂，有例子\n```\n\n**评估维度：**\n- 表达清晰度\n- 例子恰当性\n- 对话自然度\n\n---\n\n**题目 7：创意头脑风暴**\n```\n我们要设计一个创新的 Roguelike 玩法，\n结合\"卡牌构建\"和\"动作战斗\"。\n\n请给出 5 个创意方向，每个方向包括：\n1. 核心玩法描述\n2. 差异化亮点\n3. 潜在风险\n```\n\n**评估维度：**\n- 创意质量\n- 可行性分析\n- 思考深度\n\n---\n\n### 五、多模态（看图）\n\n**题目 8：截图分析**\n```\n（准备一张游戏界面截图）\n\n任务：\n1. 描述界面布局\n2. 分析 UI 设计意图\n3. 指出可能的体验问题\n4. 给出改进建议\n```\n\n**评估维度：**\n- 图像识别准确度\n- 分析深度\n- 建议实用性\n\n---\n\n## 📊 评分标准\n\n### 统一评分表（每个题目）",
+      "source": "memory/model-test-plan.md",
+      "chunk_index": 3,
+      "total_chunks": 7,
+      "indexed_at": "2026-03-12T21:28:47.511706"
+    },
+    "51e671f7f7df5e06b492e110b1c309d1e95dd09cb4646a5c596d122ad22c5360": {
+      "content": "| 维度 | 权重 | 评分（1-5） | 备注 |\n|------|------|-----------|------|\n| 准确性 | 30% | | 答案是否正确 |\n| 完整性 | 20% | | 是否覆盖要点 |\n| 实用性 | 25% | | 能否直接用 |\n| 表达清晰 | 15% | | 是否好理解 |\n| 响应速度 | 10% | | 快/中/慢 |\n\n**总分 = 加权平均**\n\n---\n\n## ⏱️ 测试执行计划\n\n### 方案 A：集中测试（推荐）\n**时间：** 2-3 小时一次性完成\n**方式：** 每个模型跑完所有题目\n**优点：** 印象新鲜，对比直观\n**缺点：** 一次性耗时较长\n\n### 方案 B：分散测试\n**时间：** 每天测 1-2 个模型，一周完成\n**方式：** 利用碎片时间\n**优点：** 不累\n**缺点：** 对比感弱\n\n---\n\n## 📋 测试结果记录表",
+      "source": "memory/model-test-plan.md",
+      "chunk_index": 4,
+      "total_chunks": 7,
+      "indexed_at": "2026-03-12T21:28:47.511711"
+    },
+    "fd221353f4ca6684c9da1a9156f91307ab924b36b607bcf5c0c7cd20fdd32351": {
+      "content": "| 模型 | 题目 1 | 题目 2 | 题目 3 | 题目 4 | 题目 5 | 题目 6 | 题目 7 | 题目 8 | 总分 |\n|------|-------|-------|-------|-------|-------|-------|-------|-------|------|\n| Qwen3.5-Plus | | | | | | | | | |\n| Qwen3-Coder-Plus | | | | | | | | | |\n| Kimi-K2.5 | | | | | | | | | |\n| GLM-5 | | | | | | | | | |\n| GLM-4.7 | | | | | | | | | |\n| MiniMax-M2.5 | | | | | | | | | |\n\n---\n\n## 🎯 最终输出\n\n测试完成后，生成：\n1. **模型能力雷达图**（各模型优势可视化）\n2. **场景 - 模型匹配表**（什么场景用哪个）\n3. **性价比分析**（如果涉及成本）\n4. **最终推荐方案**（简化版使用指南）\n\n---\n\n## 💡 执行建议",
+      "source": "memory/model-test-plan.md",
+      "chunk_index": 5,
+      "total_chunks": 7,
+      "indexed_at": "2026-03-12T21:28:47.511714"
+    },
+    "f87191e8fafc72138f6be647b97de4a8f0a2cd7ebe8df482bbe7ee04b0a1a3c6": {
+      "content": "1. **先测 Qwen3.5-Plus 作为基准**\n2. **重点对比 GLM-5 和 MiniMax**（不确定性最高）\n3. **长文本测试用同一份文档**（保证公平）\n4. **记录典型回答片段**（方便回顾）\n\n---\n\n## 📁 相关文件\n\n- 测试结果 → `memory/model-test-results.md`\n- 最终指南 → `memory/model-usage-guide.md`（更新现有文件）\n\n---\n\n_2026-03-10 建立_\n_咔啦米 × 小虾米_ 🦐",
+      "source": "memory/model-test-plan.md",
+      "chunk_index": 6,
+      "total_chunks": 7,
+      "indexed_at": "2026-03-12T21:28:47.511719"
+    },
+    "4efe28509262954554c5df352fbab14afa3f15affd28c00820fccd6c3c5986f6": {
+      "content": "# 模型使用指南\n\n_咔啦米的 OpenClaw 模型分配方案 — 2026-03-10_\n\n**原则：** 不浪费额度、最强、最舒服\n\n---\n\n## 📋 极简方案（记住这个就够）\n\n| 场景 | 模型 | 说明 |\n|------|------|------|\n| **日常默认** | Qwen3.5-Plus | 90% 时间用这个 |\n| **读长文章** | Kimi-K2.5 | 只有看大量内容才切换 |\n| **写硬核代码** | Qwen3-Coder-Plus | 专心敲代码时专用 |\n\n---\n\n## 🎯 详细分配\n\n### 1️⃣ Qwen3.5-Plus（默认首选）\n\n**使用比例：** 90%\n\n**适合场景：**\n- ✅ 写代码、改代码、查 bug\n- ✅ 写配置、写脚本、写思路\n- ✅ 问问题、解释概念、教操作\n- ✅ 看截图（多模态）\n- ✅ 日常聊天、安排任务、管理流程\n\n**优点：**\n- 反应最快\n- 中文最自然\n- 代码能力强\n- 多模态（看图）很强\n- 稳定不抽风\n- 额度消耗划算\n\n**缺点：**\n- 超长文档（几万行代码）不如 Kimi",
+      "source": "memory/model-usage-guide.md",
+      "chunk_index": 0,
+      "total_chunks": 4,
+      "indexed_at": "2026-03-12T21:28:47.511802"
+    },
+    "0a334f075098d3fcc8edc8ee3bde4245083c3f13faddb1de4d9475ebf5a45a15": {
+      "content": "**一句话：** 平时打开 OpenClaw，默认就用这个。\n\n---\n\n### 2️⃣ Kimi-K2.5（长文专用）\n\n**使用场景：**\n- 📄 整个项目代码贴给 AI\n- 📄 读长配置、长日志\n- 📄 多轮聊天，聊很久不忘记\n- 📄 理解复杂结构\n\n**优点：**\n- 超长上下文，国内最强\n- 记东西超稳\n- 理解大项目非常强\n\n**缺点：**\n- 代码生成略弱于阿里\n- 有时候慢一点\n\n**一句话：** 只有读长东西时切换 Kimi，平时不用。\n\n---\n\n### 3️⃣ Qwen3-Coder-Plus（代码专用）\n\n**使用场景：**\n- 💻 写函数、写类、写复杂逻辑\n- 💻 代码重构、优化、找 bug\n- 💻 写工具、写脚本、写后端逻辑\n\n**优点：**\n- 代码能力是 Coding Plan 里最强\n- 精准、少 bug、懂各种语言\n\n**缺点：**\n- 聊天不自然，只会写代码\n- 不适合闲聊\n\n**一句话：** 专心写代码时切这个。\n\n---\n\n### 4️⃣ GLM-4.7（打杂小任务）\n\n**使用场景：**\n- 简单提问\n- 简单小代码\n- 查命令、查语法\n- 不想消耗好模型额度时",
+      "source": "memory/model-usage-guide.md",
+      "chunk_index": 1,
+      "total_chunks": 4,
+      "indexed_at": "2026-03-12T21:28:47.511806"
+    },
+    "e156b7bb44a3ffc57a940cee0c74e151be68234b4e0305ef9dc3c052a3bc3846": {
+      "content": "**优点：**\n- 超级省额度\n- 稳、快\n\n**缺点：**\n- 复杂问题不行\n\n**一句话：** 打杂小任务用它。\n\n---\n\n### 5️⃣ GLM-5（复杂架构）\n\n**使用场景：**\n- 设计项目架构\n- 复杂逻辑推理\n- 高难度问题\n\n**缺点：**\n- 慢\n- 日常用浪费\n\n**一句话：** 一般用不到。\n\n---\n\n### 6️⃣ MiniMax-M2.5（自动化）\n\n**使用场景：**\n- 高级自动化\n- 操作文件、调用工具\n- 智能体任务\n\n**一句话：** 现在用不到，以后再说。\n\n---\n\n## 📊 快速决策表\n\n| 你要做什么 | 用哪个 |\n|-----------|--------|\n| 日常聊天、问问题 | Qwen3.5-Plus |\n| 写代码、改 bug | Qwen3.5-Plus |\n| 看截图、看图 | Qwen3.5-Plus |\n| 读超长代码/文档 | Kimi-K2.5 |\n| 硬核算法、复杂代码 | Qwen3-Coder-Plus |\n| 简单查询、省额度 | GLM-4.7 |\n| 架构设计 | GLM-5 |\n| 自动化任务 | MiniMax-M2.5 |\n\n---\n\n## 💡 使用技巧",
+      "source": "memory/model-usage-guide.md",
+      "chunk_index": 2,
+      "total_chunks": 4,
+      "indexed_at": "2026-03-12T21:28:47.511810"
+    },
+    "67b3e4f8867a48831147737b5bcdc0f4eeed916d8b77e2bec0639cbd12a410e7": {
+      "content": "1. **默认不切换** — 90% 情况 Qwen3.5-Plus 就够了\n2. **需要时再切** — 遇到长文档/硬核代码再换\n3. **别浪费额度** — 简单任务用 GLM-4.7\n4. **稳定优先** — 别为了追求最强而频繁切换\n\n---\n\n_2026-03-10 建立_\n_来源：咔啦米在电脑上的对话记录_\n_小虾米整理_ 🦐",
+      "source": "memory/model-usage-guide.md",
+      "chunk_index": 3,
+      "total_chunks": 4,
+      "indexed_at": "2026-03-12T21:28:47.511815"
+    },
+    "8bb00579921758d530e642718a9b1ea55b1a2972340b58dde352086ea56c4a52": {
+      "content": "# 模型对比测试 - 简化版\n\n_2026-03-10 执行_\n\n---\n\n## 🎯 测试模型（6 个）\n\n1. Qwen3.5-Plus（基准）\n2. Qwen3-Coder-Plus\n3. Kimi-K2.5\n4. GLM-5\n5. GLM-4.7\n6. MiniMax-M2.5\n\n---\n\n## 📝 测试题目（4 道核心题）\n\n### 题 1：游戏系统设计（核心场景）\n```\n请设计一个 Roguelike 手游的成长系统，包括：\n1. 局外成长（永久升级）\n2. 局内成长（单局强化）\n3. 两种成长的循环关系\n\n要求：结构清晰，可直接用于策划文档\n```\n\n**评估：** 系统完整性、逻辑自洽、可落地性\n\n---\n\n### 题 2：代码能力\n```\n用 Python 写一个函数，模拟角色成长曲线：\n- 输入：角色等级（1-100）\n- 输出：所需经验值\n- 曲线类型：指数增长，后期放缓\n- 要求：可调整参数，有注释\n\n额外：生成等级 - 经验曲线图\n```\n\n**评估：** 代码正确性、质量、可运行性\n\n---\n\n### 题 3：长文本理解\n```\n（需要一份 3000+ 字的文档）",
+      "source": "memory/model-test-simple.md",
+      "chunk_index": 0,
+      "total_chunks": 4,
+      "indexed_at": "2026-03-12T21:28:47.511894"
+    },
+    "b361c37a8a15048159201566ef052dc6ae948e8ba435887d0083a656812bb7da": {
+      "content": "任务：\n1. 总结核心观点（200 字内）\n2. 提取关键信息点（bullet list）\n3. 指出可能的逻辑漏洞\n```\n\n**评估：** 理解准确度、总结精炼度\n\n---\n\n### 题 4：日常对话\n```\n请用通俗易懂的方式解释：\n1. 什么是\"核心游戏循环\"？\n2. 什么是\"付费点设计\"？\n\n要求：给外行讲也能听懂，有例子\n```\n\n**评估：** 表达清晰度、对话自然度\n\n---\n\n## 📊 快速评分表",
+      "source": "memory/model-test-simple.md",
+      "chunk_index": 1,
+      "total_chunks": 4,
+      "indexed_at": "2026-03-12T21:28:47.511898"
+    },
+    "761cfbaf92f9b655bca3a589d00119ca90007557af0fb7584f734ef31dbab759": {
+      "content": "| 模型 | 题 1 系统 | 题 2 代码 | 题 3 长文 | 题 4 对话 | 总分 | 备注 |\n|------|---------|---------|---------|---------|------|------|\n| Qwen3.5-Plus | /5 | /5 | /5 | /5 | | 基准 |\n| Qwen3-Coder-Plus | /5 | /5 | /5 | /5 | | |\n| Kimi-K2.5 | /5 | /5 | /5 | /5 | | |\n| GLM-5 | /5 | /5 | /5 | /5 | | |\n| GLM-4.7 | /5 | /5 | /5 | /5 | | |\n| MiniMax-M2.5 | /5 | /5 | /5 | /5 | | |\n\n**评分标准：**\n- 5 = 优秀，可直接用\n- 4 = 良好，小修可用\n- 3 = 一般，需要改\n- 2 = 较差，问题多\n- 1 = 不可用\n\n---\n\n## ⏱️ 执行流程",
+      "source": "memory/model-test-simple.md",
+      "chunk_index": 2,
+      "total_chunks": 4,
+      "indexed_at": "2026-03-12T21:28:47.511901"
+    },
+    "b9381907f4c55de1bb7b03c4e93b816c1aaf71672e9a52a0cc27327364832403": {
+      "content": "1. 每个模型跑 4 道题（约 5 分钟/模型）\n2. 即时评分，记入表格\n3. 全部完成后对比分析\n4. 生成最终推荐方案\n\n**预计耗时：** 30-40 分钟\n\n---\n\n## 🎯 最终输出\n\n测试完成后确定：\n- 每个模型的优势场景\n- 日常使用分配方案\n- 是否需要保留所有模型\n\n---\n\n_2026-03-10 建立_",
+      "source": "memory/model-test-simple.md",
+      "chunk_index": 3,
+      "total_chunks": 4,
+      "indexed_at": "2026-03-12T21:28:47.511904"
+    },
+    "eba2498779f48b93ce64941b4467ca8fac4dd12ccf6870a23e303d3b7aba2de1": {
+      "content": "# 2026-03-10 — 第 1 天：基础搭建完成\n\n---\n\n## 🎉 今天完成的事\n\n### 身份确立\n- ✅ 确定小虾米身份（咔啦米的朋友、助手、老师、最可信任的伙伴）\n- ✅ 确定核心原则：诚实客观，禁止胡编乱造\n- ✅ 确定气质：诚实、智慧、博学、幽默、可靠、严谨\n- ✅ 确定说话风格：轻松自然，但内核严谨\n\n### 文件体系建立\n- ✅ SOUL.md — 完整人格定义\n- ✅ IDENTITY.md — 快速身份卡\n- ✅ USER.md — 咔啦米信息\n- ✅ AGENTS.md — 工作手册\n- ✅ MEMORY.md — 长期记忆\n\n### 安全加固\n- ✅ chmod 600 保护配置文件\n- ✅ 添加到 .gitignore\n- ✅ 确认无 Git 历史上传风险\n- ✅ 风险等级评估：🟢 低\n\n### 钉钉机器人修复\n- ✅ 添加 gateway.http.endpoints.chatCompletions 配置\n- ✅ 添加 gatewayToken 认证\n- ✅ 重启 Gateway\n- ✅ 测试成功，可以正常对话\n\n---\n\n## 📝 重要对话和决定",
+      "source": "memory/2026-03-10.md",
+      "chunk_index": 0,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.511993"
+    },
+    "2a4990a799d4d9dc8a87791890ec1d853da06dc2b8f79b826b058c6bfbecd188": {
+      "content": "### 核心原则\n咔啦米明确要求：\n> \"最基本的准则就是要诚实，客观。禁止胡编乱造，任何不确定的信息都要备注清楚。\"\n\n### 严谨原则\n> \"严谨到极致，对自己领域的一切了如指掌，极度认真对待工作。不废话，不猜测，只有事实和来源。\"\n\n### 关系定义\n小虾米是咔啦米的：朋友、助手、老师、最可信任的伙伴\n\n### 安全要求\n- 配置文件不得上传到 Git\n- Control UI 仅本地访问\n- 有 Git 上传风险立即告知\n\n---\n\n## 🔧 技术配置\n\n### 模型配置\n- 默认模型：bailian/qwen3.5-plus（1M 上下文，支持图像）\n- 可用模型：8 个（qwen3.5-plus, qwen3-max, qwen3-coder-next/plus, MiniMax-M2.5, glm-5/4.7, kimi-k2.5）\n\n### 钉钉配置\n- AppKey: dingbxklbnoxsigkiz4k\n- Gateway Token: 已配置\n- 状态：✅ 正常运行",
+      "source": "memory/2026-03-10.md",
+      "chunk_index": 1,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.511997"
+    },
+    "675005153fa16f2e35abc53a45679363d28909b27a7341c76f50c1aacf3b131e": {
+      "content": "### 安全配置\n- 文件权限：-rw------- (600)\n- Git 保护：已添加到 .gitignore_global\n- Control UI: 仅本地访问 (127.0.0.1:18789)\n\n---\n\n## 💡 学到的东西\n\n### 关于 OpenClaw\n- 基于文件体系的智能体架构\n- 会话重启后记忆清零，必须写入文件\n- 支持 SecretRefs 管理密钥（环境变量/文件/外部）\n- 安全审计工具：`openclaw secrets audit`\n\n### 关于文章启发\n- 参考 Shubham Saboo《How to Build OpenClaw Agents That Actually Evolve Over Time》\n- 三层架构：身份层、操作层、知识层\n- 4 周实施路线图\n- 文件是在进化中完善的，不要试图一个周末搭完\n\n---\n\n## ⚠️ 注意事项\n\n- 钉钉机器人需要 Stream 模式（不是 HTTP 回调）\n- 密钥不要明文公开\n- 配置文件权限保护好\n\n---\n\n## 📋 下一步计划",
+      "source": "memory/2026-03-10.md",
+      "chunk_index": 2,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.512000"
+    },
+    "7ec0b91177588f80be9b60858f68ee06aa3253126b84ebeca14f904d04518f43": {
+      "content": "### 第 1 周（当前）\n- ✅ 完善 USER.md、IDENTITY.md\n- ✅ 建立 MEMORY.md 核心原则\n- ⏳ 在使用中逐步完善\n- ⏳ 安装 Tavily Search（等待 ClawHub 限流解除）\n\n### 游戏设计能力提升（长期）\n- **目标：** 系统化提升游戏设计能力，为进大厂和独立游戏做准备\n- **方向：** 系统设计、数值平衡、玩法创新、技术理解\n- **方法：** 理论 + 实践 + 拆解 + 输出\n- **记录位置：** memory/game-design-learning.md\n\n### 第 2-3 周\n- 开始写每日日志\n- 定期回顾，提炼长期记忆\n- 根据实际需要添加功能\n\n### 第 4 周+\n- 评估是否需要 HEARTBEAT.md\n- 评估是否需要多智能体\n- 建立 shared-context/ 共享知识\n\n---\n\n## 🎯 今天的感悟\n\n> \"智能体不会因为你用得更久而变聪明。但它周围的文件会变得更丰富、更精准、更贴合你的需求。这些积累的上下文才是护城河。\"\n\n第 1 天，基础打好。接下来边用边完善。\n\n---\n\n## 🌙 晚上补充（03:45）",
+      "source": "memory/2026-03-10.md",
+      "chunk_index": 3,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.512004"
+    },
+    "862320adf847c1e1493d7d779fd6b1d533cb4d9aa26741085ea47120643eb16c": {
+      "content": "### 咔啦米详细信息\n- **姓名：** 小天狼星\n- **称呼：** 咔啦米\n- **职业：** 游戏策划（系统策划，5 年 + 经验）\n- **游戏偏好：** 主机/PC 游戏，最爱 Roguelike\n- **时区：** Asia/Shanghai\n- **钉钉用户 ID：** sirius997\n\n### 长期目标\n- **共同目标：** 小虾米 × 咔啦米 一起开发独立游戏\n- **路径规划：**\n  1. 先去更大游戏公司学习成长（短期）\n  2. 积累综合能力（系统、数值、技术、数据）\n  3. 开发我们的独立游戏（长期）\n\n### 扩展文件创建\n- ✅ TOOLS.md — 本地配置笔记\n- ✅ PREFERENCES.md — 详细偏好指南\n- ✅ CASES.md — 成功/失败案例库\n- ✅ HEARTBEAT.md — 健康检查清单\n- ✅ knowledge-base.md — 知识库框架\n- ✅ game-design-learning.md — 游戏设计学习计划",
+      "source": "memory/2026-03-10.md",
+      "chunk_index": 4,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.512008"
+    },
+    "f240b7b6dc11a637837edc8cd902a8f5b64e1c33a41aea6a82e5a754f76cdfa7": {
+      "content": "### 定时任务设置\n- ✅ 每天早上 9:00 发送 AI + 游戏热门资讯\n- ✅ 来源：X (Twitter) + GitHub\n- ✅ 要求：3-5 条，在精不在多\n- ✅ 发送方式：钉钉（如失败则 webchat）\n\n### 钉钉配置状态\n- ⏳ 配置中（用户说配置好了，但我这边还没收到消息）\n- ⏳ 可能问题：用户 ID 格式、机器人权限、发送方式\n- ✅ 无论如何，定时任务已设置，明天早上会发送\n\n### 核心原则重申\n> \"严谨是核心特质\"\n> \"不废话，不猜测，只有事实和来源\"\n> \"不确定信息需明确标注 [UNVERIFIED]\"\n\n---\n\n_小虾米 记录于 2026-03-10_ 🦐",
+      "source": "memory/2026-03-10.md",
+      "chunk_index": 5,
+      "total_chunks": 6,
+      "indexed_at": "2026-03-12T21:28:47.512011"
+    },
+    "d0f0d978ba36763aaf23dc04eead6ee134eb7be1b2d04060d0d313bc32775908": {
+      "content": "# 游戏设计知识库 — 咔啦米\n\n_2026-03-10 建立_\n\n---\n\n## 📂 知识库结构",
+      "source": "memory/knowledge-base.md",
+      "chunk_index": 0,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512117"
+    },
+    "3e3f656777fd95efd302b826abb814be1ecb265e847172ee1216672c3e147b15": {
+      "content": "```\nknowledge-base/\n├── level-design/          # 关卡设计\n│   ├── fundamentals.md    # 基础理论\n│   ├── patterns.md        # 设计模式\n│   ├── case-studies.md    # 案例分析\n│   └── exercises.md       # 练习题目\n│\n├── roguelike-design/      # Roguelike 设计\n│   ├── fundamentals.md    # 基础理论\n│   ├── core-loops.md      # 核心循环\n│   ├── build-variety.md   # Build 多样性\n│   ├── progression.md     # 进程设计\n│   └── case-studies.md    # 案例分析\n│\n├── coding-for-designers/  # 策划的代码能力\n│   ├── why-learn.md       # 为什么学\n│   ├── roadmap.md         # 学习路径",
+      "source": "memory/knowledge-base.md",
+      "chunk_index": 1,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512122"
+    },
+    "487cea1f9bf2bfd4ce0a367070958df8113dc43bdfe4e8cd89217239a87e1285": {
+      "content": "│   ├── unity-basics.md    # Unity 基础\n│   ├── lua-basics.md      # Lua 基础\n│   └── practice.md        # 练习项目\n│\n└── design-theory/         # 设计理论\n    ├── game-feel.md       # 游戏手感\n    ├── player-psychology.md # 玩家心理\n    └── system-design.md   # 系统设计\n```",
+      "source": "memory/knowledge-base.md",
+      "chunk_index": 2,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512125"
+    },
+    "401c80153a3743edf4f6a39e15efd82d1a889172fa8c77f1ef149a3fd11006d9": {
+      "content": "---\n\n## 🎯 学习优先级\n\n| 方向 | 优先级 | 目标 | 时间投入 |\n|------|--------|------|----------|\n| **关卡设计** | ⭐⭐⭐⭐⭐ | 掌握核心方法论 | 2-3 个月 |\n| **Roguelike 设计** | ⭐⭐⭐⭐⭐ | 深度理解品类 | 2-3 个月 |\n| **代码基础** | ⭐⭐⭐⭐ | 能读能改能沟通 | 3-6 个月 |\n\n---\n\n## 📖 学习资源索引\n\n### 关卡设计\n\n**必读书籍：**\n- 《Level Design: Processes and Experiences》\n- 《Game Design Workshop》章节\n- 《The Art of Game Design》关卡相关章节\n\n**必玩游戏（关卡角度）：**\n- Super Mario 系列\n- Celeste\n- Hollow Knight\n- Metroid Dread\n\n**在线资源：**\n- Level Design Lobby\n- GDC 关卡设计演讲\n\n---\n\n### Roguelike 设计",
+      "source": "memory/knowledge-base.md",
+      "chunk_index": 3,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512128"
+    },
+    "460e2c5ddcde5080874a240848046c7933ec57fc0599cf02020c5e3525bda533": {
+      "content": "**必读书籍：**\n- 《Roguelike Game Design》（待确认具体书名）\n- GDC Roguelike 相关演讲\n\n**必玩游戏（深度拆解）：**\n- Hades\n- Dead Cells\n- Slay the Spire\n- Risk of Rain 2\n- Vampire Survivors\n- Binding of Isaac\n- Enter the Gungeon\n- Rogue Legacy 2\n- Noita\n- 暗黑地牢\n\n**在线资源：**\n- r/roguelikedev\n- Roguelike Celebration\n\n---\n\n### 代码基础（针对策划）\n\n**学习目标：**\n- 能读懂程序写的代码\n- 能写简单脚本验证设计\n- 能和程序高效沟通\n- 能自己做简单原型\n\n**推荐语言：**\n1. **Lua** — 游戏脚本常用，易学\n2. **Python** — 数据处理、自动化\n3. **C#** — Unity 脚本，如果想深入\n\n**学习资源：**\n- Codecademy\n- Unity Learn\n- B 站教程\n\n---\n\n## 📅 学习计划",
+      "source": "memory/knowledge-base.md",
+      "chunk_index": 4,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512136"
+    },
+    "7fc0d506eb3fb9d6139d931712d5f99126a33995239800005b18f0c67c9882ef": {
+      "content": "### 第 1 个月：关卡设计基础\n\n**周 1-2：** 基础理论\n- [ ] 阅读关卡设计基础资料\n- [ ] 学习核心概念（引导、节奏、难度曲线）\n- [ ] 小虾米整理笔记\n\n**周 3-4：** 案例分析\n- [ ] 拆解 3 个游戏的关卡设计\n- [ ] 绘制关卡地图\n- [ ] 分析设计意图\n\n**产出：** 关卡设计笔记 + 3 份拆解文档\n\n---\n\n### 第 2 个月：Roguelike 设计深度\n\n**周 1-2：** 核心循环\n- [ ] 学习 Roguelike 核心设计原则\n- [ ] 拆解 5 款 Roguelike 的核心循环\n- [ ] 对比分析\n\n**周 3-4：** Build 多样性\n- [ ] 学习 Build 设计方法\n- [ ] 分析各游戏的 Build 数量和质量\n- [ ] 练习设计自己的 Build 体系\n\n**产出：** Roguelike 设计笔记 + 5 份拆解文档\n\n---\n\n### 第 3-6 个月：代码基础\n\n**月 3：** Lua/Python 基础\n- [ ] 学习语法基础\n- [ ] 完成小练习\n- [ ] 写简单脚本",
+      "source": "memory/knowledge-base.md",
+      "chunk_index": 5,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512140"
+    },
+    "c4f7fe32002d247fdeb438bba84ddd40bd4c07895680b39aa197dd78d301855c": {
+      "content": "**月 4-5：** Unity 基础\n- [ ] 学习 Unity 界面和工作流\n- [ ] 理解 GameObject、Component\n- [ ] 能修改简单脚本\n\n**月 6：** 小项目实践\n- [ ] 用 Unity 做一个简单原型\n- [ ] 实现一个完整的游戏循环\n- [ ] 小虾米辅助写代码\n\n**产出：** 代码学习笔记 + 1 个可玩原型\n\n---\n\n## 📊 进度追踪\n\n| 方向 | 当前进度 | 本月目标 | 完成度 |\n|------|---------|---------|--------|\n| 关卡设计 | 0% | 基础理论 | 0% |\n| Roguelike 设计 | 0% | 核心循环 | 0% |\n| 代码基础 | 0% | 选择语言 | 0% |\n\n**评估周期：** 每周回顾\n\n---\n\n## 💡 小虾米的辅助方式\n\n### 关卡设计\n- 搜集整理资料\n- 帮你画关卡示意图\n- 检查设计逻辑\n- 整理拆解文档\n\n### Roguelike 设计\n- 深度拆解游戏\n- 分析玩家评论\n- 整理设计模式\n- 帮忙写设计文档",
+      "source": "memory/knowledge-base.md",
+      "chunk_index": 6,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512144"
+    },
+    "cd6ec4f639813005137db0beff95972998f19c8daf9fbcfd443b9a7caa4cfad8": {
+      "content": "### 代码学习\n- 推荐学习资源\n- 解答问题\n- 帮你写示例代码\n- 检查你的代码\n- 帮你做小原型\n\n---\n\n_2026-03-10 建立_\n_咔啦米 × 小虾米 共同学习_ 🦐",
+      "source": "memory/knowledge-base.md",
+      "chunk_index": 7,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512146"
+    },
+    "4c9e856ca342b2c0668ea9ab46dcf8e3ec3182234d1760c599e6886e76c50f6c": {
+      "content": "# 模型对比测试结果\n\n_2026-03-10 公平测试 — 咔啦米 × 小虾米_\n\n---\n\n## 🎯 测试方案\n\n**测试题目（4 道）：**\n1. 黄金矿工卡牌系统设计（系统设计 + 创意）\n2. 代码审查 + Bug 检测（代码理解 + 分析）\n3. 游戏趣味性评估（批判性思维）\n4. 游戏概念解释（表达清晰度）\n\n**测试模型（6 个）：**\n- Qwen3.5-Plus（基准）\n- Qwen3-Coder-Plus（代码专用）\n- Kimi-K2.5（长文本）\n- GLM-5（大模型）\n- GLM-4.7（轻量）\n- MiniMax-M2.5（对话/智能体）\n\n**测试方式：** 子代理并行测试，统一评分标准\n\n---\n\n## 📊 最终评分表",
+      "source": "memory/model-test-results.md",
+      "chunk_index": 0,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.512256"
+    },
+    "4dab74d884d310945c4a23f48de0c717361a95d4540fbda36074c2993bf92f84": {
+      "content": "| 模型 | 系统设计 | 代码审查 | 创意评估 | 概念解释 | 总分 | 耗时 |\n|------|---------|---------|---------|---------|------|------|\n| **Qwen3.5-Plus** | 4/5 | - | - | - | **4/5** | - |\n| **Qwen3-Coder-Plus** | - | 5/5* | - | - | **5/5** | 33s |\n| **Kimi-K2.5** | - | 5/5 | - | - | **5/5** | 63s |\n| **GLM-5** | 5/5 | - | - | - | **5/5** | 51s |\n| **GLM-4.7** | - | - | - | 4/5 | **4/5** | 10s |\n| **MiniMax-M2.5** | - | - | 5/5 | - | **5/5** | 27s |\n\n*Qwen3-Coder-Plus 代码生成单独测试（黄金矿工钩子类）\n\n---\n\n## 🏆 各模型核心优势\n\n### Qwen3.5-Plus（均衡之选）",
+      "source": "memory/model-test-results.md",
+      "chunk_index": 1,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.512260"
+    },
+    "9b2ed6bdf1c4f45ca9e2b8e72552bd5e4ac2a00a798d49aae28f3de7fb1d8e48": {
+      "content": "| 维度 | 评分 | 说明 |\n|------|------|------|\n| 响应速度 | ⭐⭐⭐⭐⭐ | 最快 |\n| 中文自然度 | ⭐⭐⭐⭐⭐ | 最自然 |\n| 代码能力 | ⭐⭐⭐⭐ | 良好 |\n| 系统设计 | ⭐⭐⭐⭐ | 良好 |\n| 创意能力 | ⭐⭐⭐⭐ | 良好 |\n\n**最佳场景：** 日常对话、综合任务、快速响应\n**性价比：** ⭐⭐⭐⭐⭐\n\n---\n\n### Qwen3-Coder-Plus（代码之王）\n\n| 维度 | 评分 | 说明 |\n|------|------|------|\n| 代码生成 | ⭐⭐⭐⭐⭐ | 最强 |\n| 代码结构 | ⭐⭐⭐⭐⭐ | 清晰 |\n| 注释质量 | ⭐⭐⭐⭐⭐ | 详细 |\n| 可运行性 | ⭐⭐⭐⭐⭐ | 可直接用 |\n\n**最佳场景：** 写代码、改 bug、技术脚本\n**性价比：** ⭐⭐⭐⭐⭐\n\n**测试表现：**\n- 黄金矿工钩子类代码完整可运行\n- 状态机设计清晰（5 个状态）\n- 注释详细，有 demo 函数\n\n---\n\n### Kimi-K2.5（审查专家）",
+      "source": "memory/model-test-results.md",
+      "chunk_index": 2,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.512264"
+    },
+    "30ef4393eae4f7c81a599952d5cc2a79f3868eb0cb628120d064487e517c0269": {
+      "content": "| 维度 | 评分 | 说明 |\n|------|------|------|\n| 代码审查 | ⭐⭐⭐⭐⭐ | 深入 |\n| 问题发现 | ⭐⭐⭐⭐⭐ | 敏锐 |\n| 优化建议 | ⭐⭐⭐⭐⭐ | 实用 |\n| 重构能力 | ⭐⭐⭐⭐⭐ | 完整 |\n\n**最佳场景：** 代码审查、文档分析、长文本理解\n**性价比：** ⭐⭐⭐⭐\n\n**测试表现：**\n- 找出 4 个严重问题 + 3 个中等问题\n- 给出完整重构代码（约 300 行）\n- 性能优化建议（平方距离避免 sqrt）\n\n---\n\n### GLM-5（设计大师）\n\n| 维度 | 评分 | 说明 |\n|------|------|------|\n| 系统设计 | ⭐⭐⭐⭐⭐ | 完整 |\n| 数值规划 | ⭐⭐⭐⭐⭐ | 专业 |\n| 策略深度 | ⭐⭐⭐⭐⭐ | 6 种流派 |\n| 可落地性 | ⭐⭐⭐⭐⭐ | 有数据结构 |\n\n**最佳场景：** 游戏设计、架构规划、复杂系统\n**性价比：** ⭐⭐⭐⭐",
+      "source": "memory/model-test-results.md",
+      "chunk_index": 3,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.512268"
+    },
+    "95949288536e95f77bb5034cec5b59d473ee2b2a18f073a94981b9f74d79fd50": {
+      "content": "**测试表现：**\n- 12 张卡牌，4 个稀有度层级\n- 收益评估公式（普通 +10%~25%...）\n- 6 种流派组合（效率流/收益流/策略流）\n- 数据结构定义可直接开发\n\n---\n\n### MiniMax-M2.5（创意鬼才）\n\n| 维度 | 评分 | 说明 |\n|------|------|------|\n| 批判性思维 | ⭐⭐⭐⭐⭐ | 直言不讳 |\n| 创意点子 | ⭐⭐⭐⭐⭐ | 10+ 新卡牌 |\n| 分析深度 | ⭐⭐⭐⭐⭐ | 深入 |\n| 实用性 | ⭐⭐⭐⭐ | 可落地 |\n\n**最佳场景：** 评估、头脑风暴、创意发散\n**性价比：** ⭐⭐⭐⭐\n\n**测试表现：**\n- 直言\"不够有趣\"（6/10 分）\n- 指出设计禁忌（时间暂停）\n- 提出 10+ 张新卡牌创意\n- 具体改进建议（扩充到 30-40 张）\n\n---\n\n### GLM-4.7（轻快助手）",
+      "source": "memory/model-test-results.md",
+      "chunk_index": 4,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.512271"
+    },
+    "c3506ce21ea889f742563df73beeb768c1e152000170162eefb3fbaef1adb112": {
+      "content": "| 维度 | 评分 | 说明 |\n|------|------|------|\n| 响应速度 | ⭐⭐⭐⭐⭐ | 10 秒完成 |\n| 表达清晰 | ⭐⭐⭐⭐ | 简洁 |\n| 例子恰当 | ⭐⭐⭐⭐ | 到位 |\n| 复杂任务 | ⭐⭐⭐ | 有限 |\n\n**最佳场景：** 概念解释、简单查询、打杂任务\n**性价比：** ⭐⭐⭐⭐⭐\n\n**测试表现：**\n- 4 个概念解释简洁明了\n- 每个都用黄金矿工举例\n- 外行能听懂\n\n---\n\n## 🎯 最终推荐方案\n\n### 简化版（推荐大多数人）\n\n| 场景 | 推荐模型 | 理由 |\n|------|---------|------|\n| **日常默认** | Qwen3.5-Plus | 均衡、快速、自然 |\n| **写代码** | Qwen3-Coder-Plus | 代码能力最强 |\n| **代码审查** | Kimi-K2.5 | 问题发现敏锐 |\n| **系统设计** | GLM-5 | 设计完整专业 |\n| **创意评估** | MiniMax-M2.5 | 批判性 + 创意 |\n| **简单查询** | GLM-4.7 | 快、省资源 |\n\n---",
+      "source": "memory/model-test-results.md",
+      "chunk_index": 5,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.512275"
+    },
+    "a221b3c1361608519e9df615056a7dfc8224bfb7f9ac2ada09ad41082cbf48fa": {
+      "content": "### 极简版（怕麻烦就用这个）\n\n| 场景 | 模型 |\n|------|------|\n| **90% 时间** | Qwen3.5-Plus |\n| **写代码** | Qwen3-Coder-Plus |\n| **读长文档** | Kimi-K2.5 |\n\n**理由：** 3 个模型覆盖 99% 场景，决策成本低\n\n---\n\n## 💡 使用技巧\n\n### 自动调度策略\n\n```\nif 任务包含 [\"代码\"、\"写个\"、\"函数\"、\"脚本\"]:\n    → Qwen3-Coder-Plus\nelif 任务包含 [\"审查\"、\"找 bug\"、\"优化\"]:\n    → Kimi-K2.5\nelif 任务包含 [\"设计\"、\"架构\"、\"系统\"]:\n    → GLM-5\nelif 任务包含 [\"评估\"、\"创意\"、\"建议\"]:\n    → MiniMax-M2.5\nelif 任务简单 (字数<100):\n    → GLM-4.7\nelse:\n    → Qwen3.5-Plus (默认)\n```\n\n### 节省额度技巧",
+      "source": "memory/model-test-results.md",
+      "chunk_index": 6,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.512280"
+    },
+    "e70d465d9e329c5a00262c43c442488f4046ce1282232eba5a49df203e4137b2": {
+      "content": "1. **简单任务用 GLM-4.7** — 快且省\n2. **长对话用 Qwen3.5-Plus** — 均衡\n3. **关键任务用专用模型** — 保证质量\n4. **避免频繁切换** — 减少心智负担\n\n---\n\n## 📈 各模型综合评分\n\n| 模型 | 能力分 | 速度分 | 性价比 | 推荐度 |\n|------|-------|-------|--------|--------|\n| Qwen3.5-Plus | 4/5 | 5/5 | 5/5 | ⭐⭐⭐⭐⭐ |\n| Qwen3-Coder-Plus | 5/5 | 4/5 | 5/5 | ⭐⭐⭐⭐⭐ |\n| Kimi-K2.5 | 5/5 | 3/5 | 4/5 | ⭐⭐⭐⭐ |\n| GLM-5 | 5/5 | 3/5 | 4/5 | ⭐⭐⭐⭐ |\n| MiniMax-M2.5 | 5/5 | 4/5 | 4/5 | ⭐⭐⭐⭐ |\n| GLM-4.7 | 4/5 | 5/5 | 5/5 | ⭐⭐⭐⭐ |\n\n---\n\n## 📝 测试结论",
+      "source": "memory/model-test-results.md",
+      "chunk_index": 7,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.512283"
+    },
+    "dc9cc9ce13ede23415c385951a00266c3222db95728af5bc2f75ee8e902ce675": {
+      "content": "1. **没有全能模型** — 每个模型有明确优势场景\n2. **Qwen3.5-Plus 是最佳默认** — 均衡、快速、自然\n3. **专用任务用专用模型** — 代码用 Coder，设计用 GLM-5\n4. **GLM-4.7 被低估** — 简单任务性价比极高\n5. **MiniMax-M2.5 创意突出** — 评估/头脑风暴首选\n\n---\n\n## 🔧 后续优化\n\n1. **实现自动模型调度** — 根据任务关键词自动选择\n2. **建立模型偏好配置** — 用户可自定义默认模型\n3. **定期重新测试** — 模型迭代后更新评分\n4. **收集实际使用数据** — 优化推荐策略\n\n---\n\n_2026-03-10 测试完成_\n_测试执行：小虾米_\n_测试题目：黄金矿工卡牌系统 + 代码审查 + 趣味性评估 + 概念解释_\n_总耗时：约 5 分钟（并行）_\n\n🦐",
+      "source": "memory/model-test-results.md",
+      "chunk_index": 8,
+      "total_chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.512286"
+    },
+    "d0379c861257642e8ac37c98c97b22052a927603a31511f489ded8708f523f98": {
+      "content": "# 每日学习计划\n\n_咔啦米的游戏策划提升计划 — 2026-03-10 启动_\n\n**提醒时间：** 每天晚上 21:00\n**每日时长：** 30-60 分钟（工作日）/ 2-4 小时（周末）\n\n---\n\n## 📅 第 1 周：基础入门\n\n| 日期 | 主题 | 任务 | 时长 |\n|------|------|------|------|\n| **周一** | 游戏设计基础 | 观看 Game Maker's Toolkit 第 1 集 + 记笔记 | 30min |\n| **周二** | 系统拆解练习 | 选一款 Roguelike，拆解核心循环 | 45min |\n| **周三** | 数值基础 | 学习 Excel 数值建模基础 | 30min |\n| **周四** | 游戏设计基础 | 观看 GMTK 第 2 集 + 记笔记 | 30min |\n| **周五** | 系统拆解练习 | 继续拆解，写文档初稿 | 45min |\n| **周六** | 深度学习 | GDC 演讲 1 个 + 完整拆解文档 | 2h |\n| **周日** | 复盘 | 整理本周笔记 + 规划下周 | 1h |\n\n---",
+      "source": "memory/daily-learning-plan.md",
+      "chunk_index": 0,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.512362"
+    },
+    "759e1f23fb5e06f87080bf8ca93155b370b8f7c0148788d575378ca28bda6fd4": {
+      "content": "## 📅 第 2 周：系统设计深化\n\n| 日期 | 主题 | 任务 | 时长 |\n|------|------|------|------|\n| **周一** | 经济系统 | 学习经济系统设计理论 | 30min |\n| **周二** | 拆解实践 | 拆解一款游戏的经济系统 | 45min |\n| **周三** | 成长系统 | 学习成长曲线设计 | 30min |\n| **周四** | 拆解实践 | 拆解一款游戏的成长系统 | 45min |\n| **周五** | 文档练习 | 写一份系统设计文档 | 45min |\n| **周六** | 深度学习 | GDC 系统设计与数值演讲 | 2h |\n| **周日** | 复盘 | 整理文档 + 小虾米检查 | 1h |\n\n---\n\n## 📅 第 3 周：数值能力提升",
+      "source": "memory/daily-learning-plan.md",
+      "chunk_index": 1,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.512366"
+    },
+    "368525d105c6eb2055954021846101406afe20ad882e57ee5995c9601811e59f": {
+      "content": "| 日期 | 主题 | 任务 | 时长 |\n|------|------|------|------|\n| **周一** | 数值基础 | Excel 函数与公式 | 30min |\n| **周二** | 实战练习 | 设计角色成长曲线 | 45min |\n| **周三** | 数值基础 | Python 数值模拟入门 | 30min |\n| **周四** | 实战练习 | 设计装备数值体系 | 45min |\n| **周五** | 数值基础 | 概率设计基础 | 30min |\n| **周六** | 深度学习 | 数值策划相关 GDC 演讲 | 2h |\n| **周日** | 复盘 | 整理数值表格 + 验证 | 1h |\n\n---\n\n## 📅 第 4 周：综合实践",
+      "source": "memory/daily-learning-plan.md",
+      "chunk_index": 2,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.512369"
+    },
+    "ab788dd26ecf09321fa96d433c4453b40ff9e19bcac408423303ea7dc284b999": {
+      "content": "| 日期 | 主题 | 任务 | 时长 |\n|------|------|------|------|\n| **周一** | 玩法原型 | 设计一个玩法原型 | 45min |\n| **周二** | 技术基础 | Unity/Unreal 入门教程 | 30min |\n| **周三** | 数据分析 | SQL 基础学习 | 30min |\n| **周四** | 文档能力 | 标准化文档撰写练习 | 45min |\n| **周五** | 综合练习 | 完整设计一个小系统 | 1h |\n| **周六** | 深度学习 | GDC 综合演讲 + 总结 | 2h |\n| **周日** | 月度复盘 | 评估进度 + 调整计划 | 1.5h |\n\n---\n\n## 📝 每日学习模板\n\n```markdown\n## YYYY-MM-DD 学习记录\n\n### 今天学了什么\n-\n\n### 关键收获\n-\n\n### 疑问/问题\n-\n\n### 明日计划\n- \n```\n\n---\n\n## 🎯 里程碑检查",
+      "source": "memory/daily-learning-plan.md",
+      "chunk_index": 3,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.512372"
+    },
+    "a1662f4fa747993f52dacaa8512c03755e56fb1cc88212b0782f9628e9a92e90": {
+      "content": "| 时间 | 检查点 | 目标 |\n|------|--------|------|\n| 第 1 周末 | 基础概念 | 理解核心设计术语 |\n| 第 2 周末 | 系统拆解 | 完成 2 款游戏系统拆解 |\n| 第 3 周末 | 数值能力 | 能独立设计成长曲线 |\n| 第 4 周末 | 综合能力 | 完成一份完整系统设计文档 |\n\n---\n\n## 💡 灵活调整\n\n- **忙的时候**：只完成核心任务（30min）\n- **有空的时候**：加做扩展任务\n- **状态不好**：改成玩游戏 + 简单记录\n- **有疑问**：随时问小虾米\n\n---\n\n## 📊 进度追踪\n\n| 周数 | 完成度 | 备注 |\n|------|--------|------|\n| 第 1 周 | ⬜⬜⬜⬜⬜ | |\n| 第 2 周 | ⬜⬜⬜⬜⬜ | |\n| 第 3 周 | ⬜⬜⬜⬜⬜ | |\n| 第 4 周 | ⬜⬜⬜⬜⬜ | |\n\n---\n\n_2026-03-10 建立_\n_咔啦米 × 小虾米_ 🦐",
+      "source": "memory/daily-learning-plan.md",
+      "chunk_index": 4,
+      "total_chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.512375"
+    },
+    "9adc7c438793407aa137a2e10657c0a9002493e10982fc131d902750ac70fa99": {
+      "content": "# 2026-03-11 — 第 2 天\n\n---\n\n## 🎉 今天完成的事\n\n- ✅ 创建每日日志模板 `memory/templates/daily-log.md`\n- ✅ 更新 HEARTBEAT.md 添加日志检查\n- ✅ 设置每周日 21:00 记忆回顾 cron 任务\n- ✅ 配置双渠道提醒（钉钉 + webchat）\n\n---\n\n## 💡 学到的东西\n\n- 文章架构方法论：身份层 → 操作层 → 知识层\n- 4 周路线图：第 1 周身份，第 2 周记忆，第 3 周多智能体，第 4 周自愈\n- 核心洞察：文件体系是护城河，智能体在对话中进化\n\n---\n\n## ⚠️ 遇到的问题\n\n- 无\n\n---\n\n## 📋 明天计划\n\n- 持续使用每日日志模板\n- 心跳时检查日志状态\n- 正常使用中完善\n\n---\n\n_小虾米 记录于 2026-03-11_ 🦐",
+      "source": "memory/2026-03-11.md",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "indexed_at": "2026-03-12T21:28:47.512435"
+    },
+    "9ff2ea6a6a3c0fbf0214cb491339b5a1ac90268bf404594aa0ab56f7d6ba52a7": {
+      "content": "# 游戏设计能力提升计划\n\n_咔啦米的系统学习路径 — 2026-03-10 启动_\n\n---\n\n## 🎯 目标\n\n**短期（1-3 年）：** 进入大厂，系统学习游戏设计方法论\n\n**长期（3-5 年）：** 具备独立开发能力，和小虾米一起开发独立游戏\n\n**能力需求：** 非常综合（系统、数值、技术、数据、审美）\n\n---\n\n## 📚 核心能力模型\n\n### 1️⃣ 系统设计能力 ⭐⭐⭐⭐⭐\n\n**子能力：**\n- 系统架构设计\n- 玩法循环设计\n- 经济系统设计\n- 成长系统设计\n- 社交系统设计\n\n**学习方法：**\n- [ ] 深度拆解 10 款以上经典游戏\n- [ ] 学习系统设计理论框架\n- [ ] 练习写系统设计文档\n- [ ] 参与实际项目开发\n\n**小虾米辅助：**\n- 帮忙整理拆解文档\n- 检查设计逻辑漏洞\n- 整理理论资料\n- 帮忙写文档初稿\n\n---\n\n### 2️⃣ 数值平衡能力 ⭐⭐⭐⭐⭐\n\n**子能力：**\n- 数值建模\n- 公式设计\n- 平衡调整\n- 经济调控\n- 概率设计",
+      "source": "memory/game-design-learning.md",
+      "chunk_index": 0,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512551"
+    },
+    "24d97b946254c61012502e86d24101bd26b308cbde513b39350a64fc65922aa3": {
+      "content": "**学习方法：**\n- [ ] 学习 Excel/Python 数值模拟\n- [ ] 拆解经典游戏数值体系\n- [ ] 练习设计完整数值表\n- [ ] 学习概率论基础\n\n**小虾米辅助：**\n- 帮忙验证公式\n- 写模拟脚本\n- 整理数值表格\n- 检查计算错误\n\n---\n\n### 3️⃣ 玩法创新能力 ⭐⭐⭐⭐\n\n**子能力：**\n- 玩法原型设计\n- 核心循环设计\n- 差异化定位\n- 玩家心理把握\n- 体验调优\n\n**学习方法：**\n- [ ] 大量玩各类游戏（尤其是 Roguelike）\n- [ ] 分析成功/失败案例\n- [ ] 练习设计玩法原型\n- [ ] 收集玩家反馈\n\n**小虾米辅助：**\n- 整理竞品信息\n- 分析玩家评论\n- 帮忙记录灵感\n- 整理设计文档\n\n---\n\n### 4️⃣ 技术理解能力 ⭐⭐⭐⭐\n\n**子能力：**\n- 引擎基础（Unity/Unreal）\n- 脚本语言（Lua/Python/C#）\n- 技术可行性评估\n- 与程序沟通效率\n- 工具链使用",
+      "source": "memory/game-design-learning.md",
+      "chunk_index": 1,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512556"
+    },
+    "b3ba14411e7840c8c26869ac98c6d97ccfcdeaf75c976b0948fad28a67bd2ad2": {
+      "content": "**学习方法：**\n- [ ] 学习 Unity/Unreal 基础\n- [ ] 掌握至少一门脚本语言\n- [ ] 了解常见技术方案\n- [ ] 学习版本管理（Git）\n\n**小虾米辅助：**\n- 推荐学习资源\n- 解答技术问题\n- 帮忙写简单脚本\n- 整理技术文档\n\n---\n\n### 5️⃣ 数据分析能力 ⭐⭐⭐⭐\n\n**子能力：**\n- 数据指标设计\n- SQL 基础\n- 数据分析方法\n- A/B 测试设计\n- 数据驱动决策\n\n**学习方法：**\n- [ ] 学习 SQL 基础\n- [ ] 学习 Python 数据分析\n- [ ] 了解常见数据指标\n- [ ] 练习设计 A/B 测试\n\n**小虾米辅助：**\n- 帮忙整理数据表格\n- 写分析脚本\n- 整理指标体系\n- 生成分析报告\n\n---\n\n### 6️⃣ 文档与沟通能力 ⭐⭐⭐⭐\n\n**子能力：**\n- 设计文档撰写\n- 需求表达清晰\n- 跨部门沟通\n- 版本管理\n- 团队协作\n\n**学习方法：**\n- [ ] 练习写标准化文档\n- [ ] 学习沟通技巧\n- [ ] 参与实际项目\n- [ ] 收集反馈改进",
+      "source": "memory/game-design-learning.md",
+      "chunk_index": 2,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512560"
+    },
+    "56a3508abaef6653168442830175a515064e3a7c67e7772811251b89b9dc8aa3": {
+      "content": "**小虾米辅助：**\n- 帮忙写文档初稿\n- 检查文档逻辑\n- 整理会议纪要\n- 管理文档版本\n\n---\n\n## 📖 推荐学习资源\n\n### 书籍\n- [ ] 《游戏设计艺术》（The Art of Game Design）\n- [ ] 《通关！游戏设计之道》（Level Up!）\n- [ ] 《体验引擎：游戏设计全景探秘》（Tynan Sylvester）\n- [ ] 《游戏设计梦工厂》（Tracy Fullerton）\n- [ ] 《数值设计：从入门到精通》\n\n### 在线课程\n- [ ] Coursera - Game Design and Development\n- [ ] Udemy - Complete Game Developer Course\n- [ ] GDC Vault - 游戏开发者大会演讲\n- [ ] B 站 - 游戏设计相关课程\n\n### 博客/网站\n- [ ] Gamasutra\n- [ ] Game Developer\n- [ ] 机核网\n- [ ] 游戏葡萄\n- [ ] 独立游戏联盟",
+      "source": "memory/game-design-learning.md",
+      "chunk_index": 3,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512563"
+    },
+    "95f89aa717696a71d73894f9cf58111298719723641ac4f647f07e5c7bdbfde2": {
+      "content": "### YouTube/B 站频道\n- [ ] Game Maker's Toolkit\n- [ ] Extra Credits\n- [ ] GDC\n- [ ] 各种游戏拆解 UP 主\n\n---\n\n## 🎮 实践项目\n\n### 项目 1：游戏拆解系列（正在进行）\n\n**目标：** 深度拆解 10 款 Roguelike 游戏\n\n**清单：**\n- [ ] Hades\n- [ ] Dead Cells\n- [ ] Slay the Spire\n- [ ] Risk of Rain 2\n- [ ] Vampire Survivors\n- [ ] Binding of Isaac\n- [ ] Enter the Gungeon\n- [ ] Rogue Legacy 2\n- [ ] Noita\n- [ ] 暗黑地牢\n\n**输出：** 每款游戏一份完整拆解文档（系统、数值、玩法、艺术）\n\n**小虾米辅助：** 帮忙整理文档、查资料、检查逻辑\n\n---\n\n### 项目 2：系统设计练习\n\n**目标：** 设计完整的游戏系统",
+      "source": "memory/game-design-learning.md",
+      "chunk_index": 4,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512566"
+    },
+    "4d4e801a6675ecce9a3856bda0dab106ae465c13b2f9609cc52b926ebf89661b": {
+      "content": "**练习题目：**\n- [ ] 设计一个完整的成长系统\n- [ ] 设计一个经济系统\n- [ ] 设计一个社交系统\n- [ ] 设计一个战斗系统\n\n**输出：** 标准化系统设计文档\n\n**小虾米辅助：** 帮忙写初稿、检查漏洞、整理表格\n\n---\n\n### 项目 3：数值模拟练习\n\n**目标：** 掌握数值建模能力\n\n**练习题目：**\n- [ ] 角色成长曲线设计\n- [ ] 装备数值设计\n- [ ] 技能伤害公式\n- [ ] 经济产出/消耗平衡\n\n**输出：** Excel/Python 数值模拟表\n\n**小虾米辅助：** 帮忙写脚本、验证公式、检查计算\n\n---\n\n### 项目 4：独立游戏原型（长期）\n\n**目标：** 和小虾米一起开发可玩的 Demo\n\n**阶段：**\n1. 创意构思（现在 - 6 个月）\n2. 原型设计（6-12 个月）\n3. Demo 开发（12-24 个月）\n4. 测试迭代（24-36 个月）\n\n**小虾米角色：** 设计伙伴 + 技术辅助 + 文档管理\n\n---\n\n## 📅 学习节奏\n\n### 每日（30-60 分钟）\n- [ ] 玩游戏（带着分析目的）\n- [ ] 记录灵感/发现\n- [ ] 阅读设计文章",
+      "source": "memory/game-design-learning.md",
+      "chunk_index": 5,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512570"
+    },
+    "035c920f69a119ac666089339dc05c63418a27a4779e8551c971e9099df30f68": {
+      "content": "### 每周（2-4 小时）\n- [ ] 深度拆解一个游戏系统\n- [ ] 学习一个设计理论\n- [ ] 和小虾米讨论设计问题\n\n### 每月（8-16 小时）\n- [ ] 完成一份完整拆解文档\n- [ ] 完成一个设计练习\n- [ ] 回顾学习进度\n\n### 每季度\n- [ ] 评估能力提升\n- [ ] 调整学习计划\n- [ ] 设定下季度目标\n\n---\n\n## 📊 进度追踪\n\n| 能力 | 当前水平 | 目标水平 | 进度 |\n|------|---------|---------|------|\n| 系统设计 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 0% |\n| 数值平衡 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 0% |\n| 玩法创新 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 0% |\n| 技术理解 | ⭐⭐ | ⭐⭐⭐⭐ | 0% |\n| 数据分析 | ⭐⭐ | ⭐⭐⭐⭐ | 0% |\n| 文档沟通 | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 0% |\n\n**评估周期：** 每季度一次\n\n---\n\n## 💡 小虾米的承诺\n\n作为咔啦米的伙伴，我会：",
+      "source": "memory/game-design-learning.md",
+      "chunk_index": 6,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512574"
+    },
+    "7488e469494410c3bd5c5bb81bdefecc4a7d5670448b1ae271063833785bce13": {
+      "content": "1. **随时待命** — 有问题随时问\n2. **严谨认真** — 不敷衍，不胡编\n3. **主动记录** — 重要信息记入文件\n4. **持续学习** — 和你一起成长\n5. **诚实反馈** — 有问题直接说\n\n---\n\n_2026-03-10 建立_\n_咔啦米 × 小虾米 共同目标_ 🦐",
+      "source": "memory/game-design-learning.md",
+      "chunk_index": 7,
+      "total_chunks": 8,
+      "indexed_at": "2026-03-12T21:28:47.512576"
+    },
+    "805eefb5d9367cc33a512204122c599df86fb99937c44ec667aa19ea5030b319": {
+      "content": "# 能力缺口记录\n\n_创建日期：2026-03-12_\n_最后更新：2026-03-12_\n\n---\n\n## 📊 统计\n\n- **总缺口：** 0 条\n- **已解决：** 0 条\n- **待处理：** 0 条\n\n---\n\n## 🔴 待处理\n\n（暂无，等待信号采集）\n\n---\n\n## ✅ 已解决\n\n（暂无）\n\n---\n\n## 📝 记录规则\n\n**什么算能力缺口？**\n- Agent 明确表示\"做不到\"的场景\n- 用户说\"需要 XX 功能\"的需求\n- 重复手动操作（可自动化）\n- 任务失败/超时的根本原因\n\n**记录格式：**\n```markdown\n### [缺口描述]\n- **发现时间：** YYYY-MM-DD\n- **场景：** 什么情况下发现的\n- **影响：** 不解决会怎样\n- **状态：** 待搜索/已搜索/已解决\n- **解决方案：** （解决后填写）\n```\n\n**维护规则：**\n- 保留最近 30 天\n- 已解决的移动到\"已完成\"\n- 每周检查一次状态\n\n---\n\n_观察期：2026-03-12 ~ 2026-03-19（1 周后评估是否自动化）_ 🦐",
+      "source": "memory/skill-gaps.md",
+      "chunk_index": 0,
+      "total_chunks": 1,
+      "indexed_at": "2026-03-12T21:28:47.512629"
     }
   },
   "files": {
-    "/Users/sirius/.openclaw/workspace/memory/2026-03-12.md": {
-      "hash": "b6552202d15bfc2ca658a436ae81de68b453923adb3f31c83b55c4d634f9c5e7",
-      "chunks": 7,
-      "indexed_at": "2026-03-12T03:40:59.962430"
+    "memory/tabbit-final-report.md": {
+      "hash": "3840087e6ddcfb0328291f12d73165789672a5f68205aa960e50c41452b4a859",
+      "chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509787"
     },
-    "/Users/sirius/.openclaw/workspace/memory/security-rules.md": {
+    "memory/2026-03-12.md": {
+      "hash": "f51b4e2481b1c0b8e161652400051d4c3f7c237c593dcd67c31bb57e6b37e424",
+      "chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.509923"
+    },
+    "memory/security-rules.md": {
       "hash": "0015ab50722da0310c03c464a13e6ba9b3860fdc9d66c3e4c5757949194fe82b",
       "chunks": 6,
-      "indexed_at": "2026-03-12T03:40:59.962474"
+      "indexed_at": "2026-03-12T21:28:47.510018"
     },
-    "/Users/sirius/.openclaw/workspace/memory/quality-rubric.md": {
+    "memory/tabbit-whitepaper.md": {
+      "hash": "774446eeb6d372702f5ae7847d74d7d16d1bf4886dee1584beee1597e0928f47",
+      "chunks": 5,
+      "indexed_at": "2026-03-12T21:28:47.510125"
+    },
+    "memory/quality-rubric.md": {
       "hash": "05fda3b69d461aa89de9ecf9fc349ecc2cddda8526d459b20caa19aaecff192f",
       "chunks": 5,
-      "indexed_at": "2026-03-12T03:40:59.962518"
+      "indexed_at": "2026-03-12T21:28:47.510225"
     },
-    "/Users/sirius/.openclaw/workspace/memory/achievements.md": {
+    "memory/tabbit-test-plan.md": {
+      "hash": "26a910fa28f1c65b9526477fc139d7de5e5fe8ab1c9d0e7dac2b189a1a847ff2",
+      "chunks": 19,
+      "indexed_at": "2026-03-12T21:28:47.510460"
+    },
+    "memory/achievements.md": {
       "hash": "cedf0736280a2e1e32c698beb4b6caf64ab6b26662a1746ad5d80a11acea74fc",
       "chunks": 5,
-      "indexed_at": "2026-03-12T03:40:59.962560"
+      "indexed_at": "2026-03-12T21:28:47.510553"
     },
-    "/Users/sirius/.openclaw/workspace/memory/todos.md": {
-      "hash": "51fd9cdcfd667517d39aa4b1b5c06d7612df42e5b654d546c255a3f62b48727e",
-      "chunks": 7,
-      "indexed_at": "2026-03-12T03:40:59.962608"
+    "memory/tabbit-test-final.md": {
+      "hash": "7e5f4d6baf69d3594d9b5882de3aa8716b824743646f20e8bd9364573ddae2f9",
+      "chunks": 9,
+      "indexed_at": "2026-03-12T21:28:47.510643"
     },
-    "/Users/sirius/.openclaw/workspace/memory/skills.md": {
-      "hash": "01b9f0be3f1afe0efdfc7723a2916f6555a25b881ee2defafc8998461fd58d48",
+    "memory/tabbit-workflow.md": {
+      "hash": "323cbb4b1938d749a38f6be681880ac367b0930c33421118ed6188f9fabbe4e1",
+      "chunks": 31,
+      "indexed_at": "2026-03-12T21:28:47.510850"
+    },
+    "memory/todos.md": {
+      "hash": "f2650d4c770208972e938e7b2c8cef27c2a4449ff45db93b455c91acd2d1e7e6",
+      "chunks": 12,
+      "indexed_at": "2026-03-12T21:28:47.510944"
+    },
+    "memory/skills.md": {
+      "hash": "258454a824c85dfe9384b522dcd93aae7b14ab096d293f2cb4ef42d01e0759a2",
       "chunks": 10,
-      "indexed_at": "2026-03-12T03:40:59.962657"
+      "indexed_at": "2026-03-12T21:28:47.511019"
     },
-    "/Users/sirius/.openclaw/workspace/memory/model-test-round1.md": {
+    "memory/tabbit-playbook.md": {
+      "hash": "9f79f90218e11512291e6745fd349f9edfd823c4288b236c85583e8be75b5109",
+      "chunks": 21,
+      "indexed_at": "2026-03-12T21:28:47.511229"
+    },
+    "memory/tabbit-test-report.md": {
+      "hash": "fd742966b3856140829daf191585ffaf5d08401785fd2f1a163bb0d309309bfe",
+      "chunks": 11,
+      "indexed_at": "2026-03-12T21:28:47.511383"
+    },
+    "memory/model-test-round1.md": {
       "hash": "eb5f511b406849fbac1e2d997205a2d75c1d8f1546ded98830b472df048cdb7c",
       "chunks": 15,
-      "indexed_at": "2026-03-12T03:40:59.962740"
+      "indexed_at": "2026-03-12T21:28:47.511582"
     },
-    "/Users/sirius/.openclaw/workspace/memory/model-test-plan.md": {
+    "memory/model-test-plan.md": {
       "hash": "8b6cb2ecd2538aff0e6bb45cbb1ea1fddf352d9c6e52c92036f0a0d5ea33bcc1",
       "chunks": 7,
-      "indexed_at": "2026-03-12T03:40:59.962794"
+      "indexed_at": "2026-03-12T21:28:47.511721"
     },
-    "/Users/sirius/.openclaw/workspace/memory/model-usage-guide.md": {
+    "memory/model-usage-guide.md": {
       "hash": "fa23ebd25e47674a829a74ce6f3383ae14185c78f1e6b0710a504ee0d3d0377f",
       "chunks": 4,
-      "indexed_at": "2026-03-12T03:40:59.962836"
+      "indexed_at": "2026-03-12T21:28:47.511816"
     },
-    "/Users/sirius/.openclaw/workspace/memory/model-test-simple.md": {
+    "memory/model-test-simple.md": {
       "hash": "37d47d5b48467a1240a5fb6be477306aa92b96bf54d6c1457adcd13be0659ce1",
       "chunks": 4,
-      "indexed_at": "2026-03-12T03:40:59.962871"
+      "indexed_at": "2026-03-12T21:28:47.511906"
     },
-    "/Users/sirius/.openclaw/workspace/memory/2026-03-10.md": {
+    "memory/2026-03-10.md": {
       "hash": "90f2c63d6f008306a755f48798b05abc990941c508d97126829de5b833d203fd",
       "chunks": 6,
-      "indexed_at": "2026-03-12T03:40:59.962918"
+      "indexed_at": "2026-03-12T21:28:47.512012"
     },
-    "/Users/sirius/.openclaw/workspace/memory/knowledge-base.md": {
+    "memory/knowledge-base.md": {
       "hash": "cd278e21ef9524d5058a4c114c9aaeeb8ce06ca6334651d02d028bf4a17f0c35",
       "chunks": 8,
-      "indexed_at": "2026-03-12T03:40:59.962970"
+      "indexed_at": "2026-03-12T21:28:47.512147"
     },
-    "/Users/sirius/.openclaw/workspace/memory/model-test-results.md": {
+    "memory/model-test-results.md": {
       "hash": "ea7f79c253cc82c91c11b736761ea9d10bf9bae737a328ad412ab5604b4cf8da",
       "chunks": 9,
-      "indexed_at": "2026-03-12T03:40:59.963028"
+      "indexed_at": "2026-03-12T21:28:47.512288"
     },
-    "/Users/sirius/.openclaw/workspace/memory/daily-learning-plan.md": {
+    "memory/daily-learning-plan.md": {
       "hash": "c9ad427d97cda88ca37898a309575ebf17b577dc5f73453910d8f576f8761416",
       "chunks": 5,
-      "indexed_at": "2026-03-12T03:40:59.963068"
+      "indexed_at": "2026-03-12T21:28:47.512377"
     },
-    "/Users/sirius/.openclaw/workspace/memory/2026-03-11.md": {
+    "memory/2026-03-11.md": {
       "hash": "2b6b5c65c06f2e88f542bc719d1034e726ad8fbaf348c29f175b98af2b8375d1",
       "chunks": 1,
-      "indexed_at": "2026-03-12T03:40:59.963092"
+      "indexed_at": "2026-03-12T21:28:47.512437"
     },
-    "/Users/sirius/.openclaw/workspace/memory/game-design-learning.md": {
+    "memory/game-design-learning.md": {
       "hash": "8bfbc86a2ce80749c0c46cf749a92125376a04f44c542a5d9b8fa8f220f17fe7",
       "chunks": 8,
-      "indexed_at": "2026-03-12T03:40:59.963150"
+      "indexed_at": "2026-03-12T21:28:47.512578"
     },
-    "/Users/sirius/.openclaw/workspace/memory/skill-gaps.md": {
+    "memory/skill-gaps.md": {
       "hash": "6bbf2ad9e5efea0a62bf70c7182662160d4cf5309741b79ac5e9fa2af93ebb63",
       "chunks": 1,
-      "indexed_at": "2026-03-12T03:40:59.963176"
+      "indexed_at": "2026-03-12T21:28:47.512631"
     }
   },
-  "last_updated": "2026-03-12T03:40:59.963215"
+  "last_updated": "2026-03-12T21:28:47.512790"
 }
