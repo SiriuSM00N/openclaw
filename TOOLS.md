@@ -36,6 +36,7 @@ _Skills 定义工具怎么用，这个文件记录你的具体配置。_
 #### 钉钉
 - **用户 ID：** `sirius997`
 - **机器人 Client ID：** `dingbxklbnoxsigkiz4k`
+- **群 ID：** `16z-fue1q5rndd`
 - **用途：** 每日早安资讯、重要提醒
 
 ---

@@ -17,12 +17,14 @@ _最后更新：2026-03-12_
 | x-reader | - | 2026-03-12 | `skills/x-reader/` | X/Twitter 阅读 | - | ✅ 已克隆 |
 | browserwing | - | 2026-03-12 | `skills/browserwing/` | 浏览器自动化 | - | ✅ 已克隆 |
 | modsearch | - | 2026-03-12 | `skills/modsearch/` | 模块化搜索 | - | ✅ 已克隆 |
+| find-skills | 1.0.0 | 2026-03-12 | `~/.openclaw/skills/find-skills/` | 技能发现与安装 | npx skills CLI | ✅ 已安装，未使用 |
 
 ## 🗑️ 弃用/删除记录
 
 | 技能名 | 删除日期 | 原因 | 替代方案 |
 |--------|----------|------|----------|
 | tabbit-flow | 2026-03-12 | 违反诚实原则（假装用到 Tabbit 实际没有） | 无（功能本身有用，但不应挂 Tabbit 名字） |
+| Tabbit 相关 | 2026-03-16 | 用户主动要求卸载 | Exa Search + OpenClaw 原生能力 |
 
 ## 🛠️ 自研工具（2026-03-12 新增）
 

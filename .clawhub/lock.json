@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-daily-planner": {
+      "version": "1.0.0",
+      "installedAt": 1773684803710
+    },
+    "arc-security-audit": {
+      "version": "1.1.0",
+      "installedAt": 1773684840892
+    }
+  }
+}

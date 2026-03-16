@@ -1,18 +1,20 @@
 {
   "lastChecks": {
-    "browser": 1773248940000,
-    "dingtalk": 1773248940000,
-    "dailyLog": 1773248940000,
-    "todos": 1773248940000,
-    "skillGaps": 1773248940000,
-    "memoryIndex": 1773248940000,
-    "cron": 1773248940000
+    "browser": 1742032440000,
+    "cron": 1742032440000,
+    "dingtalk": 1742032440000,
+    "dailyLog": 1742032440000,
+    "todos": 1742032440000,
+    "memoryIndex": 1742032440000,
+    "email": null,
+    "calendar": null,
+    "weather": null
   },
-  "lastHeartbeat": "2026-03-12T03:09:00+08:00",
-  "status": "ok",
-  "issues": [
-    "Cron 失败监控 - 连续错误（可忽略，自身监控任务）",
-    "竞品分析监控 - 网络问题（白天重试）"
-  ],
-  "note": "用户正在配置 GitHub SSH，继续协助中"
+  "alerts": {
+    "todoReminder": {
+      "task": "准备水产市场发布材料",
+      "dueDate": "2026-03-19",
+      "daysRemaining": 4
+    }
+  }
 }

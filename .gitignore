@@ -1,1 +1,4 @@
 API_KEYS.md
+.env
+.env.*
+*.env
