@@ -289,13 +289,15 @@
 | browserwing | ✅ | skills/browserwing/ |
 | modsearch | ✅ | skills/modsearch/ |
 | find-skills | ✅ | ~/.openclaw/skills/find-skills/ |
-| free-ride | ⏳ | 需认证 |
+| **agent-daily-planner** | ✅ | skills/agent-daily-planner/ |
+| **arc-security-audit** | ✅ | skills/arc-security-audit/ |
+| **alex-session-wrap-up** | ✅ | skills/alex-session-wrap-up/ |
 
 **自研工具（2026-03-12）：**
 - `memory-dedup` — 去重索引 ✅
 - `memory-watcher` — 文件监听 ✅
 
-**统计：** 9 个已安装，2 个待安装，完成率 82%
+**统计：** 12 个已安装（2026-03-17 新增 3 个）
 
 **弃用技能：**
 - `tabbit-flow` — 2026-03-12 删除（违反诚实原则）

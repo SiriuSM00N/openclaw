@@ -18,6 +18,9 @@ _最后更新：2026-03-12_
 | browserwing | - | 2026-03-12 | `skills/browserwing/` | 浏览器自动化 | - | ✅ 已克隆 |
 | modsearch | - | 2026-03-12 | `skills/modsearch/` | 模块化搜索 | - | ✅ 已克隆 |
 | find-skills | 1.0.0 | 2026-03-12 | `~/.openclaw/skills/find-skills/` | 技能发现与安装 | npx skills CLI | ✅ 已安装，未使用 |
+| agent-daily-planner | 1.0.0 | 2026-03-17 | `skills/agent-daily-planner/` | 每日计划与任务跟踪 | 无 | ✅ 已测试 |
+| arc-security-audit | 1.0.0 | 2026-03-17 | `skills/arc-security-audit/` | 技能安全审计 | Python 3 | ✅ 已测试 |
+| alex-session-wrap-up | 1.0.1 | 2026-03-17 | `skills/alex-session-wrap-up/` | 会话结束自动总结 | 无（修改版） | ✅ 已测试 |
 
 ## 🗑️ 弃用/删除记录
 
@@ -131,12 +134,12 @@ python3 scripts/memory-watcher.py ./memory/ &
 
 ---
 
-## 📊 统计信息
+## 📊 统计信息（2026-03-17 更新）
 
-- **已安装技能：** 9 个
-- **待安装技能：** 2 个
+- **已安装技能：** 12 个
+- **待安装技能：** 0 个
 - **弃用技能：** 1 个（tabbit-flow）
-- **安装完成率：** 82%（9/11）
+- **新增技能：** 3 个（agent-daily-planner, arc-security-audit, alex-session-wrap-up）
 
 ---
 
