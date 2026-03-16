@@ -44,20 +44,18 @@ echo ""
 echo "💾 Persist:"
 if [ ! -f "$TODAY_LOG" ]; then
     mkdir -p "$MEMORY_DIR"
-    cat > "$TODAY_LOG" <<EOF
-# $TODAY — Session Wrap-Up
+    cat > "$TODAY_LOG" <<'EOF'
+# Session Wrap-Up
 
-## 📦 Shipped
+## Shipped
 - Auto-committed work
 
-## 📝 Learnings
+## Learnings
 - Session wrap-up executed
 
-## 🔍 Patterns
+## Patterns
 - Analysis pending OpenClaw integration
-
----
-_EOF
+EOF
     echo "  → Created $TODAY_LOG"
 else
     echo "  → $TODAY_LOG exists"
